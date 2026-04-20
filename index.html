@@ -40,25 +40,20 @@
 
     .nav-logo {
       font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--ink);
-      cursor: pointer;
-      user-select: none;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--ink); text-decoration: none;
       display: flex; align-items: center; gap: 0.45rem;
     }
 
     .nav-btn {
       background: none; border: none;
       font-family: 'Lora', serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      cursor: pointer;
-      padding: 0.45rem 1rem;
+      font-size: 0.82rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      cursor: pointer; padding: 0.45rem 1rem;
       border-radius: 2px;
       transition: color 0.2s, background 0.2s;
+      text-decoration: none; display: inline-block;
     }
     .nav-btn:hover { color: var(--ink); background: var(--border); }
     .nav-btn.active { color: var(--ink); font-weight: 500; }
@@ -106,9 +101,7 @@
     }
 
     .empty-state {
-      text-align: center;
-      padding: 5rem 0;
-      color: var(--muted);
+      text-align: center; padding: 5rem 0; color: var(--muted);
     }
     .empty-state .icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; opacity: 0.6; }
     .empty-state p { font-size: 0.95rem; font-style: italic; }
@@ -116,7 +109,7 @@
     .feed-item {
       padding: 2.5rem 0;
       border-bottom: 1px solid var(--border);
-      cursor: pointer;
+      text-decoration: none; display: block; color: inherit;
       transition: opacity 0.2s;
     }
     .feed-item:hover { opacity: 0.7; }
@@ -130,8 +123,7 @@
     .feed-item h2 {
       font-family: 'Playfair Display', serif;
       font-size: 1.45rem; line-height: 1.3;
-      margin-bottom: 0.55rem;
-      transition: color 0.2s;
+      margin-bottom: 0.55rem; transition: color 0.2s;
     }
     .feed-item:hover h2 { color: var(--accent); }
 
@@ -175,7 +167,8 @@
       display: flex; align-items: baseline; gap: 1.2rem;
       padding: 1.5rem 0;
       border-bottom: 1px solid var(--border);
-      cursor: pointer; transition: opacity 0.2s;
+      text-decoration: none; color: inherit;
+      transition: opacity 0.2s;
     }
     .list-item:hover { opacity: 0.7; }
 
@@ -197,58 +190,6 @@
       letter-spacing: 0.05em; flex-shrink: 0;
     }
 
-    /* ── POST VIEW ── */
-    .post-back-bar {
-      max-width: 620px; margin: 0 auto;
-      padding: 1.8rem 2rem 0;
-    }
-
-    .back-btn {
-      background: none; border: none;
-      font-family: 'Lora', serif;
-      font-size: 0.78rem; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--muted);
-      cursor: pointer; display: inline-flex; align-items: center; gap: 0.45rem;
-      padding: 0; transition: color 0.2s;
-    }
-    .back-btn:hover { color: var(--ink); }
-
-    .post-wrap {
-      max-width: 620px; margin: 0 auto;
-      padding: 2.5rem 2rem 6rem;
-    }
-
-    .post-wrap .cat {
-      font-size: 0.7rem; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 0.8rem;
-    }
-
-    .post-wrap h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 5vw, 2.5rem);
-      line-height: 1.2; margin-bottom: 0.8rem;
-    }
-
-    .post-wrap .byline {
-      font-size: 0.78rem; color: var(--muted);
-      margin-bottom: 2.5rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .post-body p { font-size: 1rem; color: #2e2e2a; margin-bottom: 1.5rem; }
-    .post-body h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem; margin: 2.5rem 0 1rem;
-    }
-    .post-body blockquote {
-      border-left: 3px solid var(--accent-soft);
-      padding: 0.4rem 0 0.4rem 1.4rem;
-      margin: 2rem 0; font-style: italic;
-      color: var(--muted); font-size: 1.02rem;
-    }
-
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
@@ -266,22 +207,19 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo" onclick="showPage('home')">
-    🌿 Cozy Little Cottage
-  </div>
-     <div>
-    <button class="nav-btn active" id="nav-home" onclick="showPage('home')">Home</button>
-    <button class="nav-btn" id="nav-blog" onclick="showPage('blog')">All Posts</button>
+  <a class="nav-logo" href="index.html">🌿 Cozy Little Cottage</a>
+  <div>
+    <a class="nav-btn active" href="index.html">Home</a>
+    <button class="nav-btn" onclick="showList()">All Posts</button>
   </div>
 </nav>
 
 <!-- ═══ HOME ═══ -->
 <div class="page active" id="page-home">
   <div class="home-header">
-    <p class="eyebrow"></p>
-    <h1><em>Welcome to my cottage</em></h1>
+    <p class="eyebrow">Welcome to the cottage</p>
+    <h1>A <em>cozy</em> corner<br/>of the internet</h1>
     <p>Slow reads, warm thoughts, and little stories from everyday life.</p>
   </div>
   <div class="posts-feed" id="home-feed"></div>
@@ -296,132 +234,42 @@
   <div class="list-body" id="blog-list"></div>
 </div>
 
-<!-- ═══ SINGLE POST ═══ -->
-<div class="page" id="page-post">
-  <div class="post-back-bar">
-    <button class="back-btn" onclick="goBack()">← Back</button>
-  </div>
-  <div class="post-wrap" id="post-content"></div>
-</div>
-
 <footer>
   © 2025 Cozy Little Cottage &nbsp;·&nbsp; Hosted on GitHub Pages
 </footer>
 
 <script>
-  // ── YOUR POSTS GO HERE ──────────────────────────────────────────────
-  // When you want to add a post, copy the block below, fill it in,
-  // and add it to the array. Newest post should be first in the list.
-  //
-  // {
-  //   cat: "Life",                          // category label
-  //   title: "My First Post",               // post title
-  //   date: "April 14, 2025",               // display date
-  //   excerpt: "A short teaser line.",      // shown in feed & list
-  //   body: `<p>Your full content here.</p>` // full post HTML
-  // },
+  // ── ADD YOUR POSTS HERE ─────────────────────────────────────────────
+  // Each post links to its own HTML file in your repo.
+  // Newest post should be FIRST in the list.
   // ────────────────────────────────────────────────────────────────────
   const posts = [
-    {
+  
+  {
+    cat: "Non-Electric Purifier",
+     title: "Sustainable Living Starts Here: Non-Electric Water Purifiers Explained",
+   date: "April 19, 2026",
+   excerpt: "",
+     file : "post-2.html"
+  },
+    
+  {
     cat: "Water",
     title: "From wells to water purifiers — my first step in building a home starts with water.",
     date: "April 16, 2026",
     excerpt: "",
-    body: `<p> Choosing Land with a Natural Water Source – My First Priority. <br><br>
-      When I started thinking about building my house, my first concern was simple: Does the land have a natural water source?<br>
-      &nbsp&nbspHere in Kerala, the first thing most of us do after buying land is dig a well. It’s almost a tradition. The availability of water in the well tells us a lot about the land.
-          
-       <br>&nbsp&nbsp If the water level is not adequate, there’s always the option of a borewell. But honestly, borewell water tastes very different from the well water I grew up using.
-        
-        In our area, wells are usually full of water throughout the year, except during peak summer. <br>&nbsp&nbspHowever, things changed a bit after the floods a few years ago. The floods affected many natural water sources, including wells. Since then, it has become common practice to test well water in a lab before using it for drinking or cooking.
-        
-        <br> <br> Even with a good water source, purification is important. I want something that is
-      <br> &nbsp * Sustainable
-       <br>&nbsp * Not too expensive
-      <br>&nbsp  * Easy to maintain
-       
-      <br><br>  Here are the types of purifiers based on their purification process.
-       <br><Strong>1. UV/UF Purifier</Strong> 
-
-<br>&nbsp&nbspThis is suitable if the water is already relatively clean.
-
-<br>&nbsp&nbsp* Kills bacteria and viruses (UV)
-<br>&nbsp&nbsp* Removes impurities (UF)
-<br>&nbsp&nbsp* Does not change taste much
-<br>&nbsp&nbsp* Low maintenance
-
-<br><br><strong>2. RO Purifier</strong>
-
-<br>&nbsp&nbspUseful when water has high dissolved salts or contamination.
-
-<br>&nbsp&nbsp* Removes heavy metals and dissolved impurities
-<br>&nbsp&nbsp* Makes water very safe
-<br>&nbsp&nbsp* But can slightly change taste
-<br>&nbsp&nbsp* Wastes some water
-
-<br><br><strong>3. Water Softener</strong>
-
-<br>&nbsp&nbspThis is mainly for hard water issues.
-
-<br>&nbsp&nbsp* Reduces hardness (good for skin, hair, and appliances)
-<br>&nbsp&nbsp* Usually used along with other purifiers
-<br>&nbsp&nbsp* Not mainly for drinking water purification
-
-<br><br>For me, having a natural water source is not just about convenience—it’s about connection to the land and long-term sustainability.
-
-Choosing the right purifier depends on the quality of the water we get. So before buying anything, I plan to test the water first and then decide what suits best.
-      
-      <br><br>Purifiers are two types based on it need of power, Electric and Manual Purifiers.&nbspLet see if there is any difference in efficiency between these two categories.
-      <br><br>&nbsp&nbsp<strong>Manual (Non-electric) purifier</strong>
-     <br>&nbsp&nbsp&nbsp&nbsp*It is a basic filter. 
-<br>&nbsp&nbsp&nbsp*Good when your water is already fairly clean
-<br>&nbsp&nbsp&nbsp*Cheap, simple, and eco-friendly
-<br>&nbsp&nbsp&nbsp*But not strong enough for unsafe water
-
-<br><br>&nbsp&nbsp&nbspIt is best for:
-    <br>&nbsp&nbsp&nbsp&nbsp  *Well water with good quality
- <br>&nbsp&nbsp&nbsp&nbsp *Municipal supply
-       <br>&nbsp&nbsp&nbsp&nbsp*Budget-friendly homes
-      
-      <br><br>&nbsp&nbsp<strong>Electric purifier</strong>
-      
- <br>&nbsp&nbsp&nbsp&nbspThink of it as a complete water treatment system
- <br>&nbsp&nbsp&nbsp&nbspRemoves salt, chemicals, bacteria, everything
- <br>&nbsp&nbsp&nbsp&nbspMore reliable for uncertain water quality
-
- <br>&nbsp&nbsp&nbsp&nbspIt is Best for:
- <br>&nbsp&nbsp&nbsp&nbsp Borewell water
- <br>&nbsp&nbsp&nbsp&nbspHard water (high TDS)
-<br>&nbsp&nbsp&nbsp&nbsp Areas with contamination
-      
-      <br><br>These are the purifiers that I picked based on user reviews and affordability and sustainability. 
-      
-      <br><br>&nbsp&nbsp<strong> 1. KENT Grand RO Water Purifier </strong>
-      &nbsp  <a href="https://amzn.to/4tkElnM" target="_blank">Visit Amazon</a>
-      <br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★☆</span>
-      (4.4)
-      <br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> ₹ 12599</span>
-      <br><br>&nbsp&nbsp&nbsp&nbsp&nbspIf water quality is uncertain or hard,then go for KENT RO (reliable and widely used)
-      
-      <br><br>&nbsp&nbsp<strong>2. Aquaguard Delight NXT WS RO+UV+UF </strong>
-      &nbsp  <a href="https://amzn.to/3QvcNxj" target="_blank">Visit Amazon</a>
-      <br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★☆</span>
-      (4.1)
-      <br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> ₹ 9999</span>
-      <br><br>&nbsp&nbsp&nbsp&nbsp&nbspIf your well water or water source is clean (low TDS), then go for Aquaguard UV+UF (simple, sustainable, low maintenance)
-      
-      <br><br>&nbsp&nbsp<strong>3. Native by Urban Company M1 RO+UV+ Copper+Alkaline+Mineraliser </strong>
-      &nbsp  <a href="https://amzn.to/4sHdnFL" target="_blank">Visit Amazon</a>
-      <br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★☆</span>
-      (4.5)
-      <br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> ₹ 14998</span>
-      <br><br>&nbsp&nbsp&nbsp&nbsp&nbspIf you want “health-focused” features (copper/alkaline), then consider Native M1, but it’s more of a premium choice
-</p>`
+    file:"post-1.html"
   }
+    // }{
+    //   cat: "Life",
+    //   title: "My First Post",
+    //   date: "April 20, 2025",
+    //   excerpt: "A short teaser shown in the feed.",
+    //   file: "post-1.html"
+    // }
   ];
 
   // ── RENDER HOME FEED ──
-  
   function renderHome() {
     const feed = document.getElementById('home-feed');
     if (posts.length === 0) {
@@ -432,16 +280,16 @@ Choosing the right purifier depends on the quality of the water we get. So befor
         </div>`;
       return;
     }
-    feed.innerHTML = posts.map((p, i) => `
-      <div class="feed-item" onclick="openPost(${i})">
+    feed.innerHTML = posts.map(p => `
+      <a class="feed-item" href="${p.file}">
         <p class="meta">${p.cat} &nbsp;·&nbsp; ${p.date}</p>
         <h2>${p.title}</h2>
         <p class="excerpt">${p.excerpt}</p>
         <span class="read-link">Read more →</span>
-      </div>`).join('');
+      </a>`).join('');
   }
 
-  // ── RENDER ALL POSTS LIST ──
+  // ── RENDER ALL POSTS ──
   function renderBlogList() {
     const list = document.getElementById('blog-list');
     if (posts.length === 0) {
@@ -449,44 +297,23 @@ Choosing the right purifier depends on the quality of the water we get. So befor
       return;
     }
     list.innerHTML = posts.map((p, i) => `
-      <div class="list-item" onclick="openPost(${i})">
+      <a class="list-item" href="${p.file}">
         <div class="list-num">${String(i + 1).padStart(2, '0')}</div>
         <div class="list-title">${p.title}</div>
         <div class="list-date">${p.date}</div>
-      </div>`).join('');
+      </a>`).join('');
   }
 
-  // ── NAVIGATION ──
-  let previousPage = 'home';
-
-  function showPage(name) {
+  function showList() {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('page-' + name).classList.add('active');
-    if (name !== 'post') {
-      const btn = document.getElementById('nav-' + name);
-      if (btn) btn.classList.add('active');
-      previousPage = name;
-    }
+    document.getElementById('page-blog').classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function openPost(index) {
-    const p = posts[index];
-    document.getElementById('post-content').innerHTML = `
-      <p class="cat">${p.cat}</p>
-      <h1>${p.title}</h1>
-      <p class="byline">${p.date}</p>
-      <div class="post-body">${p.body}</div>
-    `;
-    showPage('post');
-  }
-
-  function goBack() { showPage(previousPage); }
-
-  // ── INIT ──
   renderHome();
   renderBlogList();
 </script>
 </body>
-  </html>
+</html>
+
