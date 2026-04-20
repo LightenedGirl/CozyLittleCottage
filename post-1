@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post Title — Cozy Little Cottage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf9f6;
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --accent: #b07d4a;
+      --accent-soft: #ddc9aa;
+      --border: #e5e3dc;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,249,246,0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--ink); text-decoration: none;
+      display: flex; align-items: center; gap: 0.45rem;
+    }
+
+    .nav-btn {
+      font-family: 'Lora', serif;
+      font-size: 0.82rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      padding: 0.45rem 1rem; border-radius: 2px;
+      text-decoration: none; display: inline-block;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-btn:hover { color: var(--ink); background: var(--border); }
+
+    /* ── BACK BUTTON ── */
+    .post-back-bar {
+      max-width: 620px; margin: 0 auto;
+      padding: 1.8rem 2rem 0;
+    }
+
+    .back-btn {
+      font-family: 'Lora', serif;
+      font-size: 0.78rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--ink); }
+
+    /* ── POST CONTENT ── */
+    .post-wrap {
+      max-width: 620px; margin: 0 auto;
+      padding: 2.5rem 2rem 6rem;
+      animation: fadeUp 0.35s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .post-wrap .cat {
+      font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .post-wrap h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      line-height: 1.2; margin-bottom: 0.8rem;
+    }
+
+    .post-wrap .byline {
+      font-size: 0.78rem; color: var(--muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── POST BODY ── */
+    .post-body p {
+      font-size: 1rem; color: #2e2e2a;
+      margin-bottom: 1.5rem;
+    }
+
+    .post-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; margin: 2.5rem 0 1rem;
+    }
+
+    .post-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; margin: 2rem 0 0.8rem;
+      color: var(--muted);
+    }
+
+    .post-body blockquote {
+      border-left: 3px solid var(--accent-soft);
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      margin: 2rem 0; font-style: italic;
+      color: var(--muted); font-size: 1.02rem;
+    }
+
+    .post-body ul, .post-body ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .post-body li {
+      margin-bottom: 0.4rem; font-size: 1rem; color: #2e2e2a;
+    }
+
+    .post-body img {
+      width: 100%; border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.8rem 2rem;
+      text-align: center;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">🌿 Cozy Little Cottage</a>
+  <a class="nav-btn" href="index.html">All Posts</a>
+</nav>
+
+<div class="post-back-bar">
+  <a class="back-btn" href="index.html">← Back to Home</a>
+</div>
+
+<div class="post-wrap">
+
+  <!-- ── EDIT BELOW THIS LINE ── -->
+
+  <p class="cat">Water</p>
+  <!-- Category: change to your topic e.g. Travel, Food, Garden, Thoughts -->
+
+  <h1>From wells to water purifiers — my first step in building a home starts with water.</h1>
+  <!-- Change this to your actual post title -->
+
+  <p class="byline">April 16, 2026</p>
+  <!-- Change this to your post date -->
+
+  <div class="post-body">
+
+    <p>Choosing Land with a Natural Water Source – My First Priority. <br><br>
+      When I started thinking about building my house, my first concern was simple: Does the land have a natural water source?<br>
+      &nbsp&nbspHere in Kerala, the first thing most of us do after buying land is dig a well. It’s almost a tradition. The availability of water in the well tells us a lot about the land.
+          
+       <br>&nbsp&nbsp If the water level is not adequate, there’s always the option of a borewell. But honestly, borewell water tastes very different from the well water I grew up using.
+        
+        In our area, wells are usually full of water throughout the year, except during peak summer. <br>&nbsp&nbspHowever, things changed a bit after the floods a few years ago. The floods affected many natural water sources, including wells. Since then, it has become common practice to test well water in a lab before using it for drinking or cooking.
+        
+        <br> <br> Even with a good water source, purification is important. I want something that is
+      <br> &nbsp * Sustainable
+       <br>&nbsp * Not too expensive
+      <br>&nbsp  * Easy to maintain
+       
+      <br><br>  Here are the types of purifiers based on their purification process.
+       <br><Strong>1. UV/UF Purifier</Strong> 
+
+<br>&nbsp&nbspThis is suitable if the water is already relatively clean.
+
+<br>&nbsp&nbsp* Kills bacteria and viruses (UV)
+<br>&nbsp&nbsp* Removes impurities (UF)
+<br>&nbsp&nbsp* Does not change taste much
+<br>&nbsp&nbsp* Low maintenance
+
+<br><br><strong>2. RO Purifier</strong>
+
+<br>&nbsp&nbspUseful when water has high dissolved salts or contamination.
+
+<br>&nbsp&nbsp* Removes heavy metals and dissolved impurities
+<br>&nbsp&nbsp* Makes water very safe
+<br>&nbsp&nbsp* But can slightly change taste
+<br>&nbsp&nbsp* Wastes some water
+
+<br><br><strong>3. Water Softener</strong>
+
+<br>&nbsp&nbspThis is mainly for hard water issues.
+
+<br>&nbsp&nbsp* Reduces hardness (good for skin, hair, and appliances)
+<br>&nbsp&nbsp* Usually used along with other purifiers
+<br>&nbsp&nbsp* Not mainly for drinking water purification
+
+<br><br>For me, having a natural water source is not just about convenience—it’s about connection to the land and long-term sustainability.
+</p>
+
+    <p>Choosing the right purifier depends on the quality of the water we get. So before buying anything, I plan to test the water first and then decide what suits best.
+      
+      <br><br>Purifiers are two types based on it need of power, Electric and Manual Purifiers.&nbspLet see if there is any difference in efficiency between these two categories.
+      <br><br>&nbsp&nbsp<strong>Manual (Non-electric) purifier</strong>
+     <br>&nbsp&nbsp&nbsp&nbsp*It is a basic filter. 
+<br>&nbsp&nbsp&nbsp*Good when your water is already fairly clean
+<br>&nbsp&nbsp&nbsp*Cheap, simple, and eco-friendly
+<br>&nbsp&nbsp&nbsp*But not strong enough for unsafe water
+
+<br><br>&nbsp&nbsp&nbspIt is best for:
+    <br>&nbsp&nbsp&nbsp&nbsp  *Well water with good quality
+ <br>&nbsp&nbsp&nbsp&nbsp *Municipal supply
+       <br>&nbsp&nbsp&nbsp&nbsp*Budget-friendly homes
+      
+      <br><br>&nbsp&nbsp<strong>Electric purifier</strong>
+      
+ <br>&nbsp&nbsp&nbsp&nbspThink of it as a complete water treatment system
+ <br>&nbsp&nbsp&nbsp&nbspRemoves salt, chemicals, bacteria, everything
+ <br>&nbsp&nbsp&nbsp&nbspMore reliable for uncertain water quality
+
+ <br>&nbsp&nbsp&nbsp&nbspIt is Best for:
+ <br>&nbsp&nbsp&nbsp&nbsp Borewell water
+ <br>&nbsp&nbsp&nbsp&nbspHard water (high TDS)
+<br>&nbsp&nbsp&nbsp&nbsp Areas with contamination
+      
+      <br><br>These are the purifiers that I picked based on user reviews and affordability and sustainability. 
+      
+      <br><br>&nbsp&nbsp<strong> 1. KENT Grand RO Water Purifier </strong>
+      &nbsp  <a href="https://amzn.to/4tkElnM" target="_blank">Visit Amazon</a>
+      <br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★☆</span>
+      (4.4)
+      <br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> ₹ 12599</span>
+      <blockquote>
+      
+    If water quality is uncertain or hard,then go for KENT RO (reliable and widely used)
+      </blockquote>
+      <br><br>&nbsp&nbsp<strong>2. Aquaguard Delight NXT WS RO+UV+UF </strong>
+      &nbsp  <a href="https://amzn.to/3QvcNxj" target="_blank">Visit Amazon</a>
+      <br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★☆</span>
+      (4.1)
+      <br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> ₹ 9999</span>
+       <blockquote>
+     If your well water or water source is clean (low TDS), then go for Aquaguard UV+UF (simple, sustainable, low maintenance)
+       </blockquote>
+      <br><br>&nbsp&nbsp<strong>3. Native by Urban Company M1 RO+UV+ Copper+Alkaline+Mineraliser </strong>
+      &nbsp  <a href="https://amzn.to/4sHdnFL" target="_blank">Visit Amazon</a>
+      <br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★☆</span>
+      (4.5)
+      <br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> ₹ 14998</span>
+      
+    <h2></h2>
+    <!-- Use h2 for section headings inside your post -->
+
+    <p></p>
+
+    <blockquote>
+      If you want “health-focused” features (copper/alkaline), then consider Native M1, but it’s more of a premium choice</p>
+
+    </blockquote>
+
+    <p></p>
+
+  </div>
+
+  <!-- ── EDIT ABOVE THIS LINE ── -->
+
+</div>
+
+<footer>
+  © 2025 Cozy Little Cottage &nbsp;·&nbsp; Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
+
