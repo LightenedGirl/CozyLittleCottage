@@ -115,10 +115,10 @@
     }
 
     .product-price {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem; color: var(--accent);
-      white-space: nowrap; font-weight: 700;
-    }
+  font-family: 'Lora', serif;
+  font-size: 1.2rem; color: var(--accent);
+  white-space: nowrap; font-weight: 700;
+}
 
     .product-cat {
       font-size: 0.68rem; letter-spacing: 0.12em;
@@ -131,10 +131,13 @@
       margin-bottom: 1.4rem; line-height: 1.7;
     }
 
-    .product-footer {
-      display: flex; align-items: center; justify-content: space-between;
-      padding-top: 1.2rem; border-top: 1px solid var(--border);
-    }
+   .product-footer {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  padding-top: 1.2rem; border-top: 1px solid var(--border);
+}
+  .order-buttons {
+  display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;
+}
 
     .likes-count {
       font-size: 0.8rem; color: var(--muted);
@@ -159,8 +162,15 @@
     }
     .empty-state .icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; opacity: 0.6; }
     .empty-state p { font-size: 0.95rem; font-style: italic; }
-
+    
     footer { border-top: 1px solid var(--border); padding: 1.8rem 2rem; text-align: center; font-size: 0.76rem; color: var(--muted); letter-spacing: 0.05em; }
+  
+  .amazon-btn {
+  background: #f07501;
+  margin-top: 0.5rem;
+}
+.amazon-btn:hover { background: #c98500; }
+
   </style>
 </head>
 <body>
@@ -187,7 +197,7 @@
 
 <script>
   // ── YOUR EMAIL ─────────────────────────────────────────────────
-  const YOUR_EMAIL = "cozylittlecottage@gmail.com"; // ← change this to your email
+  const YOUR_EMAIL = "cozylittlecottage87@email.com"; // ← change this to your email
   // ──────────────────────────────────────────────────────────────
 
   // ── ADD YOUR PRODUCTS HERE ────────────────────────────────────
@@ -195,13 +205,14 @@
   // Leave image: "" if you don't have a photo yet.
   // ─────────────────────────────────────────────────────────────
   const products = [
-     {
-       name: "Handmade Soy Candle",
-     cat: "Home",
-      price: "₹450",
-    desc: "A calming lavender soy candle, hand-poured in small batches. Burns for up to 40 hours.",
-      image: "candle.jpg"   // upload the image to your repo and put filename here
-  }
+    {
+      name: "Handmade Soy Candle",
+      cat: "Home",
+     price: "₹450",
+      desc: "A calming lavender soy candle, hand-poured in small batches. Burns for up to 40 hours.",
+      image: "candle.jpg" , // upload the image to your repo and put filename here
+      amazon: "https://www.amazon.in/your-product-link-here"
+   }
     // {
     //   name: "Woven Basket",
     //   cat: "Decor",
@@ -250,10 +261,13 @@
             <p class="product-desc">${p.desc}</p>
             <div class="product-footer">
               <span class="likes-count" id="likes-${i}">🤍 ${likes[i]} likes</span>
-              <a class="order-btn" href="mailto:${YOUR_EMAIL}?subject=${subject}&body=${body}">
-                Order via Email
-              </a>
-            </div>
+                 <div class="order-buttons">
+  <a class="order-btn" href="mailto:${YOUR_EMAIL}?subject=${subject}&body=${body}">
+    Order via Email
+  </a>
+  ${p.amazon ? `<a class="order-btn amazon-btn" href="${p.amazon}" target="_blank">Buy on Amazon</a>` : ''}
+</div>
+      </div>
           </div>
         </div>`;
     }).join('');
@@ -279,3 +293,4 @@
 </script>
 </body>
 </html>
+
