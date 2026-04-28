@@ -183,6 +183,7 @@
     <a class="nav-btn" href="index.html">Home</a>
     <a class="nav-btn active" href="shop.html">Shop</a>
   </div>
+  <a class="nav-btn" href="autism.html">The Autism Space</a>
 </nav>
 
 <div class="shop-header">
@@ -207,13 +208,13 @@
   // Leave image: "" if you don't have a photo yet.
   // ─────────────────────────────────────────────────────────────
   const products = [
- //   {
+   // {
  //     name: "Handmade Soy Candle",
-  //    cat: "Home",
-  //   price: "₹450",
+//      cat: "Home",
+     //price: "₹450",
  //     desc: "A calming lavender soy candle, hand-poured in small batches. Burns for up to 40 hours.",
  //     image: "candle.jpg" , // upload the image to your repo and put filename here
- //     amazon: "https://www.amazon.in/your-product-link-here"
+      //amazon: "https://www.amazon.in/your-product-link-here"
 //   }
     // {
     //   name: "Woven Basket",
@@ -263,7 +264,8 @@
             <p class="product-desc">${p.desc}</p>
             <div class="product-footer">
               <span class="likes-count" id="likes-${i}">🤍 ${likes[i]} likes</span>
-                 <div class="order-buttons">
+                 <div 
+      class="order-buttons">
   <a class="order-btn" href="mailto:${YOUR_EMAIL}?subject=${subject}&body=${body}">
     Order via Email
   </a>
