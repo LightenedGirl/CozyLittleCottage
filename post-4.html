@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post Title — Cozy Little Cottage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf9f6;
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --accent: #b07d4a;
+      --accent-soft: #ddc9aa;
+      --border: #e5e3dc;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,249,246,0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--ink); text-decoration: none;
+      display: flex; align-items: center; gap: 0.45rem;
+    }
+
+    .nav-btn {
+      font-family: 'Lora', serif;
+      font-size: 0.82rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      padding: 0.45rem 1rem; border-radius: 2px;
+      text-decoration: none; display: inline-block;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-btn:hover { color: var(--ink); background: var(--border); }
+
+    /* ── BACK BUTTON ── */
+    .post-back-bar {
+      max-width: 620px; margin: 0 auto;
+      padding: 1.8rem 2rem 0;
+    }
+
+    .back-btn {
+      font-family: 'Lora', serif;
+      font-size: 0.78rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--ink); }
+
+    /* ── POST CONTENT ── */
+    .post-wrap {
+      max-width: 620px; margin: 0 auto;
+      padding: 2.5rem 2rem 6rem;
+      animation: fadeUp 0.35s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .post-wrap .cat {
+      font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .post-wrap h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      line-height: 1.2; margin-bottom: 0.8rem;
+    }
+
+    .post-wrap .byline {
+      font-size: 0.78rem; color: var(--muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── POST BODY ── */
+    .post-body p {
+      font-size: 1rem; color: #2e2e2a;
+      margin-bottom: 1.5rem;
+    }
+
+    .post-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; margin: 2.5rem 0 1rem;
+    }
+
+    .post-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; margin: 2rem 0 0.8rem;
+      color: var(--muted);
+    }
+
+    .post-body blockquote {
+      border-left: 3px solid var(--accent-soft);
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      margin: 2rem 0; font-style: italic;
+      color: var(--muted); font-size: 1.02rem;
+    }
+
+    .post-body ul, .post-body ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .post-body li {
+      margin-bottom: 0.4rem; font-size: 1rem; color: #2e2e2a;
+    }
+
+    .post-body img {
+      width: 100%; border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.8rem 2rem;
+      text-align: center;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">🌿 Cozy Little Cottage</a>
+  <a class="nav-btn" href="index.html">All Posts</a>
+</nav>
+
+<div class="post-back-bar">
+  <a class="back-btn" href="index.html">← Back to Home</a>
+</div>
+
+<div class="post-wrap">
+
+  <!-- ── EDIT BELOW THIS LINE ── -->
+
+  <p class="cat">water</p>
+  <!-- Category: change to your topic e.g. Travel, Food, Garden, Thoughts -->
+
+  <h1>5 Genius Water Storage Solutions for Apartments</h1>
+  <!-- Change this to your actual post title -->
+
+  <p class="byline">April 28, 2026</p>
+  <!-- Change this to your post date -->
+
+  <div class="post-body">
+
+    <i>*This post contains affiliate links. If you purchase through them, we may earn a small commission at no extra cost to you.*</i>
+<p>
+<br>
+  Growing up, my family lived in a small apartment. Every now and then the local authorities would send out a notice warning residents to store enough water for a few days because of scheduled maintenance work on the water supply. The funny thing is, the water never actually got delayed for more than 24 hours. But that did not stop my parents from filling up every barrel, bucket, and container they could find — enough to last us a full week without a single drop from the tap.
+<br><br>&nbspAt the time I thought they were being overly cautious. Looking back, they were absolutely right. Water is the one thing you cannot improvise when it runs out. And the peace of mind that comes from knowing you have enough stored — even if you never end up needing it — is genuinely priceless.
+<br><br>&nbspThe challenge back then was space. We were in a small apartment with no garage and no basement, just like millions of households today. But my parents made it work. And in this post I want to show you exactly how you can too — with five practical water storage solutions designed specifically for small spaces, no matter how little room you have.
+<br><br>&nbspI will cover exactly how much you need to store, what containers work best, where to put them in your apartment, and how to keep your supply safe and fresh over time.
+
+  
+
+  <h2>How much water does one person actually need?
+</h2>
+Before you buy a single container, you need to know your target. The standard recommendation from <strong>emergency</strong> agencies is one gallon(3-4 litres) of water per person per day. That covers drinking, cooking, and basic hygiene.
+<br><br>&nbspFor a single person, a two-week emergency supply is just 14 gallons. For a couple, 28 gallons. That sounds like a lot, but as you will see below, it fits very comfortably on a single closet shelf or under a bed.
+<br><br>&nbsp Do not forget pets. A medium-sized dog needs about half a gallon per day. Add that to your total before you start shopping.
+
+  <h2>The 5 best water storage solutions for apartments
+</h2> 
+Here are the five options that work best in small spaces, ranked from most practical to most specialised.
+
+<br><br><strong>1. Stackable rigid jugs</strong>
+<br>This is the everyday workhorse for apartment preppers. Rigid BPA-free containers in the 5 to 7 gallon range are designed to stack on top of each other, which means they make excellent use of vertical space inside a closet or on a pantry shelf.
+<br><br>&nbspA 7-gallon jug weighs about 58 pounds when full, so keep them on floor level or on a sturdy low shelf. Buy handles that clip onto the spout for easy pouring without lifting the whole container.
+
+  <blockquote><strong>Reliance Products Aqua-Tainer 7 Gallon Rigid Water Container</strong>
+    <br> <a href="https://amzn.to/4t45sCB" target="_blank">Visit Amazon</a>
+<br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★★</span>
+      (4.7)
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> Price : ₹4515
+</span>
+    
+   <br>Capacity: 	26 litres
+    <br>Stackable, BPA-free, and easy to pour. One of the most popular apartment prep containers available. Perfect for closet storage.
+
+    
+  </blockquote>
+  
+<strong>2. Collapsible water containers
+ </strong>
+<br>The genius of collapsible containers is that they take up almost no space when empty. You can store six of them flat in a kitchen drawer, then fill them all when a storm warning comes through.
+<br><br>They are not ideal for long-term storage since the flexible plastic can degrade over time, but for rotating supplies and grab-and-go situations they are excellent. Look for food-grade BPA-free materials with a secure screw cap.
+
+<blockquote>
+    <strong>WaterStorageCube BPA-Free Collapsible Water Container
+</strong>
+    <br> <a href="https://amzn.to/4dcbj3S" target="_blank">Visit Amazon</a>
+<br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★☆</span>
+      (4.4)
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> Price : ₹4355
+</span>
+    
+   <br>Capacity: 5.3 gallons
+    <br>BPA Free, Foldable, Portable, Lightweight, BPA-free, and easy to pour. Folds flat when empty so you can keep several on hand without using any space. Fill them fast when you need to.
+  </blockquote>
+  
+<br><strong>3. Under-bed water bricks </strong>
+<br>The space under your bed is one of the most underused storage areas in any apartment. Water Bricks are flat, rectangular containers specifically designed to stack and slide under beds, sofas, and into low cabinets.
+<br><br>Each 3.5-gallon brick weighs about 29 pounds when full and has a recessed handle for easy moving. Four bricks under a standard bed gives a single person an 11-day supply without using a single square foot of visible space.
+
+  <blockquote>
+    <strong>WaterStorageCube BPA-Free Collapsible Water Container
+</strong>
+    <br> <a href="https://desertcart.in/products/582623085S" target="_blank">Visit Desertcart</a>
+<br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★☆</span>
+      (4.5)
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> Price : ₹35744
+</span>
+     <br>Pack of 4
+    
+    <br>  <br> <a href="https://amzn.to/4mVEag9" target="_blank">Visit Amazon</a>
+<br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★★</span>
+      (4.6)
+</span>
+     <br>Pack of 6
+  <br>   <br>Capacity(each): 3.5 gallons
+    <br>BPA Free, Food grade. Designed specifically for under-bed and low-cabinet storage. Interlocking design keeps them from shifting around.
+    
+  </blockquote>
+  
+<br><strong>4. Bathtub bladder bags
+ </strong>
+<br>This is your emergency power move. When a storm warning or emergency alert comes through, you have only a short window to act. A bathtub bladder bag lets you fill a standard bathtub and store up to 100 gallons of clean tap water in minutes.
+<br><br>You keep the deflated bag under the sink year-round, taking up almost no space. When you need it, you line your bathtub, fill it, and seal it. That 100 gallons gives a family of four a 25-day drinking supply.
+
+<blockquote>
+    <strong>WaterBOB Emergency Drinking Water Storage
+</strong>
+    <br> <a href="https://amzn.to/4tceJIY" target="_blank">Visit Amazon</a>
+<br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★★</span>
+      (4.7)
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> Price : ₹6015
+</span>
+    
+   <br>Capacity: 100 gallons
+    <br>BPA Free, Holds up to 100 gallons in any standard bathtub. Comes with a hand pump for easy dispensing. The ultimate last-minute apartment solution.
+
+  </blockquote>
+    
+    
+<br><strong>5. Pre-packaged emergency water pouches </strong>
+<br>For your grab-and-go bag, nothing beats pre-packaged water pouches. These are individual 4-ounce servings of purified water sealed in durable foil packets with a 5-year shelf life. They are Coast Guard approved, lightweight, and require zero containers.
+<br><br>Keep a box in your emergency bag, your car, and your office drawer. They are not practical as your primary storage solution but they are the perfect complement to your at-home supply.
+
+
+<blockquote>
+    <strong>Datrex Emergency Survival Water Pouch - Coast Guard approved (Pack of 64)
+</strong>
+    <br> <a href="https://amzn.to/423KLM1" target="_blank">Visit Amazon</a>
+
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> Price : ₹25,245
+</span>
+  
+ <br><br>   <strong>S.O.S. Emergency Water (Pack of 62)
+</strong>
+    <br> <a href="https://amzn.to/3QOmM0Q" target="_blank">Visit Amazon</a>
+
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> Price : ₹15,441
+</span>
+    
+<br>   <br>Capacity: 125 milli Litres per pack
+    <br>5-year shelf life, and easy to split between a home kit and a go-bag. Two of the most trusted emergency water brands.
+
+  </blockquote>
+        
+  <h2>Where exactly to store it in your apartment
+</h2>
+    <br>Finding the right spots is half the battle. Here are the best locations in a typical apartment ranked by convenience:
+
+    
+<br><br>1. Closet floor — the single best location. Cool, dark, and out of the way. Stack rigid jugs here.
+<br>2. Under the bed — use flat water bricks. Slides in and out without moving furniture.
+<br>3. Behind the sofa — a row of jugs fits neatly in the gap between the sofa and the wall.
+<br>4. Inside a storage ottoman — many ottomans hold two or three 3.5-gallon water bricks perfectly.
+<br>5. Pantry bottom shelf — keep one or two containers here for easy daily rotation.
+<br>6. Under the bathroom sink — store your WaterBOB bag here so it is always ready.
+
+<br><br>Avoid storing water near chemicals, cleaning products, petrol, or paint. Even sealed containers can absorb odours and compounds over time.
+
+  <h2>How to keep your stored water safe to drink
+</h2>
+ Tap water in most cities is already treated with chlorine, which gives it a reasonable shelf life in sealed containers. Here is everything you need to know:
+   
+
+<br><br>&nbsp&nbsp1.  Label every container with the fill date before you seal it.
+    <br>&nbsp&nbsp2.  Rotate your supply every 6 to 12 months. Use the old water for plants or cleaning, refill with fresh tap water.
+    <br>&nbsp&nbsp3.  Store in a cool dark place away from sunlight, which degrades plastic and encourages algae growth. 
+    <br>&nbsp&nbsp4.  If you want extra peace of mind, add 8 drops of plain unscented liquid bleach (6% sodium hypochlorite) per gallon before sealing. This extends shelf life significantly
+    <br>&nbsp&nbsp5.  If your stored water looks cloudy or smells off when you open it, filter it before drinking.
+
+    <blockquote>
+      <strong>LifeStraw Go 2 Stage - Filter Water Bottle</strong>
+<a href="https://amzn.to/3QxedHN" target="_blank">Visit Amazon</a>
+<br>&nbsp&nbsp&nbsp&nbsp&nbspProduct Rating: <span style="color: gold; font-size: 20px;">★★★★☆</span>
+      (4.4)
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> ₹2885</span>
+<br><br>Purification Method :Activated Carbon, Hollow Fibre Membrane
+<br>Material : Plastic Portable Water B
+<br>Capacity : 650 milli Litres
+<br>TDS Level Maximum (PPM) : 500
+<br>Removes bacteria, parasites, and microplastics from stored water. A smart safeguard to keep alongside your supply.
+
+    </blockquote>
+ 
+<br><br><i>Disclosure: This post contains affiliate links. We may earn a small commission if you purchase through these links, at no additional cost to you. We only recommend products we have researched and believe in. Thank you for supporting this blog.</i>
+
+ </p> 
+  </div>
+
+  <!-- ── EDIT ABOVE THIS LINE ── -->
+
+</div>
+
+<footer>
+  © 2025 Cozy Little Cottage &nbsp;·&nbsp; Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
