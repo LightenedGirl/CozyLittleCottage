@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post Title — Cozy Little Cottage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf9f6;
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --accent: #b07d4a;
+      --accent-soft: #ddc9aa;
+      --border: #e5e3dc;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,249,246,0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--ink); text-decoration: none;
+      display: flex; align-items: center; gap: 0.45rem;
+    }
+
+    .nav-btn {
+      font-family: 'Lora', serif;
+      font-size: 0.82rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      padding: 0.45rem 1rem; border-radius: 2px;
+      text-decoration: none; display: inline-block;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-btn:hover { color: var(--ink); background: var(--border); }
+
+    /* ── BACK BUTTON ── */
+    .post-back-bar {
+      max-width: 620px; margin: 0 auto;
+      padding: 1.8rem 2rem 0;
+    }
+
+    .back-btn {
+      font-family: 'Lora', serif;
+      font-size: 0.78rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--ink); }
+
+    /* ── POST CONTENT ── */
+    .post-wrap {
+      max-width: 620px; margin: 0 auto;
+      padding: 2.5rem 2rem 6rem;
+      animation: fadeUp 0.35s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .post-wrap .cat {
+      font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .post-wrap h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      line-height: 1.2; margin-bottom: 0.8rem;
+    }
+
+    .post-wrap .byline {
+      font-size: 0.78rem; color: var(--muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── POST BODY ── */
+    .post-body p {
+      font-size: 1rem; color: #2e2e2a;
+      margin-bottom: 1.5rem;
+    }
+
+    .post-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; margin: 2.5rem 0 1rem;
+    }
+
+    .post-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; margin: 2rem 0 0.8rem;
+      color: var(--muted);
+    }
+
+    .post-body blockquote {
+      border-left: 3px solid var(--accent-soft);
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      margin: 2rem 0; font-style: italic;
+      color: var(--muted); font-size: 1.02rem;
+    }
+
+    .post-body ul, .post-body ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .post-body li {
+      margin-bottom: 0.4rem; font-size: 1rem; color: #2e2e2a;
+    }
+
+    .post-body img {
+      width: 100%; border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.8rem 2rem;
+      text-align: center;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">🌿 Cozy Little Cottage</a>
+  <a class="nav-btn" href="index.html">All Posts</a>
+</nav>
+
+<div class="post-back-bar">
+  <a class="back-btn" href="index.html">← Back to Home</a>
+</div>
+
+<div class="post-wrap">
+
+  <!-- ── EDIT BELOW THIS LINE ── -->
+
+  <p class="cat">water</p>
+  <!-- Category: change to your topic e.g. Travel, Food, Garden, Thoughts -->
+
+  <h1>Clay Containers: Nature’s Water Cooler
+</h1>
+  <!-- Change this to your actual post title -->
+
+  <p class="byline">May 6, 2026</p>
+  <!-- Change this to your post date -->
+
+  <div class="post-body">
+
+    
+   <strong><i>Disclaimer: As an Amazon Associate, I earn from qualifying purchases.</i></strong>
+    
+    <img src="claypotwaterdispenser.png" alt="Clay Pot Water Container "/>
+
+<p>
+<br>
+Drinking water stored in clay containers—often called earthen pots, matkas, or mud pots—is a traditional practice in many parts of India and still has some practical benefits.
+
+  <h2>How clay pots cool water?</h2>
+Clay is porous. Tiny pores in the pot allow a small amount of water to seep to the outer surface and evaporate. That evaporation naturally cools the remaining water inside, similar to how sweating cools the body.
+
+  <h2>What are the potential benefits?</h2>
+  <strong>Naturally cool water</strong>
+  <br>The cooling is gradual and mild, unlike refrigerator water, which can feel too cold for some people. Many find clay-pot water easier on the throat and digestion.
+
+ <br><br> <strong>No electricity needed</strong>
+<br>It’s an energy-free cooling method and environmentally friendly compared to refrigerators or plastic dispensers.
+
+ <br><br> <Strong>Taste improvement</Strong>
+<br>Many people prefer the earthy taste and smell of water from clay pots. Some feel it tastes “softer” or fresher.
+
+ <br><br> <strong>Reduced plastic exposure</strong>
+<br>Using clay containers instead of plastic bottles or tanks can reduce exposure to microplastics and certain chemicals that may leach from low-quality plastics.
+
+<br>  <br><Strong>Slight alkalinity</Strong>
+<br>Some clay pots may mildly increase water alkalinity because of natural minerals in the clay, though the effect is usually small and not medically significant for most people.
+
+  <h2>Tips for using a clay water pot</h2>
+  1. Soak a new pot in clean water for several hours before first use.
+<br>
+ 2. Keep it in a shaded, airy place.
+<br>3. Cover the opening to keep dust and insects out.
+<br>4. Clean weekly with warm water and a soft brush. Avoid strong detergents that can soak into the clay.
+
+  
+  
+  <h2>Hygiene Tips for Earthen Pots</h2>
+The benefits depend heavily on cleanliness and water quality.
+
+<br><br>1. Always use clean drinking water in the pot.
+
+<br>2. Wash the pot regularly to prevent algae, biofilm, or bacterial growth.
+
+<br>3. Avoid keeping water stagnant for too many days.
+
+<br>4. Use a clean ladle or tap instead of dipping hands or used cups into the pot.
+
+<br>5. Replace cracked or moldy pots.
+  
+    
+  <h2>Where to Buy?</h2>
+  When I was young, I used to go to a nearby place where they made fresh clay pots-pottery village. I still remember the smell of wet clay and the rows of pots drying under the sun. We used them every day at home for cooking and also to store cool drinking water. When we went abroad, my mother would carefully wrap the clay pots and place them safely in our luggage because she never wanted to lose that taste of home. These days, things have changed a lot, and we can easily buy clay pots online, but the memories connected to them still feel special.
+
+  <br><br><strong><i>Disclaimer: As an Amazon Associate, I earn from qualifying purchases.</i></strong>
+
+ <blockquote>
+      <strong> 1. Maheshwari Handmade Clay Water Pot with Tap </strong>
+<br> <a href="https://amzn.to/4wvDnan" target="_blank">Visit Amazon</a>
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> ₹759
+  
+</span>
+   <br> Capacity : 10 Litre
+</blockquote>
+
+  <blockquote>
+      <strong> 2. Desi Potters Terracota Water Dispenser with Metal Clay </strong>
+<br> <a href="https://amzn.to/4eqrM5H" target="_blank">Visit Amazon</a>
+
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> ₹2524
+</span>
+  
+ <br> Capacity : 5 Litres</blockquote>
+
+  <blockquote>
+      <strong>3. Clay Water Dispenser with Tap </strong>
+<br> <a href="https://amzn.to/3P61Z8s" target="_blank">Visit Amazon</a>
+
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> ₹1599
+</span>
+    <br>  Capacity : 5 Litres
+</blockquote>
+  <blockquote>
+      <strong>4. Tradition Clay Pot Water Dispenser</strong>
+    <br> <a href="https://amzn.to/4ngJ5sj" target="_blank">Visit Amazon</a>
+
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> ₹1399
+</span>
+        <br>Capacity : 10 Litres </blockquote>
+
+<blockquote>
+      <strong>5. Village Decor Earthen Clay Ppt Water Dispenser with Metal Tap</strong>
+
+<br> <a href="https://villagedecor.in/products/clay-water-pot-wpot14?gad_campaignid=22153278474&gad_source=1&gbraid=0AAAAAoyonjz130rkE2ZXS6Tr_M5Vmntj3&gclid=Cj0KCQjw8PDPBhCeARIsAOJwmWWpn4skGtPiWVnXIqP_MdxlDEry4ySGsOpcf7AFVC1JwmGoK3mU_GsaAqutEALw_wcB&utm_campaign=%7Bcampaignname%7D&utm_content=%7Badgroupname%7D&utm_medium=cpc&utm_source=google&utm_term=" target="_blank">Visit Village Decor</a>
+
+<br>&nbsp&nbsp&nbsp&nbsp&nbspPrice: <span style="color: Blue; font-size: 20px;"> Price : ₹2599
+</span>
+        <br> Capacity : 6 Litres
+</blockquote>
+ </p>
+ </div>
+
+  <!-- ── EDIT ABOVE THIS LINE ── -->
+
+</div>
+
+<footer>
+  © 2025 Cozy Little Cottage &nbsp;·&nbsp; Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
