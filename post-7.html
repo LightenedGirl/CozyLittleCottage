@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post Title — Cozy Little Cottage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf9f6;
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --accent: #b07d4a;
+      --accent-soft: #ddc9aa;
+      --border: #e5e3dc;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,249,246,0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--ink); text-decoration: none;
+      display: flex; align-items: center; gap: 0.45rem;
+    }
+
+    .nav-btn {
+      font-family: 'Lora', serif;
+      font-size: 0.82rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      padding: 0.45rem 1rem; border-radius: 2px;
+      text-decoration: none; display: inline-block;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-btn:hover { color: var(--ink); background: var(--border); }
+
+    /* ── BACK BUTTON ── */
+    .post-back-bar {
+      max-width: 620px; margin: 0 auto;
+      padding: 1.8rem 2rem 0;
+    }
+
+    .back-btn {
+      font-family: 'Lora', serif;
+      font-size: 0.78rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--ink); }
+
+    /* ── POST CONTENT ── */
+    .post-wrap {
+      max-width: 620px; margin: 0 auto;
+      padding: 2.5rem 2rem 6rem;
+      animation: fadeUp 0.35s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .post-wrap .cat {
+      font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .post-wrap h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      line-height: 1.2; margin-bottom: 0.8rem;
+    }
+
+    .post-wrap .byline {
+      font-size: 0.78rem; color: var(--muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── POST BODY ── */
+    .post-body p {
+      font-size: 1rem; color: #2e2e2a;
+      margin-bottom: 1.5rem;
+    }
+
+    .post-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; margin: 2.5rem 0 1rem;
+    }
+
+    .post-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; margin: 2rem 0 0.8rem;
+      color: var(--muted);
+    }
+
+    .post-body blockquote {
+      border-left: 3px solid var(--accent-soft);
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      margin: 2rem 0; font-style: italic;
+      color: var(--muted); font-size: 1.02rem;
+    }
+  .quote-card {
+  background: #000000;   /* card background */
+  color: #ffffff !important;
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.7;
+  
+  border: none; /* removes default browser blockquote styling */
+  margin: 32px 0;
+    
+}
+  .card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+    .post-body ul, .post-body ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .post-body li {
+      margin-bottom: 0.4rem; font-size: 1rem; color: #2e2e2a;
+    }
+
+    .post-body img {
+      width: 100%; border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+/* Base circle styles */
+.circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Color variations */
+.circle.amber {
+  background: #F5A623;
+  color: #1a1a1a;
+}
+
+.circle.teal {
+  background: #1D9E75;
+  color: #ffffff;
+}
+
+.circle.blue {
+  background: #378ADD;
+  color: #ffffff;
+}
+
+.circle.orange {
+  background: #E8593C;
+  color: #ffffff;
+}
+
+.circle.green {
+  background: #639922;
+  color: #ffffff;
+}
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.8rem 2rem;
+      text-align: center;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">🌿 Cozy Little Cottage</a>
+  <a class="nav-btn" href="index.html">All Posts</a>
+</nav>
+
+<div class="post-back-bar">
+  <a class="back-btn" href="index.html">← Back to Home</a>
+</div>
+
+<div class="post-wrap">
+
+  <!-- ── EDIT BELOW THIS LINE ── -->
+
+  <p class="cat">solar power</p>
+  <!-- Category: change to your topic e.g. Travel, Food, Garden, Thoughts -->
+
+  <h1>How Solar Panels Turn <em>Sunlight</em> into Electricity</h1
+
+  <!-- Change this to your actual post title -->
+
+  <p class="byline">May 7, 2026</p>
+  <!-- Change this to your post date -->
+  <div class="post-body">
+
+    
+   <strong><i>Disclaimer: As an Amazon Associate, I earn from qualifying purchases.</i></strong>
+    
+   
+<p> <br> <br>I've been thinking a lot lately about where our energy comes from. There's something really grounding about understanding the systems that quietly power our everyday lives — the kettle in the morning, the lamp by the reading chair, the phone charging overnight. Most of it arrives invisibly, through a plug in the wall. But solar energy has this lovely directness to it: sunshine goes in, electricity comes out.</p>
+
+    <p>I wanted to understand how it actually works — not just the vague idea of "panels on a roof", but the real step-by-step journey. So I did a deep dive, and I wanted to share with you the things that I understood.</p>
+
+
+    <div class="pull-quote">
+      <p>"There's something quietly radical about powering your home with sunlight."</p>
+    </div>
+
+    <h2>The journey from <em>photon to plug</em></h2>
+
+    <p>It all starts with photovoltaic cells — the little rectangles that make up each solar panel. They're made of silicon, a material that has a fascinating property: when light hits it, electrons get knocked loose. Those free electrons are what become electricity. That process has a name — the photovoltaic effect — and it was first observed way back in 1839. The fact that we're still using the same fundamental principle today, just scaled up and refined, feels rather wonderful.</p>
+
+    <p>Here's the full picture:</p>
+
+    <blockquote class="quote-card"> <h2>How Solar Panels Work from sunlight to your home</h2>
+  </blockquote>
+    <blockquote class="quote-card">
+  <div class="card-header">
+    <span class="circle amber">1</span>
+    <span style="color: #F5A623;">Capture</span>
+  </div>
+  <strong>Sunlight hits the panel</strong><br>
+<br>  Photons from the sun strike the surface of photovoltaic (PV) cells — thin silicon layers inside each panel.<br>
+</blockquote>
+           <blockquote class="quote-card">
+             <div class="card-header">           
+               <span class="circle orange">2</span> 
+               <span style="color: #E8593C;">Excite</span> 
+             </div>
+               <strong> Electrons break free</strong><br>
+             <br>  Photon energy knocks electrons loose from silicon atoms. The cell's electric field pushes them in one direction, creating a current.<br></blockquote>
+    
+           <blockquote class="quote-card">
+             <div class="card-header">
+                <span class="circle orange">3</span>
+               <span style="color: #F5A623;">Generate</span> 
+             </div>
+               <strong> DC electricity is produced</strong><br>
+          <br>   The moving electrons create direct current (DC) electricity, flowing through wiring to the inverter.<br></blockquote>
+    
+           <blockquote class="quote-card">
+             <div class="card-header"> 
+               <span class="circle teal">4</span>
+               <span style="color: #1D9E75;">Convert</span> 
+             </div>
+             <strong>Inverter changes DC → AC</strong><br>
+           <br>  The inverter converts direct current to alternating current (AC) — the standard form used by every appliance in your home.<br></blockquote>
+            
+    <blockquote class="quote-card">
+      <div class="card-header"> 
+        <span class="circle blue">5</span> 
+        <span style="color: #378ADD;">Distribute</span> 
+      </div>
+        <strong> Power flows through your home</strong><br>
+       <br> AC electricity enters your distribution board and powers lights, appliances, heating, and your EV charger.<br></blockquote>
+    
+           <blockquote class="quote-card">
+             <div class="card-header"> 
+               <span class="circle green">6</span>
+               <span style="color: #639922;">Store or Export</span>
+             </div> 
+             <strong>Surplus energy is saved or sold</strong><br>
+           <br>  Any excess charges a home battery for later, or exports to the grid — earning you feed-in credits.<br></blockquote>
+
+          
+
+    <blockquote>
+    Cost drop since 2010 : 90%
+    <br>  Typical panel lifespan:  25 years
+    <br>  Average peak sun per day: ~4hrs
+    </blockquote>
+
+       
+        
+   
+   <h2>Is it worth it for a <em>home</em>?</h2>
+
+    <p>The short answer: more now than ever. Solar panel costs have dropped around 90% since 2010, which is a staggering shift. A typical home system in the UK or India can now pay for itself in 5–8 years, and panels usually last 25 years or more. That's a long stretch of nearly free electricity — and a meaningful reduction in your household's carbon footprint.</p>
+
+    <p>If you're renting or can't install panels, there are still ways to benefit — community solar schemes, green energy tariffs, and even small balcony solar kits are becoming more accessible. The cottage may be cozy powered by the sun.</p>
+
+    <blockquote>"Solar panels have no moving parts, make no noise, and ask for nothing except a clear sky."
+  </blockquote>
+        
+
+    <p>I find that genuinely lovely. A technology that just… sits quietly on a roof and turns light into warmth and light again. There's a kind of poetry in that, I think.</p>
+
+    <p>If you're curious to explore further, I'd recommend looking into what solar options exist in your area — installation costs, feed-in tariffs, and battery storage have all changed a lot recently. It might be more within reach than you think.</p>
+    
+
+  <!-- ── EDIT ABOVE THIS LINE ── -->
+
+</div>
+
+<footer>
+  © 2025 Cozy Little Cottage &nbsp;·&nbsp; Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
