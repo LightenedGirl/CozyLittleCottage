@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>What to Buy to Install Solar Panels — Cozy Little Cottage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="colors.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf9f6;
+      --ink: #1a1a18;
+      --muted: #7A7570;
+      --accent: #b07d4a;
+      --accent-soft: #ddc9aa;
+      --border: #E8E2D9;
+      --cream: #FAF7F2;
+      --warm-white: #FFFDF9;
+      --text: #2C2A26;
+      --green: #4A6741;
+      --green-dark: #2D4A27;
+      --green-light: #EEF3ED;
+      --green-accent: #A8C97F;
+      --amber: #F5A623;
+      --orange: #E8593C;
+      --blue: #378ADD;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,249,246,0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--ink); text-decoration: none;
+      display: flex; align-items: center; gap: 0.45rem;
+    }
+    .nav-btn {
+      font-family: 'Lora', serif;
+      font-size: 0.82rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      padding: 0.45rem 1rem; border-radius: 2px;
+      text-decoration: none; display: inline-block;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-btn:hover { color: var(--ink); background: var(--border); }
+
+    /* BACK */
+    .post-back-bar {
+      max-width: 620px; margin: 0 auto;
+      padding: 1.8rem 2rem 0;
+    }
+    .back-btn {
+      font-family: 'Lora', serif;
+      font-size: 0.78rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--ink); }
+
+    /* POST WRAP */
+    .post-wrap {
+      max-width: 620px; margin: 0 auto;
+      padding: 2.5rem 2rem 6rem;
+      animation: fadeUp 0.35s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .post-wrap .cat {
+      font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .post-wrap h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      line-height: 1.2; margin-bottom: 0.8rem;
+    }
+    .post-wrap .byline {
+      font-size: 0.78rem; color: var(--muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* POST BODY */
+    .post-body p {
+      font-size: 1rem; color: #2e2e2a;
+      margin-bottom: 1.5rem;
+    }
+    .post-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; margin: 2.5rem 0 1rem;
+    }
+    .post-body blockquote {
+      border-left: 3px solid var(--accent-soft);
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      margin: 2rem 0; font-style: italic;
+      color: var(--muted); font-size: 1.02rem;
+    }
+
+    /* QUOTE CARD */
+    .quote-card {
+      background: #ffffff;
+      color: #000000 !important;
+      border-radius: 12px;
+      padding: 24px 28px;
+      font-family: 'Lora', serif;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 1.7;
+      border: 1px solid var(--border) !important;
+      border-left: 1px solid var(--border) !important;
+      margin: 20px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    /* CARD HEADER */
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      border-left: 3px solid var(--green);
+      padding: 16px 24px;
+      margin: 32px 0;
+      background: var(--green-light);
+      border-radius: 0 10px 10px 0;
+    }
+    .pull-quote p {
+      font-style: italic;
+      color: var(--green);
+      margin: 0;
+    }
+
+    /* PRODUCT BRANDS */
+    .product-brands {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 12px 0;
+      padding: 10px 14px;
+      background: var(--cream);
+      border-radius: 8px;
+    }
+    .product-brands strong { color: var(--green-dark); font-weight: 500; }
+
+    /* BUY LINKS */
+    .buy-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .buy-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .buy-link:hover { opacity: 0.8; }
+    .bl-amazon  { background: #FF9900; color: #111; }
+    .bl-flipkart{ background: #2874F0; color: #fff; }
+    .bl-loom    { background: #E8593C; color: #fff; }
+    .bl-brand   { background: var(--green-dark); color: #fff; }
+    .bl-intl    { background: #1C1C1A; color: #fff; }
+    .bl-moglix  { background: #FF6B35; color: #fff; }
+
+    /* CIRCLE */
+    .circle {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .circle.amber  { background: #F5A623; color: #1a1a1a; }
+    .circle.orange { background: #E8593C; color: #ffffff; }
+    .circle.green  { background: #639922; color: #ffffff; }
+    .circle.teal   { background: #1D9E75; color: #ffffff; }
+    .circle.blue   { background: #378ADD; color: #ffffff; }
+    .circle.purple { background: #8B5CF6; color: #ffffff; }
+    .circle.dark   { background: #1C1C1A; color: #ffffff; }
+
+    /* STATS BOX */
+    .stats-box {
+      background: var(--green-dark);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 28px 0;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+    .stat-item { color: #fff; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px; font-weight: 700;
+      color: var(--green-accent);
+      display: block;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 4px;
+      display: block;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: #2D4A27;
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+   
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.8rem 2rem;
+      text-align: center;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">🌿 Cozy Little Cottage</a>
+  <a class="nav-btn" href="index.html">All Posts</a>
+</nav>
+
+<div class="post-back-bar">
+  <a class="back-btn" href="index.html">← Back to Home</a>
+</div>
+
+<div class="post-wrap">
+ <span class="hero-tag">
+  <p class="cat">Solar Power · Shopping Guide</p>
+  <h1>Everything You Need to <em>Buy</em> to Install<br>Solar Panels at Home</h1>
+  <p class="byline">May 10, 2026</p> </span>
+
+  <div class="post-body">
+
+    <p><strong><em>Disclaimer: As an Amazon Associate, I earn from qualifying purchases.</em></strong></p>
+
+    <p>So you've decided to go solar — wonderful! But once the excitement settles, the next question hits: what do I actually need to buy? It's not just panels on a roof. There's a whole set of components that work together to turn sunlight into usable electricity. I've put together this complete shopping guide so you know exactly what to get, what to look for, and — most importantly — where to buy it online in India and internationally.</p>
+
+    <div class="pull-quote">
+      <p>"Think of a solar setup like a kitchen — the panels are the stove, but you still need the pots, pans, and plumbing to make a meal."</p>
+    </div>
+
+    <h2>The <em>7 things</em> you need to buy</h2>
+
+    <!-- CARD 1 -->
+    <blockquote class="quote-card">
+      <div class="card-header">
+        <span class="circle amber">1</span>
+        <span class="card-title" style="color: #F5A623;">Solar Panels</span>
+      </div>
+      <p class="product-desc">The panels themselves — these are the photovoltaic modules that sit on your roof and capture sunlight. For a Kerala home, a <strong>3kW system needs roughly 6–8 panels</strong> of 400–550W each. Go for <strong>monocrystalline</strong> — most efficient, longest-lasting, and best for limited roof space.</p>
+      <div class="product-brands">🏷️ <strong>Best brands:</strong> Waaree, Vikram Solar, Loom Solar, ZunSolar, Servotech</div>
+      <div class="buy-links">
+        <a class="buy-link bl-amazon" href="https://amzn.to/4wfKjIt" target="_blank">🛒 Amazon India</a>
+        <a class="buy-link bl-flipkart" href="https://www.flipkart.com/building-materials-and-supplies/solar-and-alternate-energy/solar-panels/pr?sid=b8s,5cy,f7w" target="_blank">🛒 Flipkart</a>
+        <a class="buy-link bl-loom" href="https://www.loomsolar.com/collections/solar-panels" target="_blank">🛒 Loom Solar</a>
+        <a class="buy-link bl-brand" href="https://www.waaree.com" target="_blank">🛒 Waaree</a>
+        <a class="buy-link bl-intl" href="https://www.gogreensolar.com" target="_blank">🌍 GoGreenSolar (Intl)</a>
+      </div>
+    </blockquote>
+
+    <!-- CARD 2 -->
+    <blockquote class="quote-card">
+      <div class="card-header">
+        <span class="circle orange">2</span>
+        <span class="card-title" style="color: #E8593C;">Solar Inverter</span>
+      </div>
+      <p class="product-desc">Converts DC electricity from your panels into AC electricity your home actually uses. A <strong>string inverter</strong> is most affordable for a standard home. <strong>Microinverters</strong> (one per panel) are more efficient if your roof has shade — they're pricier but worth it in complex situations.</p>
+      <div class="product-brands">🏷️ <strong>Best brands:</strong> Luminous, Havells, Sungrow, Growatt, Goodwe</div>
+      <div class="buy-links">
+        <a class="buy-link bl-amazon" href="https://amzn.to/4niDYYx" target="_blank">🛒 Amazon India</a>
+        <a class="buy-link bl-flipkart" href="https://www.flipkart.com/search?q=solar+inverter+for+home" target="_blank">🛒 Flipkart</a>
+        <a class="buy-link bl-brand" href="https://www.luminousindia.com/solar-inverters.html" target="_blank">🛒 Luminous</a>
+        <a class="buy-link bl-intl" href="https://www.ecoflow.com" target="_blank">🌍 EcoFlow (Intl)</a>
+      </div>
+    </blockquote>
+
+    <!-- CARD 3 -->
+    <blockquote class="quote-card">
+      <div class="card-header">
+        <span class="circle green">3</span>
+        <span class="card-title" style="color: #639922;">Mounting/Racking Structure</span>
+      </div>
+      <p class="product-desc">The aluminium frame structure that holds your panels securely on the roof at the correct angle. Often sold separately from panels — <strong>always check if your panel kit includes mounting</strong>, because many don't. For Kerala's occasional heavy rain, make sure the structure is rated for strong winds.</p>
+      <div class="product-brands">🏷️ <strong>Best brands:</strong> Enertech, Ganges Solar, Loom Solar, Novergy</div>
+      <div class="buy-links">
+        <a class="buy-link bl-amazon" href="https://amzn.to/4wlVY8x" target="_blank">🛒 Amazon India</a>
+        <a class="buy-link bl-flipkart" href="https://www.flipkart.com/search?q=solar+mounting+structure" target="_blank">🛒 Flipkart</a>
+        <a class="buy-link bl-loom" href="https://www.loomsolar.com/collections/solar-structure" target="_blank">🛒 Loom Solar</a>
+      </div>
+    </blockquote>
+
+    <!-- CARD 4 -->
+    <blockquote class="quote-card">
+      <div class="card-header">
+        <span class="circle teal">4</span>
+        <span class="card-title" style="color: #1D9E75;">Solar Battery</span>
+      </div>
+      <p class="product-desc">Stores surplus energy for use at night or during power cuts. Not essential if you're grid-connected with net metering, but <strong>very useful in Kerala during monsoon months</strong>. Go for <strong>Lithium Iron Phosphate (LiFePO4)</strong> — no maintenance, long life, safe indoors.</p>
+      <div class="product-brands">🏷️ <strong>Best brands India:</strong> Luminous, Okaya, Amaron &nbsp;|&nbsp; <strong>International:</strong> EcoFlow, Jackery</div>
+      <div class="buy-links">
+        <a class="buy-link bl-amazon" href="https://amzn.to/49DDpCV" target="_blank">🛒 Amazon India</a>
+        <a class="buy-link bl-loom" href="https://www.loomsolar.com/collections/lithium-battery" target="_blank">🛒 Loom Solar</a>
+        <a class="buy-link bl-intl" href="https://www.ecoflow.com/us/delta-pro.html" target="_blank">🌍 EcoFlow DELTA Pro</a>
+        <a class="buy-link bl-intl" href="https://www.jackery.com" target="_blank">🌍 Jackery (Intl)</a>
+      </div>
+    </blockquote>
+
+    <!-- CARD 5 -->
+    <blockquote class="quote-card">
+      <div class="card-header">
+        <span class="circle blue">5</span>
+        <span class="card-title" style="color: #378ADD;">Charge Controller</span>
+      </div>
+      <p class="product-desc">Regulates power flow between your panels and battery — prevents overcharging and extends battery life. <strong>Always choose MPPT over PWM</strong> — it's more efficient and works better in Kerala's variable monsoon light. Check if your inverter has one built in first.</p>
+      <div class="product-brands">🏷️ <strong>Best brands:</strong> Victron Energy, EPever, Renogy, Luminous</div>
+      <div class="buy-links">
+        <a class="buy-link bl-amazon" href="https://amzn.to/4dneswW" target="_blank">🛒 Amazon India</a>
+        <a class="buy-link bl-flipkart" href="https://www.flipkart.com/search?q=mppt+solar+charge+controller" target="_blank">🛒 Flipkart</a>
+        <a class="buy-link bl-intl" href="https://www.renogy.com/controllers/" target="_blank">🌍 Renogy (Intl)</a>
+      </div>
+    </blockquote>
+
+    <!-- CARD 6 -->
+    <blockquote class="quote-card">
+      <div class="card-header">
+        <span class="circle purple">6</span>
+        <span class="card-title" style="color: #8B5CF6;">Wiring, MC4 & Conduit</span>
+      </div>
+      <p class="product-desc">The cables and connectors that link everything together. <strong>MC4 connectors</strong> are the universal solar plug standard. You'll also need UV-resistant DC solar cable and conduit to protect wiring on your roof. Inexpensive but essential — don't compromise on quality here.</p>
+      <div class="product-brands">🏷️ <strong>Search for:</strong> "solar DC cable 4mm", "MC4 connector pair", "solar conduit pipe"</div>
+      <div class="buy-links">
+        <a class="buy-link bl-amazon" href="https://amzn.to/4u7OTai" target="_blank">🛒 Amazon India</a>
+        <a class="buy-link bl-flipkart" href="https://www.flipkart.com/search?q=solar+dc+cable+mc4" target="_blank">🛒 Flipkart</a>
+        <a class="buy-link bl-moglix" href="https://www.moglix.com" target="_blank">🛒 Moglix</a>
+      </div>
+    </blockquote>
+
+    <!-- CARD 7 -->
+    <blockquote class="quote-card">
+      <div class="card-header">
+        <span class="circle dark">7</span>
+        <span class="card-title" style="color: #555;">Monitoring System</span>
+      </div>
+      <p class="product-desc">Lets you track real-time solar output and energy savings from your phone. <strong>Most modern inverters include Wi-Fi monitoring built in</strong> — check your inverter spec sheet before buying separately. Brands like Sungrow and Growatt have excellent free monitoring apps.</p>
+      <div class="product-brands">🏷️ <strong>Check first:</strong> Sungrow iSolarCloud, Growatt ShinePhone, Luminous app</div>
+      <div class="buy-links">
+        <a class="buy-link bl-amazon" href="https://amzn.to/4uwOIVA" target="_blank">🛒 Amazon India</a>
+        <a class="buy-link bl-intl" href="https://www.emporiamon.com" target="_blank">🌍 Emporia (Intl)</a>
+      </div>
+    </blockquote>
+
+    <blockquote class ="quote-card">
+    <div class="card-header">
+       <span class="card-title" style="color: #555;">
+      💡 Feeling overwhelmed? Just buy a complete kit. </span></div>
+      <p>A solar kit bundles panels + inverter + mounting + wiring in one order. Much easier, usually better value, and designed to work together. Perfect if you're buying for a professional installer to fit.</p>
+      <div class="buy-links">
+        <a class="buy-link bl-brand" href="https://www.loomsolar.com/collections/solar-rooftop-kit" target="_blank">🛒 Loom Solar Kits</a>
+        <a class="buy-link bl-amazon" href="https://amzn.to/4tm4ZLZ" target="_blank">🛒 Amazon India Kits</a>
+        <a class="buy-link bl-brand" href="https://www.waaree.com" target="_blank">🛒 Waaree Kits</a>
+        <a class="buy-link bl-intl" href="https://www.gogreensolar.com/pages/solar-panel-kits" target="_blank">🌍 GoGreenSolar (Intl)</a>
+      </div>
+    </div>
+    </blockquote>
+    
+  
+  <h2>Kerala-Specific Tip </h2>
+  Before you buy anything, check KSEB's list of empanelled vendors and the PM Surya Ghar subsidy scheme. Buying through an approved installer qualifies you for net metering and government subsidies — this can save you ₹50,000–₹78,000 on a standard 3kW setup. That's a significant chunk of the total cost.
+  <br><br>
+        
+   
+<h2>What does it all cost together?</h2>
+
+    <p>For a standard 3kW home system in Kerala, here's a rough breakdown before subsidies:</p>
+  
+  <blockquote class ="quote-card">
+    <div class="product-card" style="margin-bottom: 32px;">
+      <table style="width:100%; border-collapse: collapse; font-size: 14px;">
+        <thead>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <th style="text-align:left; padding: 10px 8px; color: var(--muted); font-weight:500; font-size:12px; text-transform:uppercase; letter-spacing:0.06em;">Component</th>
+            <th style="text-align:right; padding: 10px 8px; color: var(--muted); font-weight:500; font-size:12px; text-transform:uppercase; letter-spacing:0.06em;">Approx. Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px 8px;">Solar Panels (3kW)</td>
+            <td style="padding: 12px 8px; text-align:right; font-weight:500;">₹60,000 – ₹90,000</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px 8px;">Inverter</td>
+            <td style="padding: 12px 8px; text-align:right; font-weight:500;">₹20,000 – ₹40,000</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px 8px;">Mounting Structure</td>
+            <td style="padding: 12px 8px; text-align:right; font-weight:500;">₹10,000 – ₹18,000</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px 8px;">Wiring & Connectors</td>
+            <td style="padding: 12px 8px; text-align:right; font-weight:500;">₹5,000 – ₹10,000</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 12px 8px;">Battery (optional)</td>
+            <td style="padding: 12px 8px; text-align:right; font-weight:500;">₹30,000 – ₹60,000</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 8px; font-family:'Lora',serif; font-weight:600; color: var(--green-dark);">Total (without battery)</td>
+            <td style="padding: 12px 8px; text-align:right; font-family:'Lora',serif; font-weight:700; color: var(--green-dark);">₹95,000 – ₹1.58L</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </blockquote>
+    <p>Add government subsidies (up to ₹78,000 under PM Surya Ghar) and you're potentially looking at a net cost of under ₹1 lakh for a complete system. With electricity savings from KSEB's net metering, most Kerala homeowners see payback in 5–7 years — after which it's essentially free power for 18+ more years.</p>
+  
+<footer>
+  © 2025 Cozy Little Cottage &nbsp;·&nbsp; Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
