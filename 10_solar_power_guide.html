@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Installing Solar Power System at Home — Cozy Little Cottage</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FDFAF5;
+    --cream-dark: #F4EFE6;
+    --cream-border: #E8DFD0;
+    --text: #2C2C2A;
+    --text-muted: #7A746A;
+    --text-soft: #5A5550;
+    --green: #4A6741;
+    --green-pale: #EDF2EB;
+    --green-mid: #6B8F62;
+    --accent: #8B6F47;
+    --accent-pale: #F5EDE2;
+    --link: #4A6741;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+    font-size: 0.97rem;
+  }
+
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAV ── */
+  .site-nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--cream-border);
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .site-logo {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .site-logo:hover { text-decoration: none; color: var(--green); }
+
+  .nav-sep {
+    color: var(--cream-border);
+    font-size: 0.85rem;
+  }
+
+  .nav-link {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-link:hover { color: var(--green); text-decoration: none; }
+
+  /* ── PAGE LAYOUT ── */
+  .page-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ── BACK LINK ── */
+  .back-link {
+    display: inline-block;
+    margin: 2rem 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .back-link:hover { color: var(--green); text-decoration: none; }
+
+  /* ── POST HEADER ── */
+  .post-header {
+    margin: 2.5rem 0 2.8rem;
+  }
+
+  .post-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 0.9rem;
+  }
+
+  .post-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+
+  .post-title em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .post-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1.4rem;
+    letter-spacing: 0.03em;
+  }
+
+  .post-rule {
+    border: none;
+    border-top: 1px solid var(--cream-border);
+    margin: 0;
+  }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 1.4rem 0;
+  }
+/* POST WRAP */
+    .post-wrap {
+      max-width: 620px; margin: 0 auto;
+      padding: 2.5rem 2rem 6rem;
+      animation: fadeUp 0.35s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .post-wrap .cat {
+      font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .post-wrap h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      line-height: 1.2; margin-bottom: 0.8rem;
+    }
+    .post-wrap .byline {
+      font-size: 0.78rem; color: var(--muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+  /* ── BODY TEXT ── */
+  .post-body p {
+    margin-bottom: 1.25rem;
+    color: var(--text-soft);
+    line-height: 1.85;
+  }
+
+  .post-body strong { font-weight: 500; color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    margin: 2rem 0;
+    padding: 1.2rem 1.8rem;
+    border-left: 3px solid var(--cream-border);
+    background: transparent;
+  }
+
+  .pull-quote p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 2.8rem 0 1.2rem;
+  }
+
+  .section-heading em { font-style: italic; color: var(--green); }
+
+  /* ── STEP CARDS ── */
+  .steps { margin: 1.5rem 0 2rem; }
+
+  .step-card {
+    border: 1px solid var(--cream-border);
+    border-radius: 8px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1rem;
+    background: #fff;
+  }
+
+  .step-card:last-child { margin-bottom: 0; }
+
+  .step-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--green-pale);
+    border: 1px solid #C5D9C0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--green);
+    flex-shrink: 0;
+  }
+
+  .step-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .step-card h3 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.55rem;
+  }
+
+  .step-card p {
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .step-card p + p { margin-top: 0.6rem; }
+
+  /* ── CALLOUT BOX (Kerala / tips) ── */
+  .callout {
+    background: var(--green-pale);
+    border: 1px solid #C5D9C0;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+
+  .callout-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    margin: 0;
+    line-height: 1.75;
+  }
+
+  .callout p + p { margin-top: 0.6rem; }
+
+  /* ── WARM CALLOUT (cost / budget) ── */
+  .callout-warm {
+    background: var(--accent-pale);
+    border: 1px solid #DECCB5;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+
+  .callout-warm .callout-label { color: var(--accent); }
+  .callout-warm p { font-size: 0.93rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout-warm p + p { margin-top: 0.6rem; }
+
+  /* ── PANEL TYPE LIST ── */
+  .panel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.8rem 0 0;
+  }
+
+  .panel-list li {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  .panel-list li:last-child { border-bottom: none; }
+  .panel-list li strong { color: var(--text); font-weight: 500; }
+
+  /* ── SIMPLE DATA ROWS ── */
+  .data-rows { margin: 0.8rem 0 0; }
+
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.91rem;
+    gap: 1rem;
+  }
+
+  .data-row:last-child { border-bottom: none; }
+  .data-row .dl { color: var(--text-soft); }
+  .data-row .dv { color: var(--text); font-weight: 500; text-align: right; }
+
+  /* ── BATTERY HIGHLIGHT ── */
+  .battery-pick {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid var(--cream-border);
+    border-left: 3px solid var(--green-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+  }
+
+  .battery-pick .bp-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 0.3rem;
+  }
+
+  .battery-pick h4 {
+    font-family: 'Lora', serif;
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .battery-pick p { font-size: 0.88rem; color: var(--text-soft); margin: 0; line-height: 1.65; }
+
+  /* ── CHECKLIST ── */
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.8rem 0 0;
+  }
+
+  .check-list li {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+
+  .check-list li:last-child { border-bottom: none; }
+
+  .check-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  .check-list li strong { font-weight: 500; color: var(--text); }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--cream-border);
+    margin: 2.5rem 0;
+  }
+  
+    .hero-tag {
+      display: inline-block;
+      background: #2D4A27;
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--cream-border);
+    margin-top: 4rem;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 540px) {
+    .post-title { font-size: 1.5rem; }
+    .step-card { padding: 1.1rem 1.2rem; }
+    .callout, .callout-warm { padding: 1.1rem 1.2rem; }
+    .data-row { flex-direction: column; gap: 0.1rem; }
+    .data-row .dv { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="site-logo" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">🌿 Cozy Little Cottage</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">All Posts</a>
+</nav>
+
+<div class="page-wrap">
+
+  <a class="back-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">← Back to Home</a>
+</div>
+  
+  <div class="post-wrap">
+ <span class="hero-tag">
+  <p class="cat">Solar Power</p>
+  <h1>Installing Solar Power System at Home — In Detail</title>
+</h1>
+  <p class="byline">May 12, 2026</p> </span>
+  
+ 
+  
+
+  <!-- BODY -->
+  <div class="post-body">
+
+    <p class="disclaimer"><em>A personal research guide — everything I learned before going solar at home in Kerala.</em></p>
+
+    <p>If you've ever had the lights flicker during a hot afternoon, or watched your electricity bill climb every summer, you already know the frustration of depending entirely on the grid. That's what pushed me to look seriously at solar. Before spending any money, I spent time digging into how these systems actually work. This is a plain-language summary of what I found out.</p>
+ 
+    <div class="pull-quote">
+      <p>"The sun is the most democratic energy source on earth. It shines on everyone's roof."</p>
+    </div>
+  </div>
+    <!-- SECTION 1 -->
+    <h2 class="section-heading">The <em>6 things</em> to understand before you install</h2>
+
+    <p>Going solar isn't as simple as calling an installer and signing a cheque. There's a bit of homework involved — and getting these right makes a real difference to how well your system performs.</p>
+
+    <div class="steps">
+
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-meta">
+          <div class="step-num" style ="background:#F5A623">1</div>
+          <span class="step-label" style= "color :#F5A623">First things first</span>
+        </div>
+        <h3>Which way should your roof face?</h3>
+        <p>In India (Northern Hemisphere), the sun arcs across the southern sky — so a <strong>south-facing roof</strong> catches the most sunlight across the entire day and gives the best energy output. East-facing roofs get strong morning sun (around 15–20% less than south). West-facing suits afternoon and evening generation, which aligns well with peak home usage. North-facing is the one to avoid.</p>
+        <p>The angle (tilt) matters too. A tilt close to your latitude is ideal — roughly <strong>10°–25° for most of India</strong>. Most installers will optimise this automatically. Flat roofs let you set any angle using mounting frames, which is actually an advantage.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-meta">
+          <div class="step-num" style ="background:#E8593C">2</div>
+          <span class="step-label"style= "color :#E8593C">Size it right</span>
+        </div>
+        <h3>How many panels do you actually need?</h3>
+        <p>Pull out your electricity bill and find your average monthly units (kWh). That number is your starting point. The simple calculation goes like this:</p>
+        <p><strong>Step 1</strong> — Find your monthly kWh from your bill (say, 300 kWh).<br>
+        <strong>Step 2</strong> — Divide by 30 to get daily use: 300 ÷ 30 = 10 kWh/day.<br>
+        <strong>Step 3</strong> — Divide by peak sun hours × panel wattage: 10 ÷ (5 hours × 0.4 kW) = <strong>5–6 panels</strong>.</p>
+        <p>Most average Indian homes need between a <strong>4 kW and 8 kW system</strong>. Size slightly bigger than you need today — electricity use tends to grow over the years.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-meta">
+          <div class="step-num" style ="background:#639922"">3</div>
+          <span class="step-label"style= "color :#639922">Know your options</span>
+        </div>
+        <h3>Types of solar panels</h3>
+        <ul class="panel-list">
+          <li><strong>Monocrystalline</strong> — 20–24% efficiency, sleek uniform black appearance, best for limited roof space. Works well even in low or diffuse light. The most common choice for homes. Carries a 25-year performance warranty.</li>
+          <li><strong>Polycrystalline</strong> — 15–18% efficiency, bluish speckled look, slightly cheaper. Still a reasonable choice if you have plenty of roof space, but monocrystalline prices have fallen enough that the gap is small.</li>
+          <li><strong>Bifacial</strong> — 22–26% efficiency, generates power from both faces of the panel. Excellent for flat or light-coloured roofs where rear-reflected light adds meaningful extra generation. Premium pricing but increasingly popular.</li>
+          <li><strong>Thin-film</strong> — 10–13% efficiency, flexible and lightweight, but you need far more roof area to match monocrystalline output. Rarely the right choice for a home.</li>
+        </ul>
+        <p style="margin-top: 0.8rem;">For most homes, <strong>monocrystalline panels</strong> are the clear choice. Bifacial is worth asking about if you have a flat roof.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-card">
+        <div class="step-meta">
+          <div class="step-num"style ="background:#1D9E75">4</div>
+          <span class="step-label"style= "color :#1D9E75">Budget</span>
+        </div>
+        <h3>What does it actually cost?</h3>
+        <p>Here are realistic 2024–25 prices for a grid-tied system (no battery) in India:</p>
+        <div class="data-rows">
+          <div class="data-row"><span class="dl">2 kW system (5–6 panels)</span><span class="dv">₹1.0 – 1.4 Lakh</span></div>
+          <div class="data-row"><span class="dl">3 kW system (7–9 panels)</span><span class="dv">₹1.4 – 2.0 Lakh</span></div>
+          <div class="data-row"><span class="dl">5 kW system (11–14 panels)</span><span class="dv">₹2.2 – 3.0 Lakh</span></div>
+          <div class="data-row"><span class="dl">8 kW system (18–22 panels)</span><span class="dv">₹3.5 – 4.5 Lakh</span></div>
+          <div class="data-row"><span class="dl">10 kW system (22–27 panels)</span><span class="dv">₹4.5 – 6.0 Lakh</span></div>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: 0.88rem; color: var(--text-muted);">Prices include panels, on-grid inverter, mounting structure, wiring, and basic installation. Most 3–5 kW systems pay back their cost within <strong>4–6 years</strong>.</p>
+      </div>
+
+    </div><!-- /steps rows 1-4 -->
+
+    <div class="callout-warm">
+      <p class="callout-label">Government subsidy — PM Surya Ghar Yojana</p>
+      <p>The central government offers a direct subsidy for residential rooftop solar. For systems up to 2 kW: ₹30,000 per kW. For 2–3 kW: an additional ₹18,000 per kW on top. This is credited directly to your bank account after installation and net metering activation. Check pmsuryaghar.gov.in for eligibility — your installer can usually help with registration.</p>
+    </div>
+
+    <div class="steps">
+
+      <!-- Step 5 -->
+      <div class="step-card">
+        <div class="step-meta">
+          <div class="step-num"style ="background:#378ADD">5</div>
+          <span class="step-label"style= "color :#378ADD">Optional but useful</span>
+        </div>
+        <h3>Do you need a battery?</h3>
+        <p>If you experience regular power cuts — yes, you do. A standard grid-tied solar system <strong>shuts down the moment the grid fails</strong>, even if the sun is blazing. It's designed to not backfeed into a dead grid. A battery + hybrid inverter solves this completely.</p>
+
+        <div class="battery-pick">
+          <div>
+            <p class="bp-label">Recommended</p>
+            <h4>Lithium Iron Phosphate (LiFePO₄)</h4>
+            <p>The clear choice for homes. 80–90% usable capacity, 10–15 year lifespan, no maintenance, thermally stable and safe. Available from Luminous, Amara Raja, Loom Solar, and others.</p>
+          </div>
+        </div>
+
+        <p>Battery costs for 2024–25:</p>
+        <div class="data-rows">
+          <div class="data-row"><span class="dl">2.4 kWh LiFePO₄ (~3–4 hrs backup)</span><span class="dv">₹55,000 – 75,000</span></div>
+          <div class="data-row"><span class="dl">5 kWh LiFePO₄ (~6–8 hrs backup)</span><span class="dv">₹1.0 – 1.4 Lakh</span></div>
+          <div class="data-row"><span class="dl">10 kWh LiFePO₄ (~12–16 hrs backup)</span><span class="dv">₹1.8 – 2.5 Lakh</span></div>
+          <div class="data-row"><span class="dl">Hybrid inverter (required with battery)</span><span class="dv">₹30,000 – 80,000</span></div>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: 0.88rem; color: var(--text-muted);">Backup times assume fans, lights, router, and refrigerator — not AC.</p>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="step-card">
+        <div class="step-meta">
+          <div class="step-num"style ="background:#8B5CF6">6</div>
+          <span class="step-label"style= "color :#8B5CF6">Final step</span>
+        </div>
+        <h3>Finding a good installer</h3>
+        <p>An installer in solar power is simply the <strong>person or company you hire to set up your solar system at home.
+</strong>
+
+<br>Think of them like a plumber or electrician — except instead of fixing pipes or wiring your house, they come to your roof and set up your solar panels, connect everything together, and make sure it all works properly.
+
+   <br>  <br>     <h3>What they actually do at your home:
+          </h3>
+They visit your house first to check your roof — its direction, size, strength, and how much shade it gets. Then they come back on installation day and physically mount the panels on your roof, run the wiring down to your inverter, connect the battery if you have one, and link everything to your home's electrical system.
+
+<br><br>After the physical work is done, a good installer also handles the paperwork side — applying for net metering with KSEB, registering for the government subsidy, and getting the necessary approvals from the electricity board. This part can take several weeks and involves a fair bit of back-and-forth, so having someone manage it for you is genuinely valuable.
+
+<br><br><h3>Why you need a good one:
+</h3>
+The panels and batteries you buy are more or less the same whoever installs them — they're standard products with fixed warranties. What varies is the quality of the installation itself. Poorly mounted panels can underperform for 25 years. Bad wiring can be a safety hazard. An installer who disappears after the job means no one to call when something needs fixing.
+
+<br><br>A good installer is essentially your long-term support system for the solar setup — not just someone who shows up for two days and leaves.
+         <br> <br>The installer is the most important decision. The panels and inverters are commodities — what varies wildly is installation quality and after-sales honesty.</p>
+        <ul class="check-list">
+          <li><div class="check-dot"></div><div><strong>Use MNRE-empanelled installers.</strong> Required for government subsidies, and guarantees a minimum accreditation standard. Find the list at pmsuryaghar.gov.in.</div></li>
+          <li><div class="check-dot"></div><div><strong>Ask your neighbours.</strong> Your local WhatsApp group or housing society forum is underrated. Real referrals beat online reviews every time.</div></li>
+          <li><div class="check-dot"></div><div><strong>Get at least 3 quotes.</strong> Compare line-by-line — panel brand, inverter model, warranty terms, and whether after-sales AMC is included.</div></li>
+          <li><div class="check-dot"></div><div><strong>Insist on an itemised quotation.</strong> Every component listed separately. Avoid lump-sum quotes that give no visibility into what you're getting.</div></li>
+          <li><div class="check-dot"></div><div><strong>Check they handle paperwork.</strong> Net metering application, DISCOM approvals, and subsidy registration. A good installer manages all of this.</div></li>
+          <li><div class="check-dot"></div><div><strong>Get warranties in writing.</strong> Panels: 25-year performance warranty from the manufacturer. Workmanship: at least 1–2 years from the installer, in the contract.</div></li>
+        </ul>
+        <p style="margin-top: 0.8rem;">Be cautious of anyone who demands 100% upfront payment, can't name the specific brands they'll use, or won't share past customer references.</p>
+      </div>
+
+    </div><!-- /steps 5-6 -->
+
+    <hr class="section-divider">
+
+    <!-- Kerala callout -->
+    <div class="callout">
+      <p class="callout-label">If you're in Kerala</p>
+      <p>Kerala gets excellent solar irradiation year-round — even during the monsoon, panels still generate meaningful power on diffuse light days. KSEB offers a net metering scheme, which means any surplus electricity you generate goes back to the grid and is credited against your bill. It's one of the better state schemes in India, and it meaningfully shortens the payback period.</p>
+      <p>KSEB net metering approval can take 4–8 weeks after installation. Your installer should be following up on your behalf — ask them upfront if this is included in their service.</p>
+    </div>
+
+    <p>Going solar in India in 2025 is genuinely more accessible than at any previous point. Prices have dropped substantially, panel efficiency has improved, LiFePO₄ batteries are now affordable for home use, and the government subsidy reduces the initial outlay meaningfully. For any household dealing with unreliable grid supply, a hybrid solar system with battery backup is one of the most practical home investments you can make.</p>
+
+  
+  <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #E8DFD0; font-size: 0.85rem; color: #7A746A;">
+  Check this Post →
+  <a href="https://lightenedgirl.github.io/CozyLittleCottage/9_solar_shopping_guide.html" 
+     style="color: #4A6741; display: block; font-family: 'Lora', Georgia, serif; font-size: 1rem; margin-top: 0.3rem;">
+    Everything You Need to Buy to Install Solar Panels at Home
+  </a>
+</div>
+  </div><!-- /post-body -->
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  © 2025 Cozy Little Cottage · Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
