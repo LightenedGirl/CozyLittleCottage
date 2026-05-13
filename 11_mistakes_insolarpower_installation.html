@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15 Mistakes That You Make Installing Solar Power System — Cozy Little Cottage</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FDFAF5;
+    --cream-dark: #F4EFE6;
+    --cream-border: #E8DFD0;
+    --text: #2C2C2A;
+    --text-muted: #7A746A;
+    --text-soft: #5A5550;
+    --green: #4A6741;
+    --green-pale: #EDF2EB;
+    --green-mid: #6B8F62;
+    --accent: #8B6F47;
+    --accent-pale: #F5EDE2;
+    --link: #4A6741;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+    font-size: 0.97rem;
+  }
+
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAV ── */
+  .site-nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--cream-border);
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .site-logo {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .site-logo:hover { text-decoration: none; color: var(--green); }
+
+  .nav-sep {
+    color: var(--cream-border);
+    font-size: 0.85rem;
+  }
+
+  .nav-link {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-link:hover { color: var(--green); text-decoration: none; }
+
+  /* ── PAGE LAYOUT ── */
+  .page-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ── BACK LINK ── */
+  .back-link {
+    display: inline-block;
+    margin: 2rem 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .back-link:hover { color: var(--green); text-decoration: none; }
+
+  /* ── POST HEADER ── */
+  .post-header {
+    margin: 2.5rem 0 2.8rem;
+  }
+
+  .post-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 0.9rem;
+  }
+
+  .post-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+
+  .post-title em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .post-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1.4rem;
+    letter-spacing: 0.03em;
+  }
+
+  .post-rule {
+    border: none;
+    border-top: 1px solid var(--cream-border);
+    margin: 0;
+  }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 1.4rem 0;
+  }
+/* POST WRAP */
+    .post-wrap {
+      max-width: 620px; margin: 0 auto;
+      padding: 2.5rem 2rem 6rem;
+      animation: fadeUp 0.35s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .post-wrap .cat {
+      font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .post-wrap h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      line-height: 1.2; margin-bottom: 0.8rem;
+    }
+    .post-wrap .byline {
+      font-size: 0.78rem; color: var(--muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+  /* ── BODY TEXT ── */
+  .post-body p {
+    margin-bottom: 1.25rem;
+    color: var(--text-soft);
+    line-height: 1.85;
+  }
+
+  .post-body strong { font-weight: 500; color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    margin: 2rem 0;
+    padding: 1.2rem 1.8rem;
+    border-left: 3px solid var(--cream-border);
+    background: transparent;
+  }
+
+  .pull-quote p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 2.8rem 0 1.2rem;
+  }
+
+  .section-heading em { font-style: italic; color: var(--green); }
+
+  /* ── STEP CARDS ── */
+  .steps { margin: 1.5rem 0 2rem; }
+
+  .step-card {
+    border: 1px solid var(--cream-border);
+    border-radius: 8px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1rem;
+    background: #fff;
+  }
+
+  .step-card:last-child { margin-bottom: 0; }
+
+  .step-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--green-pale);
+    border: 1px solid #C5D9C0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--green);
+    flex-shrink: 0;
+  }
+
+  .step-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .step-card h3 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.55rem;
+  }
+
+  .step-card p {
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .step-card p + p { margin-top: 0.6rem; }
+
+  /* ── CALLOUT BOX (Kerala / tips) ── */
+  .callout {
+    background: var(--green-pale);
+    border: 1px solid #C5D9C0;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+
+  .callout-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    margin: 0;
+    line-height: 1.75;
+  }
+
+  .callout p + p { margin-top: 0.6rem; }
+
+  /* ── WARM CALLOUT (cost / budget) ── */
+  .callout-warm {
+    background: var(--accent-pale);
+    border: 1px solid #DECCB5;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+
+  .callout-warm .callout-label { color: var(--accent); }
+  .callout-warm p { font-size: 0.93rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout-warm p + p { margin-top: 0.6rem; }
+
+  /* ── PANEL TYPE LIST ── */
+  .panel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.8rem 0 0;
+  }
+
+  .panel-list li {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  .panel-list li:last-child { border-bottom: none; }
+  .panel-list li strong { color: var(--text); font-weight: 500; }
+
+  /* ── SIMPLE DATA ROWS ── */
+  .data-rows { margin: 0.8rem 0 0; }
+
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.91rem;
+    gap: 1rem;
+  }
+
+  .data-row:last-child { border-bottom: none; }
+  .data-row .dl { color: var(--text-soft); }
+  .data-row .dv { color: var(--text); font-weight: 500; text-align: right; }
+
+  /* ── BATTERY HIGHLIGHT ── */
+  .battery-pick {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid var(--cream-border);
+    border-left: 3px solid var(--green-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+  }
+
+  .battery-pick .bp-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 0.3rem;
+  }
+
+  .battery-pick h4 {
+    font-family: 'Lora', serif;
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .battery-pick p { font-size: 0.88rem; color: var(--text-soft); margin: 0; line-height: 1.65; }
+
+  /* ── CHECKLIST ── */
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.8rem 0 0;
+  }
+
+  .check-list li {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+
+  .check-list li:last-child { border-bottom: none; }
+
+  .check-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  .check-list li strong { font-weight: 500; color: var(--text); }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--cream-border);
+    margin: 2.5rem 0;
+  }
+  
+    .hero-tag {
+      display: inline-block;
+      background: #2D4A27;
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--cream-border);
+    margin-top: 4rem;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 540px) {
+    .post-title { font-size: 1.5rem; }
+    .step-card { padding: 1.1rem 1.2rem; }
+    .callout, .callout-warm { padding: 1.1rem 1.2rem; }
+    .data-row { flex-direction: column; gap: 0.1rem; }
+    .data-row .dv { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="site-logo" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">🌿 Cozy Little Cottage</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">All Posts</a>
+</nav>
+
+<div class="page-wrap">
+
+  <a class="back-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">← Back to Home</a>
+</div>
+  
+  <div class="post-wrap">
+ <span class="hero-tag">
+  <p class="cat">Solar Power</p>
+  <h1>Mistakes That You Make Installing Solar Power System</h1>
+  <p class="byline">May 13, 2026</p> </span>
+  
+ 
+  
+
+  <!-- BODY -->
+  <div class="post-body">
+
+  <p>
+    Installing a solar power system can save a lot of money long-term, but some mistakes during planning or installation can reduce efficiency, damage equipment, or even create safety risks. Here are the most common mistakes people make.
+  </p>
+
+  <div class="pull-quote">
+    <p>
+      A good solar setup is not just about buying panels — proper design, safety, and installation matter just as much.
+    </p>
+  </div>
+
+  <h2 class="section-heading">1. Choosing the Wrong System Size</h2>
+
+  <div class="step-card">
+    <p>Many people install a system that is either:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span><strong>Too small</strong> → doesn’t meet electricity needs</span></li>
+      <li><span class="check-dot"></span><span><strong>Too large</strong> → unnecessary investment</span></li>
+    </ul>
+
+    <p style="margin-top:1rem;">A proper load calculation should consider:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Daily energy usage (kWh)</span></li>
+      <li><span class="check-dot"></span><span>Future appliances</span></li>
+      <li><span class="check-dot"></span><span>Seasonal variations</span></li>
+      <li><span class="check-dot"></span><span>Battery backup requirements</span></li>
+    </ul>
+  </div>
+
+  <h2 class="section-heading">2. Ignoring Roof Direction and Shading</h2>
+
+  <div class="step-card">
+    <p>Solar panels perform best with maximum sunlight exposure.</p>
+
+    <p style="margin-top:1rem;">Common mistakes:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Installing under shade from trees, water tanks, or nearby buildings</span></li>
+      <li><span class="check-dot"></span><span>Wrong tilt angle</span></li>
+      <li><span class="check-dot"></span><span>Wrong orientation</span></li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Helpful Tip</div>
+      <p>In India, south-facing panels usually perform best.</p>
+    </div>
+  </div>
+
+  <h2 class="section-heading">3. Using Low-Quality Components</h2>
+
+  <div class="step-card">
+    <p>Cheap components can reduce lifespan and efficiency.</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Panels</span></li>
+      <li><span class="check-dot"></span><span>Inverters</span></li>
+      <li><span class="check-dot"></span><span>Batteries</span></li>
+      <li><span class="check-dot"></span><span>Mounting structures</span></li>
+      <li><span class="check-dot"></span><span>DC cables</span></li>
+    </ul>
+
+    <p style="margin-top:1rem;">
+      A poor inverter or battery often fails long before the panels.
+    </p>
+  </div>
+
+  <h2 class="section-heading">4. Poor Battery Planning</h2>
+
+  <div class="step-card">
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Undersized batteries drain quickly</span></li>
+      <li><span class="check-dot"></span><span>Wrong battery type reduces backup time</span></li>
+      <li><span class="check-dot"></span><span>No ventilation overheats batteries</span></li>
+    </ul>
+
+    <div class="battery-pick">
+      <div>
+        <div class="bp-label">Important</div>
+        <h4>Battery bank sizing is critical</h4>
+        <p>Always size the battery according to your real backup needs and usage pattern.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-heading">5. Wrong Wire Size</h2>
+
+  <div class="step-card">
+    <p>Undersized cables cause:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Voltage drop</span></li>
+      <li><span class="check-dot"></span><span>Heating</span></li>
+      <li><span class="check-dot"></span><span>Power loss</span></li>
+      <li><span class="check-dot"></span><span>Fire hazards</span></li>
+    </ul>
+
+    <p style="margin-top:1rem;">
+      DC solar wiring must be properly rated.
+    </p>
+  </div>
+
+  <h2 class="section-heading">6. Skipping Proper Earthing and Lightning Protection</h2>
+
+  <div class="step-card">
+    <p>This is one of the most dangerous mistakes.</p>
+
+    <p style="margin-top:1rem;">Without proper grounding:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Equipment can be damaged during lightning</span></li>
+      <li><span class="check-dot"></span><span>Shock risk increases</span></li>
+      <li><span class="check-dot"></span><span>Inverter failures become common</span></li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Safety Essentials</div>
+      <p>
+        Every system should have earthing, surge protection, and a lightning arrestor — especially in Kerala’s monsoon climate.
+      </p>
+    </div>
+  </div>
+
+  <h2 class="section-heading">7. Bad Mounting Structure</h2>
+
+  <div class="step-card">
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Rusting</span></li>
+      <li><span class="check-dot"></span><span>Water leakage</span></li>
+      <li><span class="check-dot"></span><span>Panels loosening in heavy wind</span></li>
+    </ul>
+
+    <p style="margin-top:1rem;">
+      Aluminium or hot-dip galvanized structures are preferred.
+    </p>
+  </div>
+
+  <h2 class="section-heading">8. No Space for Maintenance</h2>
+
+  <div class="step-card">
+    <p>Panels need periodic cleaning.</p>
+
+    <p style="margin-top:1rem;">Mistakes include:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Installing panels too close together</span></li>
+      <li><span class="check-dot"></span><span>No walkway access</span></li>
+      <li><span class="check-dot"></span><span>Difficult inverter location</span></li>
+    </ul>
+
+    <p style="margin-top:1rem;">
+      Dust and bird droppings can significantly reduce output.
+    </p>
+  </div>
+
+  <h2 class="section-heading">9. Mixing Different Panels or Batteries</h2>
+
+  <div class="step-card">
+    <p>Using mismatched:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Solar panels</span></li>
+      <li><span class="check-dot"></span><span>Battery capacities</span></li>
+      <li><span class="check-dot"></span><span>Old and new batteries together</span></li>
+    </ul>
+
+    <p style="margin-top:1rem;">
+      This causes imbalance and efficiency loss.
+    </p>
+  </div>
+
+  <h2 class="section-heading">10. Ignoring Local Weather Conditions</h2>
+
+  <div class="callout">
+    <div class="callout-label">Kerala Climate</div>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Heavy rain</span></li>
+      <li><span class="check-dot"></span><span>Humidity</span></li>
+      <li><span class="check-dot"></span><span>Salt air near coastal regions</span></li>
+      <li><span class="check-dot"></span><span>Strong winds</span></li>
+    </ul>
+
+    <p style="margin-top:1rem;">
+      Proper waterproofing and corrosion protection are important.
+    </p>
+  </div>
+
+  <h2 class="section-heading">11. Not Checking Net Metering Rules</h2>
+
+  <div class="step-card">
+    <p>For grid-tied systems, people sometimes:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Install before approval</span></li>
+      <li><span class="check-dot"></span><span>Ignore utility regulations</span></li>
+      <li><span class="check-dot"></span><span>Use non-approved inverters</span></li>
+    </ul>
+
+    <p style="margin-top:1rem;">
+      This can delay connection.
+    </p>
+  </div>
+
+  <h2 class="section-heading">12. Expecting Full Output All the Time</h2>
+
+  <div class="step-card">
+    <p>Solar production changes with:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Weather</span></li>
+      <li><span class="check-dot"></span><span>Temperature</span></li>
+      <li><span class="check-dot"></span><span>Dust</span></li>
+      <li><span class="check-dot"></span><span>Season</span></li>
+      <li><span class="check-dot"></span><span>Time of day</span></li>
+    </ul>
+
+    <div class="callout-warm">
+      <div class="callout-label">Reality Check</div>
+      <p>A “5 kW system” only produces 5 kW under ideal conditions.</p>
+    </div>
+  </div>
+
+  <h2 class="section-heading">13. DIY Installation Without Expertise</h2>
+
+  <div class="step-card">
+    <p>Solar systems involve:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>High DC voltage</span></li>
+      <li><span class="check-dot"></span><span>AC synchronization</span></li>
+      <li><span class="check-dot"></span><span>Structural safety</span></li>
+    </ul>
+
+    <p style="margin-top:1rem;">
+      Improper installation can damage appliances or create fire hazards.
+    </p>
+  </div>
+
+  <h2 class="section-heading">14. Not Monitoring System Performance</h2>
+
+  <div class="step-card">
+    <p>Without monitoring:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Faults go unnoticed</span></li>
+      <li><span class="check-dot"></span><span>Panel failures stay hidden</span></li>
+      <li><span class="check-dot"></span><span>Energy losses increase</span></li>
+    </ul>
+
+    <p style="margin-top:1rem;">
+      Modern inverters usually include apps for tracking output.
+    </p>
+  </div>
+
+  <h2 class="section-heading">15. Focusing Only on Panel Wattage</h2>
+
+  <div class="step-card">
+    <p>People often compare only panel watts and ignore:</p>
+
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Inverter efficiency</span></li>
+      <li><span class="check-dot"></span><span>Battery quality</span></li>
+      <li><span class="check-dot"></span><span>Mounting quality</span></li>
+      <li><span class="check-dot"></span><span>Cable losses</span></li>
+      <li><span class="check-dot"></span><span>Installer expertise</span></li>
+    </ul>
+
+    <p style="margin-top:1rem;">
+      System design matters more than just panel size.
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <h2 class="section-heading">A Good Solar Installation Should Include</h2>
+
+  <div class="callout">
+    <ul class="check-list">
+      <li><span class="check-dot"></span><span>Proper load analysis</span></li>
+      <li><span class="check-dot"></span><span>Quality Tier-1 panels</span></li>
+      <li><span class="check-dot"></span><span>Correct inverter sizing</span></li>
+      <li><span class="check-dot"></span><span>Proper earthing</span></li>
+      <li><span class="check-dot"></span><span>Surge protection</span></li>
+      <li><span class="check-dot"></span><span>Good ventilation</span></li>
+      <li><span class="check-dot"></span><span>Maintenance access</span></li>
+      <li><span class="check-dot"></span><span>Monitoring system</span></li>
+      <li><span class="check-dot"></span><span>Approved installer</span></li>
+    </ul>
+  </div>
+
+</div>
+
+<div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #E8DFD0; font-size: 0.85rem; color: #7A746A;">
+  Check this Posts →
+  <a href="https://lightenedgirl.github.io/CozyLittleCottage/10_solar_power_guide_indetail.html" 
+     style="color: #4A6741; display: block; font-family: 'Lora', Georgia, serif; font-size: 1rem; margin-top: 0.3rem;">
+    Installing Solar Power System at Home — In Detail</title>
+  </a>
+</div>
+  
+  <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #E8DFD0; font-size: 0.85rem; color: #7A746A;">
+
+  <a href="https://www.tatapower.com/blogs/solar-calculators-a-complete-guide#accordion-83e0ce5697-item-e09fd7ed5c" 
+     style="color: #4A6741; display: block; font-family: 'Lora', Georgia, serif; font-size: 1rem; margin-top: 0.3rem;">
+    Know more about solar panels and much more - In detail
+  </a>
+</div>
+  
+    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #E8DFD0; font-size: 0.85rem; color: #7A746A;">
+
+  <a href="https://lightenedgirl.github.io/CozyLittleCottage/9_solar_shopping_guide.html" 
+     style="color: #4A6741; display: block; font-family: 'Lora', Georgia, serif; font-size: 1rem; margin-top: 0.3rem;">
+    Everything You Need to Buy to Install Solar Panels at Home
+  </a>
+</div>
+<!-- FOOTER -->
+<footer class="site-footer">
+  © 2025 Cozy Little Cottage · Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
