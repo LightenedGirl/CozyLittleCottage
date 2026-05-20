@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Different Types of Ladder and Its Uses — Cozy Little Cottage</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FDFAF5;
+    --cream-dark: #F4EFE6;
+    --cream-border: #E8DFD0;
+    --text: #2C2C2A;
+    --text-muted: #7A746A;
+    --text-soft: #5A5550;
+    --green: #4A6741;
+    --green-pale: #EDF2EB;
+    --green-mid: #6B8F62;
+    --accent: #8B6F47;
+    --accent-pale: #F5EDE2;
+    --link: #4A6741;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+    font-size: 0.97rem;
+  }
+
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAV ── */
+  .site-nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--cream-border);
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .site-logo {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .site-logo:hover { text-decoration: none; color: var(--green); }
+
+  .nav-sep {
+    color: var(--cream-border);
+    font-size: 0.85rem;
+  }
+
+  .nav-link {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-link:hover { color: var(--green); text-decoration: none; }
+
+  /* ── PAGE LAYOUT ── */
+  .page-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ── BACK LINK ── */
+  .back-link {
+    display: inline-block;
+    margin: 2rem 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .back-link:hover { color: var(--green); text-decoration: none; }
+
+  /* ── POST HEADER ── */
+  .post-header {
+    margin: 2.5rem 0 2.8rem;
+  }
+
+  .post-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 0.9rem;
+  }
+
+  .post-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+
+  .post-title em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .post-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1.4rem;
+    letter-spacing: 0.03em;
+  }
+
+  .post-rule {
+    border: none;
+    border-top: 1px solid var(--cream-border);
+    margin: 0;
+  }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 1.4rem 0;
+  }
+/* POST WRAP */
+    .post-wrap {
+      max-width: 620px; margin: 0 auto;
+      padding: 2.5rem 2rem 6rem;
+      animation: fadeUp 0.35s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .post-wrap .cat {
+      font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .post-wrap h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      line-height: 1.2; margin-bottom: 0.8rem;
+    }
+    .post-wrap .byline {
+      font-size: 0.78rem; color: var(--muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+  /* ── BODY TEXT ── */
+  .post-body p {
+    margin-bottom: 1.25rem;
+    color: var(--text-soft);
+    line-height: 1.85;
+  }
+
+  .post-body strong { font-weight: 500; color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    margin: 2rem 0;
+    padding: 1.2rem 1.8rem;
+    border-left: 3px solid var(--cream-border);
+    background: transparent;
+  }
+
+  .pull-quote p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 2.8rem 0 1.2rem;
+  }
+
+  .section-heading em { font-style: italic; color: var(--green); }
+
+  /* ── STEP CARDS ── */
+  .steps { margin: 1.5rem 0 2rem; }
+
+  .step-card {
+    border: 1px solid var(--cream-border);
+    border-radius: 8px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1rem;
+    background: #fff;
+  }
+
+  .step-card:last-child { margin-bottom: 0; }
+
+  .step-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--green-pale);
+    border: 1px solid #C5D9C0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--green);
+    flex-shrink: 0;
+  }
+
+  .step-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .step-card h3 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.55rem;
+  }
+
+  .step-card p {
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .step-card p + p { margin-top: 0.6rem; }
+
+  /* ── CALLOUT BOX (Kerala / tips) ── */
+  .callout {
+    background: var(--green-pale);
+    border: 1px solid #C5D9C0;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+
+  .callout-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p {
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    margin: 0;
+    line-height: 1.75;
+  }
+
+  .callout p + p { margin-top: 0.6rem; }
+
+  /* ── WARM CALLOUT (cost / budget) ── */
+  .callout-warm {
+    background: var(--accent-pale);
+    border: 1px solid #DECCB5;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+
+  .callout-warm .callout-label { color: var(--accent); }
+  .callout-warm p { font-size: 0.93rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout-warm p + p { margin-top: 0.6rem; }
+
+  /* ── PANEL TYPE LIST ── */
+  .panel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.8rem 0 0;
+  }
+
+  .panel-list li {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  .panel-list li:last-child { border-bottom: none; }
+  .panel-list li strong { color: var(--text); font-weight: 500; }
+
+  /* ── SIMPLE DATA ROWS ── */
+  .data-rows { margin: 0.8rem 0 0; }
+
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.91rem;
+    gap: 1rem;
+  }
+
+  .data-row:last-child { border-bottom: none; }
+  .data-row .dl { color: var(--text-soft); }
+  .data-row .dv { color: var(--text); font-weight: 500; text-align: right; }
+
+  /* ── BATTERY HIGHLIGHT ── */
+  .battery-pick {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid var(--cream-border);
+    border-left: 3px solid var(--green-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+  }
+
+  .battery-pick .bp-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 0.3rem;
+  }
+
+  .battery-pick h4 {
+    font-family: 'Lora', serif;
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .battery-pick p { font-size: 0.88rem; color: var(--text-soft); margin: 0; line-height: 1.65; }
+
+  /* ── CHECKLIST ── */
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.8rem 0 0;
+  }
+
+  .check-list li {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+
+  .check-list li:last-child { border-bottom: none; }
+
+  .check-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  .check-list li strong { font-weight: 500; color: var(--text); }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--cream-border);
+    margin: 2.5rem 0;
+  }
+  
+    .hero-tag {
+      display: inline-block;
+      background: #2D4A27;
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--cream-border);
+    margin-top: 4rem;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 540px) {
+    .post-title { font-size: 1.5rem; }
+    .step-card { padding: 1.1rem 1.2rem; }
+    .callout, .callout-warm { padding: 1.1rem 1.2rem; }
+    .data-row { flex-direction: column; gap: 0.1rem; }
+    .data-row .dv { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="site-logo" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">🌿 Cozy Little Cottage</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">All Posts</a>
+</nav>
+
+<div class="page-wrap">
+
+  <a class="back-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">← Back to Home</a>
+</div>
+  
+  <div class="post-wrap">
+ <span class="hero-tag">
+  <p class="cat">Solar Power</p>
+  <h1>Different Types of Solar Inverters</h1>
+  <p class="byline">May 17, 2026</p> </span>
+
+  <!-- BODY -->
+    
+     <div class="post-body">
+
+      <p>
+        There are several types of solar inverters used in homes, and each one is designed for different system sizes, budgets, and backup needs.
+      </p>
+
+      <div class="pull-quote">
+        <p>
+          The inverter is the heart of a home solar system — it converts solar energy into usable electricity for everyday appliances.
+        </p>
+      </div>
+         <img src="solarinverter.png">
+           
+ 
+
+      <h2 class="section-heading">1. String Inverter</h2>
+
+      <p>
+        A string inverter connects multiple solar panels together in a “string.”
+      </p>
+
+      <ul class="check-list">
+        <li><strong>How It Works:</strong> Panels connect in series and one inverter converts DC to AC for the whole system.</li>
+        <li><strong>Advantages:</strong> Affordable, reliable, and easy to maintain.</li>
+        <li><strong>Disadvantages:</strong> One shaded panel can reduce the output of the entire string.</li>
+        <li><strong>Best For:</strong> Homes with simple roofs and little shading.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-label">Popular Brands</div>
+        <p>SMA Solar Technology · Growatt · Sungrow</p>
+      </div>
+      
+            
+         
+         
+       
+       
+      <h2 class="section-heading">2. Microinverter</h2>
+
+      
+
+      <p>
+        A microinverter is installed behind each individual solar panel.
+      </p>
+
+      <ul class="check-list">
+        <li><strong>Advantages:</strong> Better performance in shaded conditions.</li>
+        <li><strong>Monitoring:</strong> Each panel works independently.</li>
+        <li><strong>Disadvantages:</strong> Higher installation cost.</li>
+        <li><strong>Best For:</strong> Roofs with shade or multiple roof directions.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-label">Popular Brands</div>
+        <p>Enphase Energy · APsystems</p>
+      </div>
+
+      <h2 class="section-heading">3. Hybrid Inverter</h2>
+
+      
+
+      <p>
+        Hybrid inverters work with solar panels, batteries, and grid power simultaneously.
+      </p>
+
+      <ul class="check-list">
+        <li><strong>Advantages:</strong> Battery backup support and smart energy management.</li>
+        <li><strong>Useful During:</strong> Power cuts and unstable electricity supply.</li>
+        <li><strong>Disadvantages:</strong> More expensive and slightly complex.</li>
+        <li><strong>Best For:</strong> Homes needing reliable backup power.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-label">Popular Brands</div>
+        <p>Luminous · UTL Solar · Victron Energy</p>
+      </div>
+
+      <h2 class="section-heading">4. Off-Grid Inverter</h2>
+
+      <p>
+        Off-grid inverters are designed for homes completely independent from the utility grid.
+      </p>
+
+      <ul class="check-list">
+        <li>Requires batteries for energy storage.</li>
+        <li>Works without a utility connection.</li>
+        <li>Useful for remote locations and villages.</li>
+        <li>Needs careful power planning and larger battery banks.</li>
+      </ul>
+
+      <h2 class="section-heading">5. Grid-Tied Inverter</h2>
+
+      <p>
+        Grid-tied inverters are made for systems connected directly to the utility grid.
+      </p>
+
+      <ul class="check-list">
+        <li>No batteries required.</li>
+        <li>Extra solar power can be exported to the grid.</li>
+        <li>Lower installation cost and high efficiency.</li>
+        <li>Stops working during power cuts for safety reasons.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-label">Best For</div>
+        <p>Urban homes with stable electricity and net metering.</p>
+      </div>
+
+      <h2 class="section-heading">Pure Sine Wave vs Modified Sine Wave</h2>
+
+      <h3 class="sub-heading">Pure Sine Wave Inverter</h3>
+
+      <p>
+        Produces cleaner and smoother electricity that is safer for sensitive appliances.
+      </p>
+
+      <ul class="check-list">
+        <li>Best for TVs, refrigerators, laptops, and computers.</li>
+        <li>Preferred for modern homes.</li>
+      </ul>
+
+      <h3 class="sub-heading">Modified Sine Wave Inverter</h3>
+
+      <p>
+        Cheaper but less efficient and may create appliance issues.
+      </p>
+
+      <ul class="check-list">
+        <li>Can cause heating and electrical noise.</li>
+        <li>Not ideal for sensitive electronics.</li>
+      </ul>
+
+      <div class="pull-quote">
+        <p>
+          Pure sine wave inverters are strongly recommended for most modern homes.
+        </p>
+      </div>
+
+      <h2 class="section-heading">Which Inverter Is Best for a Home?</h2>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Situation</th>
+            <th>Best Inverter</th>
+          </tr>
+          <tr>
+            <td><strong>S</strong>imple roof, low cost  </td>
+            <td><strong>S</strong>tring inverter</td>
+          </tr>
+          
+          <tr>
+            <td><strong>R</strong>oof with shade  </td>
+            <td><strong>M</strong>icroinverter</td>
+          </tr>
+          <tr>
+            <td><strong>N</strong>eed battery backup</td>
+            <td><strong>H</strong>ybrid inverter</td>
+          </tr>
+          <tr>
+            <td><strong>N</strong>o grid connection</td>
+            <td><strong>O</strong>ff-grid inverter</td>
+          </tr>
+          <tr>
+            <td><strong>C</strong>ity home with net metering</td>
+            <td><strong>G</strong>rid-tied inverter</td>
+          </tr>
+        </table>
+      </div>
+
+      
+
+      <h2 class="section-heading">Common Inverter Mistakes</h2>
+
+      <ul class="check-list">
+        <li>Buying undersized inverters</li>
+        <li>Ignoring battery compatibility</li>
+        <li>Installing in hot locations</li>
+        <li>Skipping surge protection</li>
+        <li>Poor ventilation</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-label">Important</div>
+        <p>
+          Heat is one of the biggest inverter killers. Proper ventilation and installation location matter a lot.
+        </p>
+      </div>
+
+      
+
+    </div>
+     <!-- ── PRODUCT BUYING SECTION ── -->
+
+<h2 class="section-heading">Recommended Solar Products</h2>
+
+    <strong><i>Disclaimer: As an Amazon Associate, I earn from qualifying purchases.</i></strong>
+
+<!-- PRODUCT 1 -->
+<div class="callout">
+  <p>
+    <strong>Luminous 5KW Solar Grid TIE Inverter - NXI 150 Single Phase</strong> <br>Good for standard rooftop homes with net metering. Easy service availability and widely installed across India.
+  </p>
+
+  <div class="data-rows">
+
+    <div class="data-row">
+      <span class="dl">Price</span>
+      <span class="dv">₹43,990</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Capacity</span>
+      <span class="dv">5KW</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Warranty</span>
+      <span class="dv">5 Years</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Type</span>
+      <span class="dv">On-Grid String Inverter</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Phase</span>
+      <span class="dv">Single Phase</span>
+    </div>
+
+    <a href="https://amzn.to/496tdTt"
+       target="_blank"
+       style="font-family:'Lora', serif; font-size:1rem;">
+      Buy This Solar Inverter at Amazon →
+    </a>
+
+  </div>
+</div>
+
+
+<!-- PRODUCT 2 -->
+<div class="callout">
+  <p>
+    <strong>Eastman Energy 5kW Grid Tie Solar Inverter</strong>
+  </p>
+
+  <div class="data-rows">
+
+    <div class="data-row">
+      <span class="dl">Price</span>
+      <span class="dv">₹37,000</span>
+    </div>
+
+
+    <div class="data-row">
+      <span class="dl">Capacity</span>
+      <span class="dv">5KW</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Warranty</span>
+      <span class="dv">10 Years</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Type</span>
+      <span class="dv">On-Grid String Inverter</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Phase</span>
+      <span class="dv">Single Phase</span>
+    </div>
+
+    <a href="https://amzn.to/4dtExKJ"
+       target="_blank"
+       style="font-family:'Lora', serif; font-size:1rem;">
+      Buy This Solar Inverter at Amazon →
+    </a>
+
+  </div>
+</div>
+
+
+<!-- PRODUCT 3 -->
+<div class="callout">
+  <p>
+    <strong>Luminous Solarverter PRO PCU 5KVA / 48V</strong>
+  </p>
+
+  <div class="data-rows">
+
+    <div class="data-row">
+      <span class="dl">Price</span>
+      <span class="dv">₹53,599</span>
+    </div>
+
+
+    <div class="data-row">
+      <span class="dl">Capacity</span>
+      <span class="dv">5KVA</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Warranty</span>
+      <span class="dv">2 Years</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Type</span>
+      <span class="dv">Hybrid Solar Inverter</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Battery Support</span>
+      <span class="dv">Yes</span>
+    </div>
+
+    <a href="https://amzn.to/4dPaE8T"
+       target="_blank"
+       style="font-family:'Lora', serif; font-size:1rem;">
+      Buy This Solar Inverter at Amazon →
+    </a>
+
+  </div>
+</div>
+
+
+<!-- PRODUCT 4 -->
+<div class="callout">
+  <p>
+    <strong>Solis S6 GR1P5K-S 5KW Solar Ongrid Inverter</strong>
+  </p>
+
+  <div class="data-rows">
+
+    <div class="data-row">
+      <span class="dl">Price</span>
+      <span class="dv">₹30,000</span>
+    </div>
+
+    
+
+    <div class="data-row">
+      <span class="dl">Capacity</span>
+      <span class="dv">5KW</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Warranty</span>
+      <span class="dv">5 Years</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Type</span>
+      <span class="dv">Premium On-Grid Inverter</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">MPPT</span>
+      <span class="dv">Dual MPPT</span>
+    </div>
+
+    <a href="https://shop.enleadenergy.com/products/solis-s6-gr1p5k-s-solar-ongrid-inverter?variant=43776945487914&country=IN&currency=INR&utm_source=chatgpt.com"
+       target="_blank"
+       style="font-family:'Lora', serif; font-size:1rem;">
+      Buy This Solar Inverter at Enleadenergy→
+    </a>
+
+  </div>
+</div>
+    
+<!-- PRODUCT 5  -->
+<div class="callout">
+  <p>
+    <strong>Microtek GTI 5KW</strong>
+  </p>
+
+  <div class="data-rows">
+
+    <div class="data-row">
+      <span class="dl">Price</span>
+      <span class="dv">₹30,000</span>
+    </div>
+
+    
+    <div class="data-row">
+      <span class="dl">Capacity</span>
+      <span class="dv">5KW</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Warranty</span>
+      <span class="dv">5 Years</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">Type</span>
+      <span class="dv">Premium On-Grid Inverter</span>
+    </div>
+
+    <div class="data-row">
+      <span class="dl">MPPT</span>
+      <span class="dv">Dual MPPT</span>
+    </div>
+
+    <a href="https://www.olivepower.in/microtek-gti-5kw/?utm_source=chatgpt.com"
+       target="_blank"
+       style="font-family:'Lora', serif; font-size:1rem;">
+      Buy This Solar Inverter at Olivepower→
+    </a>
+
+  </div>
+</div>
+   
+
+    
+
+<!-- FINAL NOTE -->
+<div class="callout-warm">
+
+  <div class="callout-label">Before Buying</div>
+
+  <p>
+    Always compare warranty, efficiency, compatibility, and local service support before purchasing solar equipment online.
+  </p>
+
+</div>
+
+<div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #E8DFD0; font-size: 0.85rem; color: #7A746A;">
+  Check this Posts →
+  <a href="https://lightenedgirl.github.io/CozyLittleCottage/10_solar_power_guide_indetail.html" 
+     style="color: #4A6741; display: block; font-family: 'Lora', Georgia, serif; font-size: 1rem; margin-top: 0.3rem;">
+    Installing Solar Power System at Home — In Detail</title>
+  </a>
+</div>
+  
+  <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #E8DFD0; font-size: 0.85rem; color: #7A746A;">
+
+  <a href="https://www.tatapower.com/blogs/solar-calculators-a-complete-guide#accordion-83e0ce5697-item-e09fd7ed5c" 
+     style="color: #4A6741; display: block; font-family: 'Lora', Georgia, serif; font-size: 1rem; margin-top: 0.3rem;">
+    Know more about solar panels and much more - In detail
+  </a>
+</div>
+  
+    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #E8DFD0; font-size: 0.85rem; color: #7A746A;">
+
+  <a href="https://lightenedgirl.github.io/CozyLittleCottage/9_solar_shopping_guide.html" 
+     style="color: #4A6741; display: block; font-family: 'Lora', Georgia, serif; font-size: 1rem; margin-top: 0.3rem;">
+    Everything You Need to Buy to Install Solar Panels at Home
+  </a>
+</div>
+  
+  
+   
+<!-- FOOTER -->
+<footer class="site-footer">
+  © 2025 Cozy Little Cottage · Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
