@@ -92,6 +92,40 @@
       font-size: 0.95rem; color: var(--muted);
       max-width: 380px; margin: 0 auto;
     }
+  
+  .search-wrap {
+  margin: 1.5rem auto 0;
+  max-width: 360px;
+  position: relative;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 0.55rem 1rem 0.55rem 2.4rem;
+  font-family: 'Lora', serif;
+  font-size: 0.88rem;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b07d4a' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0.7rem center;
+}
+
+.search-wrap input:focus {
+  border-color: var(--accent);
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem 0;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 
     /* ── FEED ── */
     .posts-feed {
@@ -222,6 +256,14 @@
     <p class="eyebrow">Welcome to the cottage</p>
     <h1>A <em>cozy</em> corner<br/>of the internet</h1>
     <p>Slow reads, warm thoughts, and little stories from everyday life.</p>
+    <div class="search-wrap">
+  <input
+    type="text"
+    id="post-search"
+    placeholder="Search posts…"
+    autocomplete="off"
+  />
+</div>
   </div>
   <div class="posts-feed" id="home-feed"></div>
 </div>
@@ -359,16 +401,14 @@
 
   // ── RENDER HOME FEED ──
   function renderHome() {
-    const feed = document.getElementById('home-feed');
-    if (posts.length === 0) {
-      feed.innerHTML = `
-        <div class="empty-state">
-          <span class="icon">🍵</span>
-          <p>No posts yet — pull up a chair, something's brewing.</p>
-        </div>`;
+  const feed = document.getElementById('home-feed');
+
+  function renderPosts(list) {
+    if (list.length === 0) {
+      feed.innerHTML = `<p class="no-results">No posts found — try a different word.</p>`;
       return;
     }
-    feed.innerHTML = posts.map(p => `
+    feed.innerHTML = list.map(p => `
       <a class="feed-item" href="${p.file}">
         <p class="meta">${p.cat} &nbsp;·&nbsp; ${p.date}</p>
         <h2>${p.title}</h2>
@@ -376,6 +416,19 @@
         <span class="read-link">Read more →</span>
       </a>`).join('');
   }
+
+  renderPosts(posts);
+
+  document.getElementById('post-search').addEventListener('input', function () {
+    const q = this.value.trim().toLowerCase();
+    if (!q) { renderPosts(posts); return; }
+    const filtered = posts.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.cat.toLowerCase().includes(q)
+    );
+    renderPosts(filtered);
+  });
+}
 
   // ── RENDER ALL POSTS ──
   function renderBlogList() {
@@ -404,3 +457,5 @@
 </script>
 </body>
 </html>
+
+    
