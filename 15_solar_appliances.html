@@ -7,373 +7,90 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --cream: #FDFAF5;
-    --cream-dark: #F4EFE6;
-    --cream-border: #E8DFD0;
-    --text: #2C2C2A;
-    --text-muted: #7A746A;
-    --text-soft: #5A5550;
-    --green: #4A6741;
-    --green-pale: #EDF2EB;
-    --green-mid: #6B8F62;
-    --accent: #8B6F47;
-    --accent-pale: #F5EDE2;
-    --link: #4A6741;
+    --cream: #FDFAF5; --cream-dark: #F4EFE6; --cream-border: #E8DFD0;
+    --text: #2C2C2A; --text-muted: #7A746A; --text-soft: #5A5550;
+    --green: #4A6741; --green-pale: #EDF2EB; --green-mid: #6B8F62;
+    --accent: #8B6F47; --accent-pale: #F5EDE2; --link: #4A6741;
   }
-
   html { font-size: 16px; }
-
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    line-height: 1.8;
-    font-weight: 300;
-    font-size: 0.97rem;
-  }
-
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--text); line-height: 1.8; font-weight: 300; font-size: 0.97rem; }
   a { color: var(--link); text-decoration: none; }
   a:hover { text-decoration: underline; }
-
-  /* NAV */
-  .site-nav {
-    background: var(--cream);
-    border-bottom: 1px solid var(--cream-border);
-    padding: 0.9rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .site-logo {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text);
-    text-decoration: none;
-    letter-spacing: 0.01em;
-  }
+  .site-nav { background: var(--cream); border-bottom: 1px solid var(--cream-border); padding: 0.9rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .site-logo { font-family: 'Lora', Georgia, serif; font-size: 1rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: 0.01em; }
   .site-logo:hover { text-decoration: none; color: var(--green); }
   .nav-sep { color: var(--cream-border); font-size: 0.85rem; }
-  .nav-link {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    letter-spacing: 0.02em;
-  }
+  .nav-link { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.02em; }
   .nav-link:hover { color: var(--green); text-decoration: none; }
-
-  /* PAGE LAYOUT */
   .page-wrap { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
-
-  .back-link {
-    display: inline-block;
-    margin: 2rem 0 0;
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    letter-spacing: 0.02em;
-  }
+  .back-link { display: inline-block; margin: 2rem 0 0; font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.02em; }
   .back-link:hover { color: var(--green); text-decoration: none; }
-
-  /* POST WRAP */
-  .post-wrap {
-    max-width: 620px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem 6rem;
-    animation: fadeUp 0.35s ease both;
-  }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* HERO TAG */
-  .hero-tag {
-    display: inline-block;
-    background: #fffff0;
-    color: #689934;
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 5px 16px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-  }
-
-  /* POST HEADER */
+  .post-wrap { max-width: 620px; margin: 0 auto; padding: 2.5rem 2rem 6rem; animation: fadeUp 0.35s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-tag { display: inline-block; background: #fffff0; color: #689934; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 20px; }
   .post-header { margin: 2.5rem 0 2.8rem; }
-  .post-tag {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--green-mid);
-    margin-bottom: 0.9rem;
-  }
-  .post-title {
-    font-family: 'Lora', Georgia, serif;
-    font-size: clamp(1.7rem, 4vw, 2.4rem);
-    font-weight: 500;
-    line-height: 1.25;
-    color: var(--text);
-    margin-bottom: 0.8rem;
-  }
+  .post-tag { display: inline-block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 0.9rem; }
+  .post-title { font-family: 'Lora', Georgia, serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 500; line-height: 1.25; color: var(--text); margin-bottom: 0.8rem; }
   .post-title em { font-style: italic; color: var(--green); }
-  .post-date {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-bottom: 1.4rem;
-    letter-spacing: 0.03em;
-  }
+  .post-date { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.4rem; letter-spacing: 0.03em; }
   .post-rule { border: none; border-top: 1px solid var(--cream-border); margin: 0; }
-
-  /* DISCLAIMER */
-  .disclaimer {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    font-style: italic;
-    margin: 1.4rem 0;
-  }
-
-  /* BODY TEXT */
-  .post-body p {
-    margin-bottom: 1.25rem;
-    color: var(--text-soft);
-    line-height: 1.85;
-  }
+  .disclaimer { font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin: 1.4rem 0; }
+  .post-body p { margin-bottom: 1.25rem; color: var(--text-soft); line-height: 1.85; }
   .post-body strong { font-weight: 500; color: var(--text); }
-
-  /* PULL QUOTE */
-  .pull-quote {
-    margin: 2rem 0;
-    padding: 1.2rem 1.8rem;
-    border-left: 3px solid var(--cream-border);
-    background: transparent;
-  }
-  .pull-quote p {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.1rem;
-    font-style: italic;
-    color: var(--text-muted);
-    margin: 0;
-    line-height: 1.65;
-  }
-
-  /* SECTION HEADING */
-  .section-heading {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--text);
-    margin: 2.8rem 0 1.2rem;
-  }
+  .pull-quote { margin: 2rem 0; padding: 1.2rem 1.8rem; border-left: 3px solid var(--cream-border); background: transparent; }
+  .pull-quote p { font-family: 'Lora', Georgia, serif; font-size: 1.1rem; font-style: italic; color: var(--text-muted); margin: 0; line-height: 1.65; }
+  .section-heading { font-family: 'Lora', Georgia, serif; font-size: 1.25rem; font-weight: 500; color: var(--text); margin: 2.8rem 0 1.2rem; }
   .section-heading em { font-style: italic; color: var(--green); }
-
-  /* APPLIANCE CARDS */
-  .appliance-card {
-    border: 1px solid var(--cream-border);
-    border-radius: 8px;
-    padding: 1.4rem 1.6rem;
-    margin-bottom: 1.2rem;
-    background:var(--green-pale);
-  }
-  .appliance-card:last-child { margin-bottom: 0; }
-
-  .appliance-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.65rem;
-  }
-  .appliance-num {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: var(--green-pale);
-    border: 1px solid #C5D9C0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: var(--green);
-    flex-shrink: 0;
-  }
-  .appliance-cat {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-  .appliance-card h3 {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 0.55rem;
-  }
-  .appliance-card p {
-    font-size: 0.93rem;
-    color: var(--text-soft);
-    line-height: 1.75;
-    margin: 0 0 0.6rem;
-  }
-
-  /* PRODUCT BUY LINKS */
-  .buy-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.9rem;
-    margin-bottom: 2.5rem;
-    padding-top: 0.9rem;
-    border-top: 1px solid var(--cream-border);
-  }
-  .buy-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    color: var(--green);
-    background: var(--green-pale);
-    border: 1px solid #C5D9C0;
-    border-radius: 20px;
-    padding: 0.35rem 0.9rem;
-    text-decoration: none;
-    transition: background 0.15s;
-  }
+  .appliance-card { border: 1px solid var(--cream-border); border-radius: 8px; padding: 1.4rem 1.6rem; margin-bottom: 1.2rem; background: var(--green-pale); }
+  .appliance-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.65rem; }
+  .appliance-num { width: 26px; height: 26px; border-radius: 50%; background: var(--green-pale); border: 1px solid #C5D9C0; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 500; color: var(--green); flex-shrink: 0; }
+  .appliance-cat { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+  .appliance-card h3 { font-family: 'Lora', Georgia, serif; font-size: 1.05rem; font-weight: 500; color: var(--text); margin-bottom: 0.55rem; }
+  .appliance-card p { font-size: 0.93rem; color: var(--text-soft); line-height: 1.75; margin: 0 0 0.6rem; }
+  .buy-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; margin-bottom: 2.5rem; padding-top: 0.9rem; border-top: 1px solid var(--cream-border); }
+  .buy-btn { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; color: var(--green); background: var(--green-pale); border: 1px solid #C5D9C0; border-radius: 20px; padding: 0.35rem 0.9rem; text-decoration: none; transition: background 0.15s; }
   .buy-btn:hover { background: #daebd5; text-decoration: none; }
   .buy-btn svg { width: 12px; height: 12px; flex-shrink: 0; }
 
-  /* CALLOUT */
-  .callout {
-    background: var(--green-pale);
-    border: 1px solid #C5D9C0;
-    border-radius: 8px;
-    padding: 1.3rem 1.6rem;
-    margin: 2rem 0;
-  }
-  .callout-label {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--green);
-    margin-bottom: 0.5rem;
-  }
-  .callout p {
-    font-size: 0.93rem;
-    color: var(--text-soft);
-    margin: 0;
-    line-height: 1.75;
-  }
-  .callout p + p { margin-top: 0.6rem; }
+  /* Amazon.com button — clearly distinct blue */
+  .buy-btn-global { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; color: #1a3fa3; background: #e8f0ff; border: 1.5px solid #7a9fe8; border-radius: 20px; padding: 0.35rem 0.9rem; text-decoration: none; transition: background 0.15s; }
+  .buy-btn-global:hover { background: #d0e0ff; text-decoration: none; }
 
-  /* WARM CALLOUT */
-  .callout-warm {
-    background: var(--accent-pale);
-    border: 1px solid #DECCB5;
-    border-radius: 8px;
-    padding: 1.3rem 1.6rem;
-    margin: 2rem 0;
-  }
+  /* Product card inside buy-links */
+  .product-row { display:flex; gap:1rem; align-items:flex-start; background:#fff; border:1px solid #E8DFD0; border-left:3px solid #6B8F62; border-radius:0 8px 8px 0; padding:1.2rem 1.4rem; margin:1rem 0; width:100%; }
+  .product-row img { width:70px; height:70px; object-fit:cover; border-radius:7px; flex-shrink:0; border:1px solid #E8DFD0; }
+  .product-row-info { min-width:0; }
+  .product-row-info h4 { font-family:'Lora',Georgia,serif; font-size:0.97rem; font-weight:500; color:#2C2C2A; margin-bottom:0.4rem; }
+  .product-row-info p { font-size:0.88rem; color:#5A5550; margin:0; line-height:1.65; }
+  .product-row-info a { display:inline-block; margin-top:0.6rem; font-size:0.82rem; color:#4A6741; border:1px solid #C5D9C0; padding:4px 12px; border-radius:20px; text-decoration:none; }
+
+  /* Amazon.com first-card highlight */
+  .product-row-global { display:flex; gap:1rem; align-items:flex-start; background:#f0f5ff; border:1px solid #c0cef5; border-left:3px solid #3a6fd8; border-radius:0 8px 8px 0; padding:1.2rem 1.4rem; margin:1rem 0; width:100%; }
+  .product-row-global .product-row-info h4 { color:#1a2f6e; }
+  .product-row-global .amzcom-tag { display:inline-block; font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#1a3fa3; background:#dce8ff; border-radius:4px; padding:2px 7px; margin-bottom:0.4rem; }
+  .product-row-global a { color:#1a3fa3; border-color:#7a9fe8; }
+
+  .callout { background: var(--green-pale); border: 1px solid #C5D9C0; border-radius: 8px; padding: 1.3rem 1.6rem; margin: 2rem 0; }
+  .callout-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.5rem; }
+  .callout p { font-size: 0.93rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout p + p { margin-top: 0.6rem; }
+  .callout-warm { background: var(--accent-pale); border: 1px solid #DECCB5; border-radius: 8px; padding: 1.3rem 1.6rem; margin: 2rem 0; }
   .callout-warm .callout-label { color: var(--accent); }
   .callout-warm p { font-size: 0.93rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
-  .callout-warm p + p { margin-top: 0.6rem; }
-
-  /* PANEL LIST */
   .panel-list { list-style: none; padding: 0; margin: 0.8rem 0 0; }
-  .panel-list li {
-    padding: 0.55rem 0;
-    border-bottom: 1px solid var(--cream-border);
-    font-size: 0.93rem;
-    color: var(--text-soft);
-    line-height: 1.6;
-  }
+  .panel-list li { padding: 0.55rem 0; border-bottom: 1px solid var(--cream-border); font-size: 0.93rem; color: var(--text-soft); line-height: 1.6; }
   .panel-list li:last-child { border-bottom: none; }
   .panel-list li strong { color: var(--text); font-weight: 500; }
-
-  /* CHECK LIST */
-  .check-list { list-style: none; padding: 0; margin: 0.8rem 0 0; }
-  .check-list li {
-    display: flex;
-    gap: 0.8rem;
-    align-items: flex-start;
-    padding: 0.55rem 0;
-    border-bottom: 1px solid var(--cream-border);
-    font-size: 0.93rem;
-    color: var(--text-soft);
-    line-height: 1.7;
-  }
-  .check-list li:last-child { border-bottom: none; }
-  .check-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--green-mid);
-    flex-shrink: 0;
-    margin-top: 0.55rem;
-  }
-  .check-list li strong { font-weight: 500; color: var(--text); }
-
-  /* SECTION DIVIDER */
   .section-divider { border: none; border-top: 1px solid var(--cream-border); margin: 2.5rem 0; }
-
-  /* RELATED POSTS */
-  .related-post-link {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #E8DFD0;
-    font-size: 0.85rem;
-    color: #7A746A;
-  }
-  .related-post-link a {
-    color: #4A6741;
-    display: block;
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1rem;
-    margin-top: 0.3rem;
-  }
-
-  /* FOOTER */
-  .site-footer {
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    border-top: 1px solid var(--cream-border);
-    margin-top: 4rem;
-    letter-spacing: 0.03em;
-  }
-
-  /* IMAGE */
-  .post-img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 1.5rem 0 2rem;
-    display: block;
-  }
-
-  @media (max-width: 540px) {
-    .post-title { font-size: 1.5rem; }
-    .appliance-card { padding: 1.1rem 1.2rem; }
-    .callout, .callout-warm { padding: 1.1rem 1.2rem; }
-    .buy-links { gap: 0.4rem; }
-  }
+  .related-post-link { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #E8DFD0; font-size: 0.85rem; color: #7A746A; }
+  .related-post-link a { color: #4A6741; display: block; font-family: 'Lora', Georgia, serif; font-size: 1rem; margin-top: 0.3rem; }
+  .site-footer { text-align: center; padding: 2.5rem 1.5rem; font-size: 0.78rem; color: var(--text-muted); border-top: 1px solid var(--cream-border); margin-top: 4rem; letter-spacing: 0.03em; }
+  @media (max-width: 540px) { .post-title { font-size: 1.5rem; } .appliance-card { padding: 1.1rem 1.2rem; } .callout, .callout-warm { padding: 1.1rem 1.2rem; } .buy-links { gap: 0.4rem; } }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="site-nav">
   <a class="site-logo" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">🌿 Cozy Little Cottage</a>
   <span class="nav-sep">·</span>
@@ -386,621 +103,615 @@
 
 <div class="post-wrap">
 
-  <!-- HEADER -->
-  <span class="hero-tag">Solar Power
+  <span class="hero-tag">Solar Power</span>
 
   <div class="post-header">
     <h1 class="post-title">Solar Powered <em>Appliances & Gadgets</em> Available Today</h1>
     <p class="post-date">May 20, 2026</p>
     <hr class="post-rule">
   </div>
-  </span>
+
   <p class="disclaimer">***Disclaimer: As an Amazon Associate, I earn from qualifying purchases.***</p>
 
-  <!-- INTRO -->
   <div class="post-body">
     <p>When most people think about solar energy at home, they imagine rooftop panels and inverters. But solar technology has quietly found its way into dozens of everyday products — from the light in your garden to the camera watching your gate.</p>
-
     <div class="pull-quote">
       <p>"Every product here replaces a little bit of grid electricity with free sunlight — and that adds up to something meaningful over the years."</p>
     </div>
-
-    <p>Here's a complete look at solar-powered appliances and gadgets that are actually available to buy today, with Amazon India links for each.</p>
+    <p>Here's a complete look at solar-powered appliances and gadgets that are actually available to buy today, with Amazon India and Amazon.com links for each.</p>
   </div>
 
   <!-- SECTION 1: HOME APPLIANCES -->
   <h2 id="home-appliances" class="section-heading">🏠 Home Appliances</h2>
 
+  <!-- 1. SOLAR WATER HEATER -->
   <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">1</div>
-      <span class="appliance-cat">Most Popular</span>
-    </div>
+    <div class="appliance-meta"><div class="appliance-num">1</div><span class="appliance-cat">Most Popular</span></div>
     <h2 id="solar-water-heater">Solar Water Heater</h2>
   </div>
-    <p>A solar water heater uses rooftop thermal collectors to heat water directly from sunlight — no electricity needed at all. For a Kerala home, this is one of the most practical solar investments you can make. A family of 4 can save ₹2,000–₹4,000 per year on electricity just from hot water alone.</p>
-    <ul class="panel-list">
-      <li><strong>Best capacity for a family of 4–5:</strong> 150–200 LPD</li>
-      <li><strong>Top brands:</strong> Racold, V-Guard, Supreme Solar</li>
-      <li><strong>Typical price:</strong> ₹15,000 – ₹40,000</li>
-      <li><strong>Payback period:</strong> 3–5 years</li>
-    </ul>
-  
-  
-    <div class="buy-links">
-  
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<a href="https://amzn.to/4v26b8J" target="_blank" rel="nofollow noopener">
-  <img src="https://m.media-amazon.com/images/I/51-r3wv+6fL._AC_AIweblab1006854,T4_FMavif_SF700,700_PQ69_.jpg?aicid=detailPage-mediaBlock" 
-    alt="Commercial Solar Panel Water Heater Element with Thermostat" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-</a>
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Commercial Solar Panel Water Heater Element with Thermostat</h4>
-<a href="https://amzn.to/4v26b8J" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://www.suryasolarwaters.com/wp-content/uploads/2024/11/Solar-water-heater.png" alt="Surya Solar Water Heater" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Surya Solar Water Heater</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">Surya Solar and Waters offers advanced solar water heaters designed to provide instant and reliable hot water for residential, commercial, and industrial applications. Our water heaters combine energy efficiency, safety, and durability, making them the perfect solution for all your hot water needs.</p>
-<div style="font-size:0.9rem;font-weight:500;color:#4A6741;margin-top:0.4rem">₹19040 Onwards</div>
-<a href="https://www.suryasolarwaters.com/product/solar-water-heater/?srsltid=AfmBOoozFia4pNnJyK9AOgd5pXFcM5who6DxCntHuEnXEbaa3sAVDlr_" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-</div>
-  
-  <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">2</div>
-      <span class="appliance-cat">Home Appliance</span>
+  <p>A solar water heater uses rooftop thermal collectors to heat water directly from sunlight — no electricity needed at all. For a Kerala home, this is one of the most practical solar investments you can make. A family of 4 can save ₹2,000–₹4,000 per year on electricity just from hot water alone.</p>
+  <ul class="panel-list">
+    <li><strong>Best capacity for a family of 4–5:</strong> 150–200 LPD</li>
+    <li><strong>Top brands:</strong> Racold, V-Guard, Supreme Solar</li>
+    <li><strong>Typical price:</strong> ₹15,000 – ₹40,000</li>
+    <li><strong>Payback period:</strong> 3–5 years</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Water Heater</h4>
+        <a href="https://amzn.to/3SfdHie" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
     </div>
+    <div class="product-row">
+      <a href="https://amzn.to/4v26b8J" target="_blank" rel="nofollow noopener">
+        <img src="https://m.media-amazon.com/images/I/51-r3wv+6fL._AC_AIweblab1006854,T4_FMavif_SF700,700_PQ69_.jpg?aicid=detailPage-mediaBlock" alt="Commercial Solar Panel Water Heater Element with Thermostat">
+      </a>
+      <div class="product-row-info">
+        <h4>Commercial Solar Panel Water Heater Element with Thermostat</h4>
+        <a href="https://amzn.to/4v26b8J" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://www.suryasolarwaters.com/wp-content/uploads/2024/11/Solar-water-heater.png" alt="Surya Solar Water Heater">
+      <div class="product-row-info">
+        <h4>Surya Solar Water Heater</h4>
+        <p>₹19,040 Onwards</p>
+        <a href="https://www.suryasolarwaters.com/product/solar-water-heater/" target="_blank" rel="noopener">View product →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SOLAR COOKER -->
+  <div class="appliance-card">
+    <div class="appliance-meta"><div class="appliance-num">2</div><span class="appliance-cat">Home Appliance</span></div>
     <h2 id="solar-cooker">Solar Cooker</h2>
   </div>
-    <p>A solar box cooker uses a mirrored lid to concentrate sunlight and cook food — completely free, with zero fuel. It can boil water, cook rice, make dal, and even bake. On a sunny day it reaches up to 160°C. It won't replace your gas stove, but it's a wonderful supplement that can save you 2 LPG cylinders per year.</p>
-    <ul class="panel-list">
-      <li><strong>Best for:</strong> Boiling, slow cooking, drying food</li>
-      <li><strong>Average capacity:</strong> 3–4 kg</li>
-      <li><strong>Price range:</strong> ₹1,500 – ₹4,500</li>
-      <li><strong>Works on:</strong> Clear sunny days with direct sunlight</li>
-    </ul>
-    
+  <p>A solar box cooker uses a mirrored lid to concentrate sunlight and cook food — completely free, with zero fuel. It can boil water, cook rice, make dal, and even bake. On a sunny day it reaches up to 160°C. It won't replace your gas stove, but it's a wonderful supplement that can save you 2 LPG cylinders per year.</p>
+  <ul class="panel-list">
+    <li><strong>Best for:</strong> Boiling, slow cooking, drying food</li>
+    <li><strong>Average capacity:</strong> 3–4 kg</li>
+    <li><strong>Price range:</strong> ₹1,500 – ₹4,500</li>
+    <li><strong>Works on:</strong> Clear sunny days with direct sunlight</li>
+  </ul>
   <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Cooker</h4>
+        <a href="https://amzn.to/43bOTKn" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <a href="https://amzn.to/4wFyrQ3" target="_blank" rel="nofollow noopener">
+        <img src="https://m.media-amazon.com/images/I/51ce5P7KDkL._SX300_SY300_QL70_FMwebp_.jpg" alt="SolCook All Season Solar Cooker">
+      </a>
+      <div class="product-row-info">
+        <h4>SolCook All Season Solar Cooker</h4>
+        <a href="https://amzn.to/4wFyrQ3" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <a href="https://amzn.to/4tPOVme" target="_blank" rel="nofollow noopener">
+        <img src="https://m.media-amazon.com/images/I/41+fCcmPKHL._SY300_SX300_QL70_FMwebp_.jpg" alt="Eco-Friendly Solar Cooker Box Type 4Kg">
+      </a>
+      <div class="product-row-info">
+        <h4>Eco-Friendly Solar Cooker (Box Type) 4Kg</h4>
+        <a href="https://amzn.to/4tPOVme" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+  </div>
 
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<a href="https://amzn.to/4wFyrQ3" target="_blank" rel="nofollow noopener">
-  <img src="https://m.media-amazon.com/images/I/51ce5P7KDkL._SX300_SY300_QL70_FMwebp_.jpg"    
-    alt="sola cooker" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-</a>
-  <div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">SolCook All Season Solar Cooker</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">ECO-FRIENDLY &amp; EFFICIENT – Save money on fuel by harnessing the power of the sun to cook delicious meals!</p>
-<a href="https://amzn.to/4wFyrQ3" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-
-  
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-  <a href="https://amzn.to/4tPOVme" target="_blank" rel="nofollow noopener">
-  <img src="https://m.media-amazon.com/images/I/41+fCcmPKHL._SY300_SX300_QL70_FMwebp_.jpg"   
-    alt="Solar cooker" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-</a>
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Eco-Friendly Solar Cooker (Box Type) 4Kg</h4>
-<a href="https://amzn.to/4tPOVme" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-</div>
-      
-
+  <!-- 3. SOLAR REFRIGERATOR -->
   <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">3 </div>
-      <span class="appliance-cat">Home Appliance</span>
-    </div>
+    <div class="appliance-meta"><div class="appliance-num">3</div><span class="appliance-cat">Home Appliance</span></div>
     <h2 id="solar-refrigerator">Solar Refrigerator / Freezer</h2>
+  </div>
+  <p>Designed to run directly on 12V or 24V DC power from solar panels and batteries, solar refrigerators are built for off-grid homes and remote locations. They use highly efficient DC compressors and thick insulation to keep food cold while using a fraction of the electricity of a standard fridge.</p>
+  <ul class="panel-list">
+    <li><strong>Best for:</strong> Off-grid homes, farms, remote areas</li>
+    <li><strong>Power draw:</strong> 30–60W (very low compared to standard fridges)</li>
+    <li><strong>Brands to look for:</strong> Dometic, Iceco, GoSun</li>
+    <li><strong>Price range:</strong> ₹20,000 – ₹80,000</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Refrigerator / Freezer</h4>
+        <a href="https://amzn.to/4dMGOSI" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
     </div>
-    <p>Designed to run directly on 12V or 24V DC power from solar panels and batteries, solar refrigerators are built for off-grid homes and remote locations. They use highly efficient DC compressors and thick insulation to keep food cold while using a fraction of the electricity of a standard fridge.</p>
-    <ul class="panel-list">
-      <li><strong>Best for:</strong> Off-grid homes, farms, remote areas</li>
-      <li><strong>Power draw:</strong> 30–60W (very low compared to standard fridges)</li>
-      <li><strong>Brands to look for:</strong> Dometic, Iceco, GoSun</li>
-      <li><strong>Price range:</strong> ₹20,000 – ₹80,000</li>
-    </ul>
-    <div class="buy-links">
-
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/41Xj2gNvmsL._SX342_SY445_QL70_FMwebp_.jpg"    alt="Solar refrigerator" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-
-  <div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Rockwell 15Litres Portable Car Fridge Cooler Freezer</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">12V DC/ 220V AC Compatible</p>
-<a href="https://amzn.to/43kvG9n" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/41tMTstzU7L._SY300_SX300_QL70_FMwebp_.jpg"    alt="Solar refrigerator" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-
-  <div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">KILIG Subzero 20S Portable Electric Car Fridge Cooler Freezer with 20 litres</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">12V DC / 220V AC Compatible</p>
-<a href="https://amzn.to/3RzaNVi" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/41Xj2gNvmsL._SX342_SY445_QL70_FMwebp_.jpg" alt="Rockwell 15Litres Portable Car Fridge Cooler Freezer">
+      <div class="product-row-info">
+        <h4>Rockwell 15L Portable Car Fridge Cooler Freezer</h4>
+        <p>12V DC / 220V AC Compatible</p>
+        <a href="https://amzn.to/43kvG9n" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
     </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/41tMTstzU7L._SY300_SX300_QL70_FMwebp_.jpg" alt="KILIG Subzero 20S Portable Electric Car Fridge">
+      <div class="product-row-info">
+        <h4>KILIG Subzero 20S Portable Electric Car Fridge Cooler Freezer — 20L</h4>
+        <p>12V DC / 220V AC Compatible</p>
+        <a href="https://amzn.to/3RzaNVi" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+  </div>
   <hr class="section-divider">
-
-
 
   <!-- SECTION 2: LIGHTING -->
   <h2 id="lighting" class="section-heading">💡 <em>Lighting</em></h2>
 
+  <!-- 4. SOLAR GARDEN LIGHTS -->
   <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">4</div>
-      <span class="appliance-cat">Outdoor</span>
-    </div>
+    <div class="appliance-meta"><div class="appliance-num">4</div><span class="appliance-cat">Outdoor</span></div>
     <h2 id="solar-garden-lights">Solar Garden & Pathway Lights</h2>
   </div>
-  
-    <p>Solar garden lights have a small PV panel built in, charge all day, and switch on automatically at dusk. No wiring, no running costs. They're perfect for pathways, courtyards, and plant borders. Kerala homes with any outdoor space can use these along walkways and gate entrances beautifully.</p>
-    <ul class="panel-list">
-      <li><strong>Runtime:</strong> 6–12 hours per night on a full charge</li>
-      <li><strong>Price range:</strong> ₹300 – ₹2,000 per piece</li>
-      <li><strong>Popular features:</strong> Motion sensor, auto on/off, IP65 waterproof</li>
-    </ul>
-    <div class="buy-links">
-   
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/618E9ep4DVL._SL1500_.jpg" alt="Solar Light for Outdoor Garden" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Solar Light for Outdoor Garden</h4>
-<a href="https://amzn.to/4nFqTZu" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-
-        
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/81QnFkCPqYL._SL1500_.jpg" alt="COXSENI Solar Pathway Lights" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">COXSENI Solar Pathway Lights</h4>
-<a href="https://amzn.to/4tKZzKZ" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-      
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/81uo8IDiYTL._SL1500_.jpg" alt="Toodour Polyvinyl Chloride Solar LED Torch Lights Outdoor with Flickering Flame, Waterproof Solar Pathway Lights" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Toodour Polyvinyl Chloride Solar LED Torch Lights Outdoor with Flickering Flame, Waterproof Solar Pathway Lights</h4>
-<a href="https://amzn.to/4dHgRCI" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-</div>
-      
-  
-  <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">5</div>
-      <span class="appliance-cat">Portable</span>
+  <p>Solar garden lights have a small PV panel built in, charge all day, and switch on automatically at dusk. No wiring, no running costs. They're perfect for pathways, courtyards, and plant borders.</p>
+  <ul class="panel-list">
+    <li><strong>Runtime:</strong> 6–12 hours per night on a full charge</li>
+    <li><strong>Price range:</strong> ₹300 – ₹2,000 per piece</li>
+    <li><strong>Popular features:</strong> Motion sensor, auto on/off, IP65 waterproof</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Garden & Pathway Lights</h4>
+        <a href="https://amzn.to/4dY5mXD" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
     </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/618E9ep4DVL._SL1500_.jpg" alt="Solar Light for Outdoor Garden">
+      <div class="product-row-info">
+        <h4>Solar Light for Outdoor Garden</h4>
+        <a href="https://amzn.to/4nFqTZu" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/81QnFkCPqYL._SL1500_.jpg" alt="COXSENI Solar Pathway Lights">
+      <div class="product-row-info">
+        <h4>COXSENI Solar Pathway Lights</h4>
+        <a href="https://amzn.to/4tKZzKZ" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/81uo8IDiYTL._SL1500_.jpg" alt="Toodour Solar LED Torch Lights">
+      <div class="product-row-info">
+        <h4>Toodour Solar LED Torch Lights Outdoor with Flickering Flame</h4>
+        <a href="https://amzn.to/4dHgRCI" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. SOLAR LANTERNS -->
+  <div class="appliance-card">
+    <div class="appliance-meta"><div class="appliance-num">5</div><span class="appliance-cat">Portable</span></div>
     <h3 id="solar-lanterns">Solar Lanterns</h3>
   </div>
-    <p>Portable solar lanterns are a must-have for Kerala homes given the frequent power cuts during monsoon. They charge in sunlight during the day and provide bright LED light for 6–10 hours at night. Many models can also charge a phone via USB — a small but genuinely useful feature when the grid is down.</p>
-    <ul class="panel-list">
-      <li><strong>Runtime:</strong> 6–10 hours per full charge</li>
-      <li><strong>Added bonus:</strong> Some models double as a phone charger</li>
-      <li><strong>Price range:</strong> ₹500 – ₹2,500</li>
-    </ul>
-    <div class="buy-links">
-          
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/71QZdmEPvRL._SL1500_.jpg" alt="Solar Lantern Glass Jar" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Solar Lantern Glass Jar</h4>
-<a href="https://amzn.to/4tP63bC" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-      
-     
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/81uWYCwARXL._SL1500_.jpg" alt="Inflatable Solar Powered Lantern" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Inflatable Solar Powered Lantern</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">USB rechargeable</p>
-<a href="https://amzn.to/42P8wb6" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/81e6iTJXc3L._SL1500_.jpg" alt="Homehop Solar Powered Portable Table Lamp" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Homehop Solar Powered Portable Table Lamp</h4>
-<a href="https://amzn.to/4dXHkNx" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-      
-      <a class="buy-btn" href="https://amzn.to/42OTLFg" target="_blank" rel="nofollow noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        More Solar Lanterns →
-      </a>
+  <p>Portable solar lanterns are a must-have for Kerala homes given the frequent power cuts during monsoon. They charge in sunlight during the day and provide bright LED light for 6–10 hours at night.</p>
+  <ul class="panel-list">
+    <li><strong>Runtime:</strong> 6–10 hours per full charge</li>
+    <li><strong>Added bonus:</strong> Some models double as a phone charger</li>
+    <li><strong>Price range:</strong> ₹500 – ₹2,500</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/71QZdmEPvRL._SL1500_.jpg" alt="Solar Lantern Glass Jar">
+      <div class="product-row-info">
+        <h4>Solar Lantern Glass Jar</h4>
+        <a href="https://amzn.to/4tP63bC" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
     </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/81uWYCwARXL._SL1500_.jpg" alt="Inflatable Solar Powered Lantern">
+      <div class="product-row-info">
+        <h4>Inflatable Solar Powered Lantern</h4>
+        <p>USB rechargeable</p>
+        <a href="https://amzn.to/42P8wb6" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/81e6iTJXc3L._SL1500_.jpg" alt="Homehop Solar Powered Portable Table Lamp">
+      <div class="product-row-info">
+        <h4>Homehop Solar Powered Portable Table Lamp</h4>
+        <a href="https://amzn.to/4dXHkNx" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <a class="buy-btn" href="https://amzn.to/42OTLFg" target="_blank" rel="nofollow noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      More Solar Lanterns →
+    </a>
+  </div>
 
+  <!-- 6. SOLAR STREET LIGHTS -->
   <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">6</div>
-      <span class="appliance-cat">Street & Security</span>
-    </div>
+    <div class="appliance-meta"><div class="appliance-num">6</div><span class="appliance-cat">Street & Security</span></div>
     <h3 id="solar-street-lights">Solar Street Lights & Security Lights</h3>
   </div>
-    <p>All-in-one solar street lights are now a practical option even for home use — a single unit with a built-in panel, battery, LED, and motion sensor. No electrician, no wiring. Mount it on a wall or pole and it handles everything automatically. Great for driveways, garage entrances, or the side of the house.</p>
-    <ul class="panel-list">
-      <li><strong>Wattage range:</strong> 20W – 180W</li>
-      <li><strong>Motion trigger:</strong> Brightens automatically when someone approaches</li>
-      <li><strong>Price range:</strong> ₹800 – ₹5,000</li>
-    </ul>
-    <div class="buy-links">
-      
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/71wIHo+YgSL._SL1500_.jpg" alt="180W Led Solar Street Light" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">180W Led Solar Street Light</h4>
-<a href="https://amzn.to/4dyK5na" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-  
-        <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/61gQCnzPNQL._SL1024_.jpg" alt="Gesto 120W Solar Street Light" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Gesto 120W Solar Street Light</h4>
-<a href="https://amzn.to/4nJu2HD" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-        
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/71CVVfjZR7L._SL1500_.jpg" alt="Homehop Solar LED Street Light Outdoor Waterproof 50 Watt" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Homehop Solar LED Street Light Outdoor Waterproof 50 Watt</h4>
-<a href="https://amzn.to/42Rrtdb" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-      
+  <p>All-in-one solar street lights are now a practical option even for home use — a single unit with a built-in panel, battery, LED, and motion sensor. No electrician, no wiring.</p>
+  <ul class="panel-list">
+    <li><strong>Wattage range:</strong> 20W – 180W</li>
+    <li><strong>Motion trigger:</strong> Brightens automatically when someone approaches</li>
+    <li><strong>Price range:</strong> ₹800 – ₹5,000</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Street Lights</h4>
+        <a href="https://amzn.to/4vjp7Qj" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
     </div>
-
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Flood Lights</h4>
+        <a href="https://amzn.to/3PBXN0L" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/71wIHo+YgSL._SL1500_.jpg" alt="180W Led Solar Street Light">
+      <div class="product-row-info">
+        <h4>180W LED Solar Street Light</h4>
+        <a href="https://amzn.to/4dyK5na" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/61gQCnzPNQL._SL1024_.jpg" alt="Gesto 120W Solar Street Light">
+      <div class="product-row-info">
+        <h4>Gesto 120W Solar Street Light</h4>
+        <a href="https://amzn.to/4nJu2HD" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/71CVVfjZR7L._SL1500_.jpg" alt="Homehop Solar LED Street Light 50W">
+      <div class="product-row-info">
+        <h4>Homehop Solar LED Street Light Outdoor Waterproof 50W</h4>
+        <a href="https://amzn.to/42Rrtdb" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+  </div>
   <hr class="section-divider">
 
   <!-- SECTION 3: PORTABLE POWER -->
   <h2 id="portable-power" class="section-heading">🔋 <em>Portable Power</em></h2>
 
+  <!-- 7. SOLAR POWER BANKS -->
   <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">7</div>
-      <span class="appliance-cat">Travel & Emergency</span>
-    </div>
+    <div class="appliance-meta"><div class="appliance-num">7</div><span class="appliance-cat">Travel & Emergency</span></div>
     <h3 id="solar-power-banks">Solar Power Banks & Chargers</h3>
   </div>
-    <p>Foldable solar chargers and solar power banks let you charge your phone, tablet, or camera using sunlight alone. They're great for camping trips, travel, and as emergency backup during power cuts. Many models have fast-charging USB-C ports and can charge two devices simultaneously.</p>
-    <ul class="panel-list">
-      <li><strong>Capacity:</strong> 10,000 – 30,000 mAh</li>
-      <li><strong>Brands:</strong> Ambrane, Anker, BLAVOR, BigBlue</li>
-      <li><strong>Price range:</strong> ₹800 – ₹6,000</li>
-    </ul>
-    <div class="buy-links">
-     
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/81hDZdgkGxL._SL1500_.jpg" alt="SOXONO Solar Charger Power Bank" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">SOXONO Solar Charger Power Bank</h4>
-<a href="https://amzn.to/4a17kVO" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-        
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/414Had9MqrL.jpg" alt="Yashidun Outdoor Solar Power Bank 20000mAh with Wireless Charging Fast Charging Support" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Yashidun Outdoor Solar Power Bank 20000mAh with Wireless Charging Fast Charging Support</h4>
-<a href="https://amzn.to/4f2yr6w" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-        
-        <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/61IYLZPiIaL._SL1254_.jpg" alt="Artifax 7W Portable Solar Panel - 5V Type-C Portable Solar Charger for CCTV Camera &amp; Power Bank" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Artifax 7W Portable Solar Panel - 5V Type-C Portable Solar Charger for CCTV Camera &amp; Power Bank</h4>
-<a href="https://amzn.to/3RqLox1" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-      
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/61pmyXmtpaL._SL1000_.jpg" alt="FlexSolar 60W Portable Solar Panels Chargers with USB-C,USB-A and DC Outputs" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">FlexSolar 60W Portable Solar Panels Chargers with USB-C,USB-A and DC Outputs</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">Foldable, Waterproof</p>
-<a href="https://amzn.to/3Rg5QAP" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div><p>
-  
-  <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/81OfMkn5UyL._SL1500_.jpg" alt="Bigblue 5V 28W Solar Charger With Digital Ammeter" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Bigblue 5V 28W Solar Charger With Digital Ammeter</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">Waterproof, Foldable, Dual Usb Ports</p>
-<a href="https://amzn.to/49eSTNE" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div><br></p>
-      
-    
+  <p>Foldable solar chargers and solar power banks let you charge your phone, tablet, or camera using sunlight alone. They're great for camping trips, travel, and as emergency backup during power cuts.</p>
+  <ul class="panel-list">
+    <li><strong>Capacity:</strong> 10,000 – 30,000 mAh</li>
+    <li><strong>Brands:</strong> Ambrane, Anker, BLAVOR, BigBlue</li>
+    <li><strong>Price range:</strong> ₹800 – ₹6,000</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Power Bank & Charger</h4>
+        <a href="https://amzn.to/4ulMuYU" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
     </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/81hDZdgkGxL._SL1500_.jpg" alt="SOXONO Solar Charger Power Bank">
+      <div class="product-row-info">
+        <h4>SOXONO Solar Charger Power Bank</h4>
+        <a href="https://amzn.to/4a17kVO" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/414Had9MqrL.jpg" alt="Yashidun Solar Power Bank 20000mAh">
+      <div class="product-row-info">
+        <h4>Yashidun Outdoor Solar Power Bank 20000mAh with Wireless Charging</h4>
+        <a href="https://amzn.to/4f2yr6w" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/61pmyXmtpaL._SL1000_.jpg" alt="FlexSolar 60W Portable Solar Panels Charger">
+      <div class="product-row-info">
+        <h4>FlexSolar 60W Portable Solar Panel Charger — Foldable, Waterproof</h4>
+        <a href="https://amzn.to/3Rg5QAP" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/81OfMkn5UyL._SL1500_.jpg" alt="Bigblue 5V 28W Solar Charger">
+      <div class="product-row-info">
+        <h4>Bigblue 5V 28W Solar Charger With Digital Ammeter — Dual USB</h4>
+        <a href="https://amzn.to/49eSTNE" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+  </div>
 
+  <!-- 8. SOLAR GENERATORS -->
   <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">8</div>
-      <span class="appliance-cat">Backup Power</span>
-    </div>
+    <div class="appliance-meta"><div class="appliance-num">8</div><span class="appliance-cat">Backup Power</span></div>
     <h3 id="solar-generators">Solar Generators / Portable Power Stations</h3>
   </div>
-    <p>A portable power station paired with a foldable solar panel is essentially a mini off-grid system you can take anywhere. Brands like EcoFlow and Jackery make units that can run fans, lights, laptops, and even small fridges for hours. Excellent for camping and very useful as home backup during Kerala's monsoon power cuts.</p>
-    <ul class="panel-list">
-      <li><strong>Capacity range:</strong> 150Wh – 2,000Wh</li>
-      <li><strong>Can run:</strong> Fans, lights, laptops, CPAP machines, small fridges</li>
-      <li><strong>Top brands:</strong> EcoFlow, Jackery, Anker</li>
-      <li><strong>Price range:</strong> ₹15,000 – ₹1,50,000</li>
-    </ul>
-    <div class="buy-links">
-
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/71jx2Yxk3mL._SL1500_.jpg" alt="Solar Power Station X300 (288Wh LiFePO4) with 100W Solar Panel Combo" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Solar Power Station X300 (288Wh LiFePO4) with 100W Solar Panel Combo</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">300W Pure Sine Wave Portable Power Station</p>
-<a href="https://amzn.to/4v0RDWN" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-        
-        <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/81IOROq6MNL._SL1500_.jpg" alt="TWELSEAVAN 120W Portable Foldable Solar Panel Charger" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">TWELSEAVAN 120W Portable Foldable Solar Panel Charger for Jackery Explorer 160/240/500 Power Station/Suaoki S270/Goal Zero Yeti/Rockpals 250W Solar Generator, with USB QC3.0 Port, USB Type C Port</h4>
-<a href="https://amzn.to/42QEAez" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div><p>
-  
-  <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/71AB8pypGBL._SL1500_.jpg" alt="EnginStar 100W Foldable Solar Panel Charger with 18V DC Outlet for Portable Power Stations" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">EnginStar 100W Foldable Solar Panel Charger with 18V DC Outlet for Portable Power Stations</h4>
-<a href="https://amzn.to/4v46Y9d" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-  
-  <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/61g+ob9hr-L._SL1500_.jpg" alt="ALLWEI Portable Power Station 300W, Solar Generator 280Wh with Pure Sine Wave AC Output 110V" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">ALLWEI Portable Power Station 300W, Solar Generator 280Wh with Pure Sine Wave AC Output 110V</h4>
-<a href="https://amzn.to/4tO21QI" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-  
-  <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/71Jy4yXs61L._SL1500_.jpg" alt="GRECELL 330W Portable Power Station (600W Peak) with 40W Solar Panel" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">GRECELL 330W Portable Power Station (600W Peak) with 40W Solar Panel, 230.88Wh Solar Generator, 60W Pd Battery with Usb-C, 110V Pure Sine Wave AC Socket, Battery</h4>
-<a href="https://amzn.to/4dpn0V9" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div><br></p>
+  <p>A portable power station paired with a foldable solar panel is essentially a mini off-grid system you can take anywhere. Excellent for camping and very useful as home backup during Kerala's monsoon power cuts.</p>
+  <ul class="panel-list">
+    <li><strong>Capacity range:</strong> 150Wh – 2,000Wh</li>
+    <li><strong>Can run:</strong> Fans, lights, laptops, CPAP machines, small fridges</li>
+    <li><strong>Top brands:</strong> EcoFlow, Jackery, Anker</li>
+    <li><strong>Price range:</strong> ₹15,000 – ₹1,50,000</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Generator / Portable Power Station</h4>
+        <a href="https://amzn.to/4u9R9N8" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
     </div>
-
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/71jx2Yxk3mL._SL1500_.jpg" alt="Solar Power Station X300">
+      <div class="product-row-info">
+        <h4>Solar Power Station X300 (288Wh LiFePO4) with 100W Solar Panel Combo</h4>
+        <a href="https://amzn.to/4v0RDWN" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/61g+ob9hr-L._SL1500_.jpg" alt="ALLWEI Portable Power Station 300W">
+      <div class="product-row-info">
+        <h4>ALLWEI Portable Power Station 300W, 280Wh Pure Sine Wave</h4>
+        <a href="https://amzn.to/4tO21QI" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/71Jy4yXs61L._SL1500_.jpg" alt="GRECELL 330W Portable Power Station">
+      <div class="product-row-info">
+        <h4>GRECELL 330W Portable Power Station with 40W Solar Panel</h4>
+        <a href="https://amzn.to/4dpn0V9" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+  </div>
   <hr class="section-divider">
 
   <!-- SECTION 4: OUTDOOR & GARDEN -->
   <h2 id="outdoor-garden" class="section-heading">🌿 Outdoor & <em>Garden</em></h2>
 
+  <!-- 9. SOLAR WATER PUMP -->
   <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">9</div>
-      <span class="appliance-cat">Garden / Farm</span>
-    </div>
+    <div class="appliance-meta"><div class="appliance-num">9</div><span class="appliance-cat">Garden / Farm</span></div>
     <h3 id="solar-water-pump">Solar Water Pump</h3>
   </div>
-    <p>A solar water pump runs directly from a solar panel to pump water from wells, tanks, or ponds — no battery needed during daytime operation. Hugely useful for gardens, farms, and homes in Kerala that rely on open wells. Small submersible solar pumps are affordable and simple to set up.</p>
-    <ul class="panel-list">
-      <li><strong>Best for:</strong> Well pumping, garden irrigation, drip systems</li>
-      <li><strong>Flow rate:</strong> 400–2,000 L/hour depending on model</li>
-      <li><strong>Price range:</strong> ₹1,500 – ₹15,000</li>
-      <li><strong>No battery needed:</strong> Runs in real-time while sun is out</li>
-    </ul>
-    <div class="buy-links">
-
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/81jPWcUEx2L._SL1500_.jpg" alt="AISITIN Solar Fountain Pump, 3W Solar Powered Water Fountain" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">AISITIN Solar Fountain Pump, 3W Solar Powered Water Fountain</h4>
-<a href="https://amzn.to/4umoo0F" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div><p>
-  <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/61yqgVEIHHL._SL1200_.jpg" alt="Hovico Solar Fountain - Panel Water Pump for Bird Bath" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Hovico Solar Fountain - Panel Water Pump for Bird Bath</h4>
-<a href="https://amzn.to/49cRszl" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-  <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/41wnXUcePmL.jpg" alt="RASHRI 24V DC Water Pump – High-Performance Solar &amp; Battery-Powered Pump" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">RASHRI 24V DC Water Pump – High-Performance Solar &amp; Battery-Powered Pump</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">Efficient, Durable, Reliable</p>
-<a href="https://amzn.to/4fCa3Zv" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div><br></p>
-
+  <p>A solar water pump runs directly from a solar panel to pump water from wells, tanks, or ponds — no battery needed during daytime operation. Hugely useful for gardens, farms, and homes in Kerala that rely on open wells.</p>
+  <ul class="panel-list">
+    <li><strong>Best for:</strong> Well pumping, garden irrigation, drip systems</li>
+    <li><strong>Flow rate:</strong> 400–2,000 L/hour depending on model</li>
+    <li><strong>Price range:</strong> ₹1,500 – ₹15,000</li>
+    <li><strong>No battery needed:</strong> Runs in real-time while sun is out</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Water Pump</h4>
+        <a href="https://amzn.to/3Qh1R6I" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
     </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/81jPWcUEx2L._SL1500_.jpg" alt="AISITIN Solar Fountain Pump 3W">
+      <div class="product-row-info">
+        <h4>AISITIN Solar Fountain Pump, 3W Solar Powered Water Fountain</h4>
+        <a href="https://amzn.to/4umoo0F" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/61yqgVEIHHL._SL1200_.jpg" alt="Hovico Solar Fountain Water Pump for Bird Bath">
+      <div class="product-row-info">
+        <h4>Hovico Solar Fountain — Panel Water Pump for Bird Bath</h4>
+        <a href="https://amzn.to/49cRszl" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/41wnXUcePmL.jpg" alt="RASHRI 24V DC Water Pump">
+      <div class="product-row-info">
+        <h4>RASHRI 24V DC Solar & Battery-Powered Water Pump</h4>
+        <a href="https://amzn.to/4fCa3Zv" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+  </div>
 
+  <!-- 10. SOLAR GATE LIGHT -->
   <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">10</div>
-      <span class="appliance-cat">Gate & Boundary</span>
-    </div>
+    <div class="appliance-meta"><div class="appliance-num">10</div><span class="appliance-cat">Gate & Boundary</span></div>
     <h3 id="solar-gate-light">Solar Gate Light</h3>
   </div>
-    <p>Solar gate or pillar lights attach to the top of compound walls and gate pillars. They charge during the day and light up automatically at night, giving your home entrance a warm glow with zero wiring and zero electricity cost. Many models come with remote controls for colour and brightness adjustment.</p>
-    <ul class="panel-list">
-      <li><strong>IP rating:</strong> IP65 — rain-proof and dustproof</li>
-      <li><strong>Modes:</strong> Warm white, cool white, RGB in some models</li>
-      <li><strong>Price range:</strong> ₹800 – ₹3,000 per piece</li>
-    </ul>
-    <div class="buy-links">
-    
-   <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/712nK64XdTL._SL1500_.jpg" alt="Homehop 10W Solar Antique Main Gate Pillar Lights" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Homehop 10W Solar Antique Main Gate Pillar Lights</h4>
-<a href="https://amzn.to/4tK6NP7" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-  <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/91ijvOsDkxL._SL1500_.jpg" alt="Homehop Solar Gate Light" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Homehop Solar Gate Light</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">Aluminium, 3 Colour Modes</p>
-<a href="https://amzn.to/4dq4Mmv" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-  <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/817RWfh4cqL._SL1500_.jpg" alt="Homehop Solar Light Outdoor Home" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Homehop Solar Light Outdoor Home</h4>
-<a href="https://amzn.to/4uyfSvU" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-   <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/7196+CcxZ3L._SL1500_.jpg" alt="Homehop Abs 96 LED  Solar Pillar Light for Home" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Homehop Abs 96 LED  Solar Pillar Light for Home</h4>
-<a href="https://amzn.to/4dGKGDt" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-  <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/71mW8BGqJgL._SL1500_.jpg" alt="Homehop 15W Solar LED Main Gate Light for Home" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Homehop 15W Solar LED Main Gate Light for Home</h4>
-<a href="https://amzn.to/3RlQDhC" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div><br></p>
-
+  <p>Solar gate or pillar lights attach to the top of compound walls and gate pillars. They charge during the day and light up automatically at night, giving your home entrance a warm glow with zero wiring and zero electricity cost.</p>
+  <ul class="panel-list">
+    <li><strong>IP rating:</strong> IP65 — rain-proof and dustproof</li>
+    <li><strong>Modes:</strong> Warm white, cool white, RGB in some models</li>
+    <li><strong>Price range:</strong> ₹800 – ₹3,000 per piece</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Gate Light</h4>
+        <a href="https://amzn.to/435VSEN" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
     </div>
-
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/712nK64XdTL._SL1500_.jpg" alt="Homehop 10W Solar Antique Main Gate Pillar Lights">
+      <div class="product-row-info">
+        <h4>Homehop 10W Solar Antique Main Gate Pillar Lights</h4>
+        <a href="https://amzn.to/4tK6NP7" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/91ijvOsDkxL._SL1500_.jpg" alt="Homehop Solar Gate Light">
+      <div class="product-row-info">
+        <h4>Homehop Solar Gate Light — Aluminium, 3 Colour Modes</h4>
+        <a href="https://amzn.to/4dq4Mmv" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/71mW8BGqJgL._SL1500_.jpg" alt="Homehop 15W Solar LED Main Gate Light">
+      <div class="product-row-info">
+        <h4>Homehop 15W Solar LED Main Gate Light for Home</h4>
+        <a href="https://amzn.to/3RlQDhC" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+  </div>
   <hr class="section-divider">
 
   <!-- SECTION 5: SECURITY -->
   <h2 id="security-monitoring" class="section-heading">🔒 <em>Security</em> & Monitoring</h2>
 
+  <!-- 11. SOLAR SECURITY CAMERA -->
   <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">11</div>
-      <span class="appliance-cat">Home Security</span>
-    </div>
+    <div class="appliance-meta"><div class="appliance-num">11</div><span class="appliance-cat">Home Security</span></div>
     <h3 id="solar-security-camera">Solar Security Camera</h3>
   </div>
-    <p>Solar-powered security cameras have a small built-in panel that keeps the battery topped up continuously — no wiring, no charging. They connect to your phone via Wi-Fi and send motion alerts. Brands like Reolink and Tapo make reliable models with 2K video, night vision, and two-way audio that work well in Indian conditions.</p>
-    <ul class="panel-list">
-      <li><strong>Video quality:</strong> 1080p to 2K</li>
-      <li><strong>Features:</strong> Motion detection, night vision, two-way audio, app alerts</li>
-      <li><strong>Price range:</strong> ₹3,000 – ₹12,000</li>
-      <li><strong>Top brands:</strong> Reolink, Tapo, Imou</li>
-    </ul>
-    <div class="buy-links">
-  
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/51CSQN6YdbL._SL1024_.jpg" alt="Eyetech 3 Lens Solar Powered WiFi CCTV Camera" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Eyetech 3 Lens Solar Powered WiFi CCTV Camera</h4>
-<a href="https://amzn.to/49g9GzU" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-       <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/61UrSWIt5ML._SL1024_.jpg" alt="JB Supar Dual Lens Solar Powered PTZ Outdoor CCTV Camera" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">JB Supar Dual Lens Solar Powered PTZ Outdoor CCTV Camera</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">360° View, Color Night Vision, Motion Detection</p>
-<a href="https://amzn.to/4f3a5to" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div><p>
-  <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/61UrSWIt5ML._SL1024_.jpg" alt="Guard Well Dual Lens Solar Powered PTZ Outdoor Security Camera" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Guard Well Dual Lens Solar Powered PTZ Outdoor Security Camera</h4>
-<p style="font-size:0.88rem;color:#5A5550;margin:0;line-height:1.65">360° View, Color Night Vision, Motion Detection</p>
-<a href="https://amzn.to/4uX8YQy" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div><br></p>
-</div>
-
+  <p>Solar-powered security cameras have a small built-in panel that keeps the battery topped up continuously — no wiring, no charging. They connect to your phone via Wi-Fi and send motion alerts.</p>
+  <ul class="panel-list">
+    <li><strong>Video quality:</strong> 1080p to 2K</li>
+    <li><strong>Features:</strong> Motion detection, night vision, two-way audio, app alerts</li>
+    <li><strong>Price range:</strong> ₹3,000 – ₹12,000</li>
+    <li><strong>Top brands:</strong> Reolink, Tapo, Imou</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Security Camera</h4>
+        <a href="https://amzn.to/3PSyhEy" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/51CSQN6YdbL._SL1024_.jpg" alt="Eyetech 3 Lens Solar Powered WiFi CCTV Camera">
+      <div class="product-row-info">
+        <h4>Eyetech 3 Lens Solar Powered WiFi CCTV Camera</h4>
+        <a href="https://amzn.to/49g9GzU" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/61UrSWIt5ML._SL1024_.jpg" alt="JB Supar Dual Lens Solar PTZ Outdoor CCTV Camera">
+      <div class="product-row-info">
+        <h4>JB Supar Dual Lens Solar Powered PTZ Outdoor CCTV Camera — 360° View</h4>
+        <a href="https://amzn.to/4f3a5to" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+  </div>
   <hr class="section-divider">
 
   <!-- SECTION 6: GADGETS -->
   <h2 id="small-gadgets" class="section-heading">🧴 Small <em>Gadgets</em></h2>
 
+  <!-- 12. SOLAR FAN -->
   <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">12</div>
-      <span class="appliance-cat">Everyday Use</span>
-    </div>
+    <div class="appliance-meta"><div class="appliance-num">12</div><span class="appliance-cat">Everyday Use</span></div>
     <h3 id="solar-fan">Solar Fan</h3>
   </div>
-    <p>Solar DC fans run directly from a small panel without needing a battery or inverter. They're excellent for ventilating sheds, poultry farms, small rooms, and storage spaces during the day. As long as the sun is up, the fan runs — making them perfect for daytime use in Kerala's warm climate.</p>
-    <ul class="panel-list">
-      <li><strong>Best for:</strong> Sheds, balconies, farm storage, ventilation</li>
-      <li><strong>Panel needed:</strong> 10–20W panel (often included)</li>
-      <li><strong>Price range:</strong> ₹800 – ₹3,000</li>
-    </ul>
-    <div class="buy-links">
-      <a class="buy-btn" href="https://amzn.to/3RqaqMO" target="_blank" rel="nofollow noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Solar DC Fans on Amazon →
-      </a>
-      <a class="buy-btn" href="https://amzn.to/4wHCVpm" target="_blank" rel="nofollow noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Solar Exhaust / Ventilation Fans →
-      </a>
+  <p>Solar DC fans run directly from a small panel without needing a battery or inverter. They're excellent for ventilating sheds, poultry farms, small rooms, and storage spaces during the day.</p>
+  <ul class="panel-list">
+    <li><strong>Best for:</strong> Sheds, balconies, farm storage, ventilation</li>
+    <li><strong>Panel needed:</strong> 10–20W panel (often included)</li>
+    <li><strong>Price range:</strong> ₹800 – ₹3,000</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Fan</h4>
+        <a href="https://amzn.to/4u6nJj3" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
     </div>
+    <a class="buy-btn" href="https://amzn.to/3RqaqMO" target="_blank" rel="nofollow noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Solar DC Fans on Amazon India →
+    </a>
+    <a class="buy-btn" href="https://amzn.to/4wHCVpm" target="_blank" rel="nofollow noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Solar Exhaust / Ventilation Fans →
+    </a>
+  </div>
 
+  <!-- 13. SOLAR RADIO -->
   <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">13</div>
-      <span class="appliance-cat">Outdoor / Emergency</span>
-    </div>
+    <div class="appliance-meta"><div class="appliance-num">13</div><span class="appliance-cat">Outdoor / Emergency</span></div>
     <h3 id="solar-radio">Solar Radio</h3>
   </div>
-    <p>A solar radio with a hand crank is an underrated emergency device. It charges via a small built-in panel or by cranking a dynamo by hand — and can receive AM, FM, and sometimes shortwave signals. Useful during extended power cuts when phone batteries run low and you need weather or news updates.</p>
-    <ul class="panel-list">
-      <li><strong>Extra features:</strong> LED torch, phone charging port, alarm</li>
-      <li><strong>Charging methods:</strong> Solar panel, hand crank, USB</li>
-      <li><strong>Price range:</strong> ₹600 – ₹2,000</li>
-    </ul>
-    <div class="buy-links">
-     
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/61NJQ7ZAN8L._SL1500_.jpg" alt="Emergency Hand Crank Radio with Bright Flashlight &amp; SOS Alarm for Home and Outdoor Emergencies" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Emergency Hand Crank Radio with Bright Flashlight &amp; SOS Alarm for Home and Outdoor Emergencies</h4>
-<a href="https://amzn.to/42UVyZk" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-        <div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/71B9hiytZnL._SL1500_.jpg" alt="FosPower Emergency Solar Hand Crank Portable Radio, NOAA Weather Radio for  Emergency" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">FosPower Emergency Solar Hand Crank Portable Radio, NOAA Weather Radio for Emergency</h4>
-<a href="https://amzn.to/4dJr4P2" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-</div>
-
-  <div class="appliance-card">
-    <div class="appliance-meta">
-      <div class="appliance-num">14</div>
-      <span class="appliance-cat">Backyard / Decoration</span>
+  <p>A solar radio with a hand crank is an underrated emergency device. Useful during extended power cuts when phone batteries run low and you need weather or news updates.</p>
+  <ul class="panel-list">
+    <li><strong>Extra features:</strong> LED torch, phone charging port, alarm</li>
+    <li><strong>Charging methods:</strong> Solar panel, hand crank, USB</li>
+    <li><strong>Price range:</strong> ₹600 – ₹2,000</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Radio</h4>
+        <a href="https://amzn.to/4uMOsCk" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
     </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/61NJQ7ZAN8L._SL1500_.jpg" alt="Emergency Hand Crank Radio with Flashlight and SOS Alarm">
+      <div class="product-row-info">
+        <h4>Emergency Hand Crank Radio with Flashlight & SOS Alarm</h4>
+        <a href="https://amzn.to/42UVyZk" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/71B9hiytZnL._SL1500_.jpg" alt="FosPower Emergency Solar Hand Crank Portable Radio">
+      <div class="product-row-info">
+        <h4>FosPower Emergency Solar Hand Crank Portable Radio</h4>
+        <a href="https://amzn.to/4dJr4P2" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 14. SOLAR MOSQUITO TRAP -->
+  <div class="appliance-card">
+    <div class="appliance-meta"><div class="appliance-num">14</div><span class="appliance-cat">Backyard / Decoration</span></div>
     <h3 id="solar-mosquito-trap">Solar Mosquito Trap & Insect Killer</h3>
   </div>
-    <p>Solar-powered insect traps use UV light to attract mosquitoes and bugs, then trap or zap them — all powered by a small built-in solar panel. Perfect for gardens, patios, and outdoor sitting areas. They charge during the day and work automatically through the night.</p>
-    <ul class="panel-list">
-      <li><strong>Works on:</strong> Mosquitoes, moths, flies, gnats</li>
-      <li><strong>Best placed:</strong> Near sitting areas, water bodies, garden edges</li>
-      <li><strong>Price range:</strong> ₹2500 – ₹25000</li>
-    </ul>
-    <div class="buy-links">
-   
-<div style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #E8DFD0;border-left:3px solid #6B8F62;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0">
-<img src="https://m.media-amazon.com/images/I/81coDp8w38L._SL1500_.jpg" alt="Solar Bug Zapper Outdoor, PhatroyYee Mosquito Zapper 4500V" style="width:70px;height:70px;object-fit:cover;border-radius:7px;flex-shrink:0;border:1px solid #E8DFD0">
-<div style="min-width:0">
-<h4 style="font-family:'Lora',Georgia,serif;font-size:0.97rem;font-weight:500;color:#2C2C2A;margin-bottom:0.4rem">Solar Bug Zapper Outdoor, PhatroyYee Mosquito Zapper 4500V</h4>
-<a href="https://amzn.to/4dYE3gS" style="display:inline-block;margin-top:0.6rem;font-size:0.82rem;color:#4A6741;border:1px solid #C5D9C0;padding:4px 12px;border-radius:20px;text-decoration:none">View product →</a>
-</div></div>
-
-      <a class="buy-btn" href="https://www.amazon.in/solar-mosquito-killer/s?k=solar+mosquito+killer+outdoor" target="_blank" rel="nofollow noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Solar Mosquito Traps →
-      </a>
-      <a class="buy-btn" href="https://www.amazon.in/solar-insect-killer/s?k=solar+insect+killer+uv+light" target="_blank" rel="nofollow noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Solar UV Insect Killers →
-      </a>
+  <p>Solar-powered insect traps use UV light to attract mosquitoes and bugs, then trap or zap them — all powered by a small built-in solar panel. Perfect for gardens, patios, and outdoor sitting areas.</p>
+  <ul class="panel-list">
+    <li><strong>Works on:</strong> Mosquitoes, moths, flies, gnats</li>
+    <li><strong>Best placed:</strong> Near sitting areas, water bodies, garden edges</li>
+    <li><strong>Price range:</strong> ₹2,500 – ₹25,000</li>
+  </ul>
+  <div class="buy-links">
+    <div class="product-row-global">
+      <div class="product-row-info">
+        <span class="amzcom-tag">🌍 Amazon.com</span>
+        <h4>Solar Mosquito Trap & Insect Killer</h4>
+        <a href="https://amzn.to/4u77LFz" target="_blank" rel="nofollow noopener">View on Amazon.com →</a>
+      </div>
     </div>
+    <div class="product-row">
+      <img src="https://m.media-amazon.com/images/I/81coDp8w38L._SL1500_.jpg" alt="Solar Bug Zapper Outdoor PhatroyYee Mosquito Zapper 4500V">
+      <div class="product-row-info">
+        <h4>Solar Bug Zapper Outdoor — PhatroyYee Mosquito Zapper 4500V</h4>
+        <a href="https://amzn.to/4dYE3gS" target="_blank" rel="nofollow noopener">View on Amazon India →</a>
+      </div>
+    </div>
+    <a class="buy-btn" href="https://www.amazon.in/solar-mosquito-killer/s?k=solar+mosquito+killer+outdoor" target="_blank" rel="nofollow noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Solar Mosquito Traps →
+    </a>
+    <a class="buy-btn" href="https://www.amazon.in/solar-insect-killer/s?k=solar+insect+killer+uv+light" target="_blank" rel="nofollow noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Solar UV Insect Killers →
+    </a>
+  </div>
 
   <hr class="section-divider">
 
-  <!-- KERALA TIP -->
   <div class="callout">
     <div class="callout-label">For Kerala Homes</div>
     <p>The most practical solar products for a Kerala home are, in order of impact: <strong>solar water heater</strong> (biggest electricity saving), <strong>solar garden &amp; gate lights</strong> (zero running cost, no wiring), <strong>solar water pump</strong> if you have an open well, and <strong>solar lanterns</strong> for monsoon power cut backup. These four products together cost less than ₹30,000 and eliminate several recurring electricity expenses.</p>
   </div>
 
-  <!-- BUYING TIP -->
   <div class="callout-warm">
     <div class="callout-label">Before Buying</div>
     <p>Always check wattage, warranty, and whether the product ships to your pincode. For larger items like water heaters, compare local vendors too — installation and after-sales service matter a lot for these products. Smaller gadgets like lanterns, fans, and garden lights are safe to buy online without worry.</p>
@@ -1008,35 +719,22 @@
 
   <hr class="section-divider">
 
-  <!-- RELATED POSTS -->
   <div class="related-post-link">
     Check this Posts →
-    <a href="https://lightenedgirl.github.io/CozyLittleCottage/14_different_types_of_solarinverters.html">
-      Different Types of Solar Inverters
-    </a>
+    <a href="https://lightenedgirl.github.io/CozyLittleCottage/14_different_types_of_solarinverters.html">Different Types of Solar Inverters</a>
   </div>
-
   <div class="related-post-link">
-    <a href="https://lightenedgirl.github.io/CozyLittleCottage/10_solar_power_guide_indetail.html">
-      Installing Solar Power System at Home — In Detail
-    </a>
+    <a href="https://lightenedgirl.github.io/CozyLittleCottage/10_solar_power_guide_indetail.html">Installing Solar Power System at Home — In Detail</a>
   </div>
-
   <div class="related-post-link">
-    <a href="https://www.tatapower.com/blogs/solar-calculators-a-complete-guide#accordion-83e0ce5697-item-e09fd7ed5c">
-      Know more about solar panels and much more - In detail
-    </a>
+    <a href="https://www.tatapower.com/blogs/solar-calculators-a-complete-guide#accordion-83e0ce5697-item-e09fd7ed5c">Know more about solar panels and much more — In detail</a>
   </div>
-
   <div class="related-post-link">
-    <a href="https://lightenedgirl.github.io/CozyLittleCottage/9_solar_shopping_guide.html">
-      Everything You Need to Buy to Install Solar Panels at Home
-    </a>
+    <a href="https://lightenedgirl.github.io/CozyLittleCottage/9_solar_shopping_guide.html">Everything You Need to Buy to Install Solar Panels at Home</a>
   </div>
 
 </div>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   © 2025 Cozy Little Cottage · Hosted on GitHub Pages
 </footer>
