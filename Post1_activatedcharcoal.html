@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Activated Charcoal for Health — Cozy Little Cottage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #faf9f6; --ink: #1a1a18; --muted: #6b6b65;
+      --border: #e5e3dc;
+      --r1: #e85d5d; --r2: #e8963a; --r3: #d4b800;
+      --r4: #4caa5e; --r5: #3a7ed4; --r6: #7c5abf;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lora', Georgia, serif; background: var(--bg); color: var(--ink); min-height: 100vh; line-height: 1.85; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,249,246,0.94); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.8rem 2rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    }
+    .rainbow-bar-top {
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--r1), var(--r2), var(--r3), var(--r4), var(--r5), var(--r6));
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700;
+      color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 0.45rem;
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; flex-wrap: wrap; justify-content: center; }
+    .nav-btn {
+      background: none; border: none; font-family: 'Lora', serif;
+      font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); cursor: pointer; padding: 0.45rem 1rem;
+      border-radius: 2px; transition: color 0.2s, background 0.2s;
+      text-decoration: none; display: inline-block;
+    }
+    .nav-btn:hover { color: var(--ink); background: var(--border); }
+    .nav-btn.active { color: var(--r6); font-weight: 500; }
+
+    /* POST LAYOUT */
+    .post-container { max-width: 660px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--r2); text-decoration: none; margin-bottom: 2.5rem;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 0.65; }
+
+    .post-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--r2); margin-bottom: 0.8rem;
+    }
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+    .post-date { font-size: 0.78rem; color: var(--muted); margin-bottom: 3rem; }
+
+    .post-divider {
+      height: 3px; border: none; margin-bottom: 3rem;
+      background: linear-gradient(90deg, var(--r1), var(--r2), var(--r3), var(--r4), var(--r5), var(--r6));
+    }
+
+    /* BODY TYPOGRAPHY */
+    .post-body { font-size: 1rem; color: var(--ink); }
+    .post-body p { margin-bottom: 1.5rem; }
+    .post-body h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.5rem;
+      line-height: 1.25; margin: 3rem 0 1rem; color: var(--ink);
+    }
+    .post-body h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.15rem;
+      margin: 2rem 0 0.6rem; color: var(--ink);
+    }
+    .post-body ul, .post-body ol { padding-left: 1.6rem; margin-bottom: 1.5rem; }
+    .post-body li { margin-bottom: 0.55rem; }
+
+    /* CALLOUT BOXES */
+    .callout {
+      border-left: 3px solid var(--r2); background: #fff8ee;
+      padding: 1.2rem 1.5rem; border-radius: 0 6px 6px 0;
+      margin: 2rem 0; font-size: 0.93rem;
+    }
+    .callout.green { border-color: var(--r4); background: #f0faf3; }
+    .callout.red   { border-color: var(--r1); background: #fff2f2; }
+    .callout.blue  { border-color: var(--r5); background: #f0f5ff; }
+    .callout strong { display: block; margin-bottom: 0.4rem; font-family: 'Playfair Display', serif; font-size: 1rem; }
+
+    /* USES GRID */
+    .uses-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.8rem; margin: 1.5rem 0 2rem;
+    }
+    .use-chip {
+      border: 1px solid var(--border); border-radius: 6px;
+      padding: 0.8rem 1rem; font-size: 0.88rem;
+      display: flex; align-items: flex-start; gap: 0.6rem;
+    }
+    .use-chip .icon { font-size: 1.1rem; flex-shrink: 0; }
+    .use-chip .label { font-weight: 500; display: block; margin-bottom: 0.1rem; }
+    .use-chip .desc { font-size: 0.78rem; color: var(--muted); }
+
+    /* BENEFIT CARDS */
+    .benefit-card {
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 1.5rem; margin-bottom: 1.2rem;
+    }
+    .benefit-card .b-header {
+      display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;
+    }
+    .benefit-card .b-icon {
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .benefit-card .b-title {
+      font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700;
+    }
+    .benefit-card .b-body { font-size: 0.93rem; color: var(--muted); line-height: 1.75; }
+    .benefit-card .b-evidence {
+      margin-top: 0.8rem; font-size: 0.75rem; letter-spacing: 0.06em;
+      text-transform: uppercase; font-style: normal;
+    }
+
+    /* CHEMISTRY BOX */
+    .chem-box {
+      background: #f5f3ff; border: 1px solid #d8d0f5;
+      border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;
+      font-size: 0.93rem;
+    }
+    .chem-box h3 { color: var(--r6); margin-top: 0; margin-bottom: 0.6rem; font-size: 1rem; }
+
+    /* AFFILIATE CARD */
+    .affiliate-section { margin: 3rem 0 1rem; }
+    .affiliate-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .affiliate-note { font-size: 0.8rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem; }
+
+    .product-card {
+      display: flex; gap: 1.2rem; align-items: center;
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 1.2rem; text-decoration: none; color: inherit;
+      transition: box-shadow 0.2s; margin-bottom: 1rem;
+    }
+    .product-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .product-card img {
+      width: 90px; height: 90px; object-fit: cover;
+      border-radius: 6px; flex-shrink: 0; background: #f0f0f0;
+    }
+    .product-card .p-store {
+      font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--r2); margin-bottom: 0.3rem;
+    }
+    .product-card .p-name {
+      font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 0.3rem;
+    }
+    .product-card .p-cta { font-size: 0.82rem; color: var(--muted); }
+
+    footer {
+      border-top: 3px solid transparent;
+      border-image: linear-gradient(90deg, var(--r1), var(--r2), var(--r3), var(--r4), var(--r5), var(--r6)) 1;
+      padding: 1.8rem 2rem; text-align: center;
+      font-size: 0.76rem; color: var(--muted); letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 480px) {
+      .post-container { padding: 2.5rem 1.2rem 4rem; }
+      .uses-grid { grid-template-columns: 1fr; }
+      .product-card { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="rainbow-bar-top"></div>
+  <a class="nav-logo" href="index.html">🌈 Cozy Little Cottage</a>
+  <div class="nav-links">
+    <a class="nav-btn" href="index.html">Home</a>
+    <a class="nav-btn" href="shop.html">Shop</a>
+    <a class="nav-btn active" href="autism.html">The Autism Space</a>
+    <a class="nav-btn" href="kitchen.html">Cozy Kitchen</a>
+  </div>
+</nav>
+
+<div class="post-container">
+
+  <a class="back-link" href="autism.html">← Back to The Autism Space</a>
+
+  <p class="post-eyebrow">ADHD</p>
+  <h1 class="post-title">Activated Charcoal for Gut Health</h1>
+  <p class="post-date">June 16, 2025</p>
+
+  <hr class="post-divider" />
+
+  <div class="post-body">
+
+    <!-- ── SECTION 1: WHAT IS IT ── -->
+    <h2>What Is Activated Charcoal?</h2>
+
+    <p>
+      Activated charcoal is a fine, odourless black powder made from natural carbon-rich materials — most commonly <strong>coconut shells, wood, peat, or sawdust</strong>. It is not the same as barbecue charcoal, which contains toxic chemicals and should never be consumed.
+    </p>
+
+    <p>
+      The word <em>activated</em> is the key. During production, raw charcoal is heated to extremely high temperatures and treated with gases in a controlled process. This strips away any previously absorbed molecules and blasts open millions of tiny pores across every particle's surface — dramatically increasing its surface area. One teaspoon of activated charcoal has roughly the same surface area as a football field.
+    </p>
+
+    <p>
+      The result is a highly porous substance with an enormous capacity to bind to other molecules — making it one of the most powerful natural adsorbents known.
+    </p>
+
+    <div class="callout green">
+      <strong>📋 Quick facts</strong>
+      Activated charcoal has been used medicinally for over 200 years. It sits on the World Health Organization's list of essential medicines and is a standard treatment in emergency rooms worldwide for certain poisonings and overdoses.
+    </div>
+
+    <!-- ── SECTION 2: CHEMISTRY ── -->
+    <h2>How Does It Work Chemically?</h2>
+
+    <p>
+      The mechanism is called <strong>adsorption</strong> — and it is different from absorption. Absorption means one substance soaks into another (like water into a sponge). Adsorption is a surface process: molecules physically stick to the outside of the charcoal particle rather than mixing into it.
+    </p>
+
+    <div class="chem-box">
+      <h3>⚗️ The chemistry, simply explained</h3>
+      <p>Activated charcoal carries a <strong>negative electrical charge</strong> on its surface. Most toxins, gases, and drug molecules carry a <strong>positive charge</strong>. Opposites attract — so these substances are pulled toward and bond with the charcoal's surface through a combination of electrostatic attraction and Van der Waals forces (weak molecular attraction forces).</p>
+      <br>
+      <p>The enormous number of pores gives the charcoal millions of binding sites simultaneously. Once a molecule locks into a pore, it cannot pass through your gut wall into the bloodstream — it is trapped. Since your body cannot absorb charcoal itself, it passes through your digestive system entirely and is excreted in your stool, carrying the bound substances with it.</p>
+    </div>
+
+    <p>
+      A secondary chemical process called <strong>intestinal dialysis</strong> can also occur: in some cases, toxins that have already entered the bloodstream can migrate back into the intestines through the blood vessel walls lining the gut, where they then bind to charcoal and are carried out. This is why multiple doses are sometimes used in hospital settings.
+    </p>
+
+    <!-- ── SECTION 3: USES (BRIEF) ── -->
+    <h2>What Is It Used For?</h2>
+
+    <p>Here is a quick overview of all known uses — from the most to least evidence-backed:</p>
+
+    <div class="uses-grid">
+      <div class="use-chip">
+        <span class="icon">🚨</span>
+        <div><span class="label">Emergency poisoning</span><span class="desc">Most proven use — standard ER treatment</span></div>
+      </div>
+      <div class="use-chip">
+        <span class="icon">🫁</span>
+        <div><span class="label">Drug overdose</span><span class="desc">Binds to many drugs before absorption</span></div>
+      </div>
+      <div class="use-chip">
+        <span class="icon">💧</span>
+        <div><span class="label">Water filtration</span><span class="desc">Removes chlorine & organic compounds</span></div>
+      </div>
+      <div class="use-chip">
+        <span class="icon">🩹</span>
+        <div><span class="label">Wound care</span><span class="desc">Adsorbs bacteria & odour in dressings</span></div>
+      </div>
+      <div class="use-chip">
+        <span class="icon">🫃</span>
+        <div><span class="label">Gas & bloating</span><span class="desc">May reduce intestinal gas</span></div>
+      </div>
+      <div class="use-chip">
+        <span class="icon">🧫</span>
+        <div><span class="label">Gut detox</span><span class="desc">Traps unwanted substances in the gut</span></div>
+      </div>
+      <div class="use-chip">
+        <span class="icon">🩺</span>
+        <div><span class="label">Kidney support</span><span class="desc">May filter urea byproducts</span></div>
+      </div>
+      <div class="use-chip">
+        <span class="icon">❤️</span>
+        <div><span class="label">Cholesterol</span><span class="desc">May reduce LDL reabsorption</span></div>
+      </div>
+      <div class="use-chip">
+        <span class="icon">🦷</span>
+        <div><span class="label">Teeth whitening</span><span class="desc">Mild effect; abrasion risk</span></div>
+      </div>
+      <div class="use-chip">
+        <span class="icon">🧴</span>
+        <div><span class="label">Skincare</span><span class="desc">Popular but weak evidence</span></div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 4: HEALTH BENEFITS IN DETAIL ── -->
+    <h2>Health Benefits — In Detail</h2>
+
+    <!-- 1 -->
+    <div class="benefit-card">
+      <div class="b-header">
+        <div class="b-icon" style="background:#fff2f2;">🚨</div>
+        <div class="b-title">Emergency Poison & Overdose Treatment</div>
+      </div>
+      <div class="b-body">
+        This is activated charcoal's most powerful and best-proven use. When given within 30–60 minutes of ingesting a toxic substance or experiencing a drug overdose, it binds to the poison while it is still in the stomach — before the body can absorb it into the bloodstream. Emergency doses are large: 50–100 grams for adults. In severe cases or with slow-release drugs, repeat doses over several hours use the intestinal dialysis effect to continue pulling toxins out. It does not work for all substances — alcohol, heavy metals, and caustic chemicals are not bound by charcoal.
+        <p class="b-evidence" style="color: var(--r4);">✅ Strong clinical evidence — WHO essential medicine</p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="benefit-card">
+      <div class="b-header">
+        <div class="b-icon" style="background:#f0faf3;">🫃</div>
+        <div class="b-title">Gut Health, Gas & Bloating</div>
+      </div>
+      <div class="b-body">
+        Activated charcoal adsorbs the intestinal gases that cause uncomfortable bloating and flatulence. It works by trapping gas molecules in its porous surface before they cause pressure. Some studies show a measurable reduction in obstructive gut gases when taken before or after a gassy meal. It may also help with traveller's diarrhoea by binding bacteria and food-borne toxins in the gut. Research results are mixed overall, but many people report noticeable relief — particularly when combined with simethicone.
+        <p class="b-evidence" style="color: var(--r3);">⚠️ Moderate evidence — mixed research results</p>
+      </div>
+    </div>
+
+    <!-- GUT DETOX -->
+<div class="benefit-card">
+  <div class="b-header">
+    <div class="b-icon" style="background:#f0faf3;">🧫</div>
+    <div class="b-title">General Gut Detox</div>
+  </div>
+  <div class="b-body">
+    <p>The gut is constantly exposed to substances it was never designed to handle — pesticide residues on food, environmental pollutants, food additives, preservatives, and the natural byproducts of digestion itself. While the liver and kidneys do an extraordinary job filtering the blood, activated charcoal works one step earlier: it intercepts unwanted substances <em>before</em> they even leave the gut and enter the bloodstream.</p>
+
+    <p>Because activated charcoal is not absorbed by the body, it acts as a passive carrier — travelling the full length of the digestive tract, binding to whatever it encounters along the way, and exiting cleanly through the stool. This makes it uniquely suited to gut-level detoxification in a way that most supplements cannot replicate.</p>
+
+    <p>There are three main ways this plays out:</p>
+
+    <p><strong>1. Binding dietary toxins and residues</strong><br>
+    Many processed foods contain artificial additives, colourings, and preservatives that the gut recognises as foreign. Pesticide residues — even at trace levels — are increasingly common in everyday produce. Activated charcoal can adsorb many of these compounds and prevent them from being absorbed through the gut wall, reducing the total toxic load the liver has to process.</p>
+
+    <p><strong>2. Clearing metabolic waste</strong><br>
+    Digestion itself produces waste — ammonia from protein breakdown, bile metabolites, and other compounds that linger in the gut longer than ideal. Activated charcoal can bind to these metabolic byproducts, speeding their exit and reducing the risk of reabsorption. This is particularly relevant for people with sluggish digestion or constipation, where waste sits in the colon longer and has more opportunity to be reabsorbed.</p>
+
+    <p><strong>3. Supporting the gut microbiome environment</strong><br>
+    An overloaded gut — full of unprocessed waste, irritants, and fermentation gases — creates an environment where harmful bacteria can thrive. By clearing some of this burden, activated charcoal may create a cleaner environment in which beneficial gut bacteria are better able to compete. This is an emerging area of research and not yet fully understood, but the logic is consistent with what we know about gut ecology.</p>
+
+    <p>It is worth noting that activated charcoal does not discriminate perfectly — it can also bind to beneficial nutrients, vitamins, and medications. This is why it should not be taken with meals or supplements, and always at least 2 hours away from any prescription medication. Short-term or occasional use for gut detox is generally considered safe; long-term daily use without medical guidance is not recommended.</p>
+
+    <p class="b-evidence" style="color: var(--r3);">⚠️ Mechanistically sound — human clinical trials limited</p>
+  </div>
+</div>
+    <!-- 3 -->
+    <div class="benefit-card">
+      <div class="b-header">
+        <div class="b-icon" style="background:#f0f5ff;">🩺</div>
+        <div class="b-title">Kidney Support</div>
+      </div>
+      <div class="b-body">
+        The kidneys filter waste products from the blood — primarily urea and other byproducts of protein digestion. Activated charcoal may ease some of this burden by catching these waste molecules in the gut before they ever reach the bloodstream. Animal studies have shown improvements in kidney function and reduced gastrointestinal inflammation. For people with chronic kidney disease, this gut-level filtering could offer meaningful support. However, human clinical trials are still limited and it should not replace prescribed kidney treatments.
+        <p class="b-evidence" style="color: var(--r3);">⚠️ Promising — mainly animal studies so far</p>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="benefit-card">
+      <div class="b-header">
+        <div class="b-icon" style="background:#fff8ee;">❤️</div>
+        <div class="b-title">Cholesterol Reduction</div>
+      </div>
+      <div class="b-body">
+        Bile acids — made from cholesterol — are secreted into the gut to aid digestion and are normally reabsorbed back into the body. Activated charcoal can bind to these bile acids before they are reabsorbed, forcing the liver to use more cholesterol to make fresh bile. Several older studies found reductions in total and LDL (bad) cholesterol with regular activated charcoal use. The research is not recent and sample sizes were small, but the mechanism is chemically sound and mirrors how certain cholesterol medications work.
+        <p class="b-evidence" style="color: var(--r3);">⚠️ Limited but plausible — needs larger trials</p>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="benefit-card">
+      <div class="b-header">
+        <div class="b-icon" style="background:#f5f3ff;">💧</div>
+        <div class="b-title">Water Purification</div>
+      </div>
+      <div class="b-body">
+        One of activated charcoal's most reliable everyday applications. Carbon filters are widely used in home water filtration systems to remove chlorine, chloramines, volatile organic compounds (VOCs), and certain pesticides — all of which can affect the taste, smell, and safety of tap water. Importantly, charcoal filters do not remove all contaminants: they leave behind beneficial minerals like calcium and magnesium, and they do not filter out bacteria, viruses, fluoride, or heavy metals like lead.
+        <p class="b-evidence" style="color: var(--r4);">✅ Well established — used globally in filtration</p>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="benefit-card">
+      <div class="b-header">
+        <div class="b-icon" style="background:#f0faf3;">🩹</div>
+        <div class="b-title">Wound Care</div>
+      </div>
+      <div class="b-body">
+        Activated charcoal wound dressings have been used in clinical nursing for decades, particularly for chronic wounds, ulcers, and infected wounds that produce odour. The charcoal adsorbs bacteria, toxins, and odour-causing compounds directly from the wound surface, while creating a moist environment that supports healing. Multiple clinical reviews support its use for malodorous wounds. It is not a disinfectant — it traps rather than kills bacteria — but it can significantly improve patient comfort and wound environment.
+        <p class="b-evidence" style="color: var(--r4);">✅ Good clinical support in nursing literature</p>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="benefit-card">
+      <div class="b-header">
+        <div class="b-icon" style="background:#fff2f2;">🦷</div>
+        <div class="b-title">Teeth Whitening</div>
+      </div>
+      <div class="b-body">
+        Activated charcoal toothpaste and powders have exploded in popularity. Some studies do show a mild whitening effect, likely because the charcoal is mildly abrasive and scrubs surface stains. However, this same abrasiveness is a concern — it can scratch tooth enamel over time, which is irreversible and can make teeth more sensitive and more prone to staining. Dentists generally do not recommend activated charcoal as a long-term whitening solution. Occasional use may be fine, but it is not better than conventional whitening products.
+        <p class="b-evidence" style="color: var(--r1);">❌ Weak evidence — potential enamel damage risk</p>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="benefit-card">
+      <div class="b-header">
+        <div class="b-icon" style="background:#fff8ee;">🧴</div>
+        <div class="b-title">Skincare</div>
+      </div>
+      <div class="b-body">
+        Activated charcoal is a popular ingredient in face masks, cleansers, and soaps with claims of drawing out impurities, unclogging pores, and reducing acne. The idea makes intuitive sense — the same adsorption that works in the gut could theoretically lift debris from pores. However, there is no robust clinical evidence to support these claims. Anecdotally, many people with oily or congested skin find charcoal masks temporarily satisfying, and they are generally safe for occasional use. Just don't expect pharmaceutical-grade results.
+        <p class="b-evidence" style="color: var(--r1);">❌ No strong clinical evidence for skin benefits</p>
+      </div>
+    </div>
+<!-- SIDE EFFECTS & WARNINGS -->
+<div class="benefit-card" style="border-color: #f5c5c5;">
+  <div class="b-header">
+    <div class="b-icon" style="background:#fff2f2;">⚠️</div>
+    <div class="b-title" style="color: var(--r1);">Side Effects & Warnings</div>
+  </div>
+  <div class="b-body">
+
+    <p><strong>Black stools</strong><br>
+    Completely normal and temporary. Any time you take activated charcoal your stools will turn black — this is simply the charcoal passing through. It is harmless but can be alarming if you are not expecting it.</p>
+
+    <p><strong>Constipation</strong><br>
+    Activated charcoal can slow things down in the gut, particularly at higher doses. If you are already prone to constipation, use with caution and drink plenty of water alongside it.</p>
+
+    <p><strong>Nausea and vomiting</strong><br>
+    Some people experience nausea, especially when taking it in large amounts. In a hospital setting this is managed carefully — at home, start with a small dose to see how your body responds.</p>
+
+    <p><strong>Medication interference — most important</strong><br>
+    This is the biggest risk for everyday users. Activated charcoal cannot tell the difference between a toxin and your medication — it will bind to both equally. This means it can significantly reduce how much of your prescription drug your body absorbs, making it less effective or even ineffective. Always take activated charcoal at least <strong>2 hours before or 2 hours after</strong> any medication, supplement, or vitamin. If you take ADHD medication, birth control, thyroid medication, or any daily prescription, speak to your doctor before using activated charcoal regularly.</p>
+
+    <p><strong>Aspiration risk</strong><br>
+    If charcoal is accidentally inhaled into the lungs rather than swallowed, it can cause serious breathing problems. This is mainly a risk in a hospital setting when it is administered to an unconscious or drowsy patient — but it is worth knowing. Always take it mixed in water and swallow carefully.</p>
+
+    <p><strong>Gut blockage (rare)</strong><br>
+    In very rare cases, high or repeated doses of activated charcoal can cause a blockage in the intestinal tract, especially in people with slow gut motility. Signs include severe abdominal pain, bloating, and no bowel movements. Seek medical attention immediately if this occurs.</p>
+
+    <p><strong>Not suitable for everyone</strong><br>
+    Avoid activated charcoal if you have a bowel obstruction, are recovering from gut surgery, or have been told you have reduced gut motility. Pregnant or breastfeeding women should consult a doctor before use.</p>
+
+    <p><strong>Do not use to treat poisoning at home</strong><br>
+    If you suspect poisoning or overdose, call emergency services immediately. Do not attempt to administer activated charcoal yourself — the dose, timing, and method matter enormously, and incorrect use can make things worse.</p>
+
+    <p class="b-evidence" style="color: var(--r1);">🚨 Always consult your doctor before starting regular use</p>
+  </div>
+</div>
+    <div class="callout red">
+      <strong>⚠️ Important cautions</strong>
+      Activated charcoal cannot be taken alongside medications without a gap of at least 2 hours — it will bind to your medicine and reduce how much your body absorbs. It does not work on alcohol, heavy metals, or caustic chemicals. Never self-treat poisoning at home — call emergency services immediately.
+    </div>
+
+    <!-- ── SECTION 5: AFFILIATE ── -->
+    <div class="affiliate-section">
+      <h2>Activated Charcoal Tablets — Where to Buy</h2>
+      <p class="affiliate-note">These are affiliate links. I earn a small commission at no extra cost to you — thank you for supporting Cozy Little Cottage! 💚</p>
+<!-- PRODUCT CARDS -->
+<div style="display: flex; flex-direction: column; gap: 1.2rem; margin: 2rem 0;">
+
+  <!-- Amazon.com Card -->
+  <a href="https://amzn.to/4er8o6O" target="_blank" rel="noopener noreferrer sponsored"
+     style="display: flex; gap: 1.2rem; align-items: center; border: 1px solid var(--border);
+            border-radius: 8px; padding: 1.2rem; text-decoration: none; color: inherit;
+            transition: box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'"
+     onmouseout="this.style.boxShadow='none'">
+    <!-- Replace the src below with your actual product image URL -->
+    <img src="https://m.media-amazon.com/images/I/71OQMTTS3UL._AC_SL1500_.jpg" alt="Activated Charcoal product"
+         style="width: 90px; height: 90px; object-fit: cover; border-radius: 6px; flex-shrink: 0; background: #f0f0f0;" />
+    <div>
+      <p style="font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--r2); margin-bottom: 0.3rem;">Amazon.com 🇺🇸</p>
+      <p style="font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 0.3rem;">Activated Charcoal Capsules</p>
+      <p style="font-size: 0.82rem; color: var(--muted);">Shop on Amazon.com →</p>
+    </div>
+  </a>
+
+  <!-- Amazon.in Card -->
+  <a href="https://amzn.to/3ScBUWD" target="_blank" rel="noopener noreferrer sponsored"
+     style="display: flex; gap: 1.2rem; align-items: center; border: 1px solid var(--border);
+            border-radius: 8px; padding: 1.2rem; text-decoration: none; color: inherit;
+            transition: box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'"
+     onmouseout="this.style.boxShadow='none'">
+    <!-- Replace the src below with your actual product image URL -->
+    <img src="https://m.media-amazon.com/images/I/71lhOc5KY0L._SL1250_.jpg" alt="Activated Charcoal product"
+         style="width: 90px; height: 90px; object-fit: cover; border-radius: 6px; flex-shrink: 0; background: #f0f0f0;" />
+    <div>
+      <p style="font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--r2); margin-bottom: 0.3rem;">Amazon.in 🇮🇳</p>
+      <p style="font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 0.3rem;">Activated Charcoal Capsules</p>
+      <p style="font-size: 0.82rem; color: var(--muted);">Shop on Amazon.in →</p>
+    </div>
+  </a>
+
+</div>
+
+    <div class="callout green">
+      <strong>💚 A note from me</strong>
+      I find the science behind everyday health products genuinely fascinating — especially when it cuts through the noise of wellness marketing. If this post helped you, I'd love to hear from you. More deep-dives on the way.
+    </div>
+
+  </div><!-- /.post-body -->
+</div><!-- /.post-container -->
+
+<footer>© 2025 Cozy Little Cottage &nbsp;·&nbsp; Hosted on GitHub Pages</footer>
+
+</body>
+</html>
