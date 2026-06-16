@@ -112,6 +112,7 @@
     .cat-pill.active[data-cat="Awareness & Information"] { background: var(--r4); border-color: var(--r4); color: #fff; }
     .cat-pill.active[data-cat="Personal Stories"]        { background: var(--r1); border-color: var(--r1); color: #fff; }
     .cat-pill.active[data-cat="Tips & Resources"]        { background: var(--r5); border-color: var(--r5); color: #fff; }
+    .cat-pill.active[data-cat="ADHD"]                    { background: var(--r2); border-color: var(--r2); color: #fff; }
 
     /* ── FEED ── */
     .posts-feed { max-width: 620px; margin: 0 auto; padding: 1.5rem 2rem 5rem; }
@@ -144,6 +145,8 @@
     .feed-item[data-cat="Awareness & Information"] .read-link { color: var(--r4); }
     .feed-item[data-cat="Personal Stories"] .read-link        { color: var(--r1); }
     .feed-item[data-cat="Tips & Resources"] .read-link        { color: var(--r5); }
+    .feed-item[data-cat="ADHD"] .meta                         { color: var(--r2); }
+    .feed-item[data-cat="ADHD"] .read-link                    { color: var(--r2); }
 
     /* ── ALL POSTS LIST ── */
     .list-header { max-width: 620px; margin: 0 auto; padding: 4rem 2rem 2.5rem; border-bottom: 1px solid var(--border); }
@@ -202,9 +205,7 @@
   <!-- Category Filter -->
   <div class="category-bar">
     <button class="cat-pill active" data-cat="All" onclick="filterPosts('All', this)">All</button>
-    <button class="cat-pill" data-cat="Awareness & Information" onclick="filterPosts('Awareness & Information', this)">Awareness & Information</button>
-    <button class="cat-pill" data-cat="Personal Stories" onclick="filterPosts('Personal Stories', this)">Personal Stories</button>
-    <button class="cat-pill" data-cat="Tips & Resources" onclick="filterPosts('Tips & Resources', this)">Tips & Resources</button>
+      <button class="cat-pill" data-cat="ADHD" onclick="filterPosts('ADHD', this)">ADHD</button>
   </div>
 
   <div class="posts-feed" id="home-feed"></div>
@@ -223,13 +224,13 @@
 
 <script>
   const posts = [
-    // {
-    //   cat: "Personal Stories",
-    //   title: "Our Journey With Autism",
-    //   date: "April 21, 2025",
-    //   excerpt: "A short teaser shown on the page.",
-    //   file: "autism-1.html"
-    // }
+    {
+      cat: "ADHD",
+      title: "Activated Charcoal for Gut Health",
+      date: "June 16, 2025",
+      excerpt: "",
+      file: "autism_post1_activatedcharcoal.html"
+    }
   ];
 
   let activeFilter = 'All';
