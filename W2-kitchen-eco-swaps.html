@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco-Friendly Kitchen Swaps — Cozy Little Cottage</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FDFAF5;
+    --cream-dark: #F4EFE6;
+    --cream-border: #E8DFD0;
+    --text: #2C2C2A;
+    --text-muted: #7A746A;
+    --text-soft: #5A5550;
+    --blue: #2E5F7A;
+    --blue-pale: #EAF3F8;
+    --blue-mid: #4A83A0;
+    --green: #3D6B42;
+    --green-pale: #EDF4EE;
+    --accent: #8B6F47;
+    --accent-pale: #F5EDE2;
+    --link: #2E5F7A;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+    font-size: 0.97rem;
+  }
+
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAV ── */
+  .site-nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--cream-border);
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .site-logo {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .site-logo:hover { color: var(--blue); text-decoration: none; }
+  .nav-sep { color: var(--cream-border); font-size: 0.85rem; }
+  .nav-link { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.02em; }
+  .nav-link:hover { color: var(--blue); text-decoration: none; }
+
+  /* ── LAYOUT ── */
+  .page-wrap { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .back-link {
+    display: inline-block;
+    margin: 2rem 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .back-link:hover { color: var(--blue); text-decoration: none; }
+
+  .post-wrap {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 6rem;
+    animation: fadeUp 0.35s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HEADER ── */
+  .hero-tag {
+    display: inline-block;
+    background: #1C3E52;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+
+  .post-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.7rem;
+  }
+  .post-title em { font-style: italic; color: var(--blue); }
+
+  .post-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+    margin-bottom: 1.4rem;
+  }
+
+  .post-rule { border: none; border-top: 1px solid var(--cream-border); margin: 0 0 1.4rem; }
+
+  .disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 1.8rem;
+  }
+
+  /* ── BODY TEXT ── */
+  .post-body p {
+    margin-bottom: 1.25rem;
+    color: var(--text-soft);
+    line-height: 1.85;
+  }
+  .post-body strong { font-weight: 500; color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    margin: 2rem 0;
+    padding: 1.2rem 1.8rem;
+    border-left: 3px solid var(--cream-border);
+  }
+  .pull-quote p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 2.8rem 0 1rem;
+  }
+  .section-heading em { font-style: italic; color: var(--blue); }
+
+  /* ── SWAP CARD ── */
+  .swap-card {
+    border: 1px solid var(--cream-border);
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .swap-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid var(--cream-border);
+    background: var(--cream-dark);
+  }
+
+  .swap-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--blue-pale);
+    border: 1px solid #B3D4E4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--blue);
+    flex-shrink: 0;
+  }
+
+  .swap-card-header h3 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .swap-card-body { padding: 1.3rem 1.5rem; }
+
+  /* replace row */
+  .replace-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-out { background: #FDECEA; color: #8B2D26; border: 1px solid #F2C0BB; }
+  .badge-in  { background: var(--green-pale); color: var(--green); border: 1px solid #B8D9BC; }
+  .badge-arrow { color: var(--text-muted); font-size: 0.85rem; }
+
+  .swap-card-body p {
+    font-size: 0.92rem;
+    color: var(--text-soft);
+    line-height: 1.78;
+    margin-bottom: 0.9rem;
+  }
+  .swap-card-body p:last-of-type { margin-bottom: 0; }
+  .swap-card-body strong { font-weight: 500; color: var(--text); }
+
+  /* why it matters */
+  .why-box {
+    background: var(--cream);
+    border: 1px solid var(--cream-border);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin: 0.9rem 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+  .why-box strong { color: var(--text-soft); font-weight: 500; }
+
+  /* product image */
+  .product-img-wrap {
+    margin: 1rem 0 1rem;
+    border: 1px solid var(--cream-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--cream-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+  }
+  .product-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+  }
+  .product-img-wrap.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    height: 200px;
+  }
+  .product-img-wrap.two-col .img-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: var(--cream-dark);
+  }
+  .product-img-wrap.two-col .img-slot:first-child {
+    border-right: 1px solid var(--cream-border);
+  }
+  .product-img-wrap.two-col .img-slot img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+  }
+  .img-caption {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 0.3rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* buy links */
+  .buy-links {
+    margin-top: 1rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--cream-border);
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .buy-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 0.2rem;
+  }
+  .buy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--blue);
+    background: var(--blue-pale);
+    border: 1px solid #B3D4E4;
+    border-radius: 20px;
+    padding: 4px 13px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .buy-btn:hover { background: #d2eaf5; text-decoration: none; }
+  .buy-btn svg { width: 11px; height: 11px; fill: currentColor; flex-shrink: 0; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: var(--blue-pale);
+    border: 1px solid #B3D4E4;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+  .callout-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.6rem;
+  }
+  .callout p { font-size: 0.92rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout p + p { margin-top: 0.55rem; }
+
+  .callout-warm {
+    background: var(--accent-pale);
+    border: 1px solid #DECCB5;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+  .callout-warm .callout-label { color: var(--accent); }
+  .callout-warm p { font-size: 0.92rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout-warm p + p { margin-top: 0.55rem; }
+
+  /* ── CHECKLIST ── */
+  .check-list { list-style: none; padding: 0; margin: 0.6rem 0 0; }
+  .check-list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.92rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue-mid);
+    flex-shrink: 0;
+    margin-top: 0.6rem;
+  }
+  .check-list li strong { font-weight: 500; color: var(--text); }
+
+  /* ── DIVIDER ── */
+  .section-divider { border: none; border-top: 1px solid var(--cream-border); margin: 2.5rem 0; }
+
+  /* ── RELATED POST ── */
+  .related-post {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--cream-border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .related-post a {
+    color: var(--blue);
+    display: block;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--cream-border);
+    margin-top: 4rem;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 540px) {
+    .post-title { font-size: 1.5rem; }
+    .swap-card-body { padding: 1.1rem 1.2rem; }
+    .swap-card-header { padding: 0.9rem 1.2rem; }
+    .buy-links { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="site-logo" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">🌿 Cozy Little Cottage</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">All Posts</a>
+</nav>
+
+<div class="page-wrap">
+  <a class="back-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">← Back to Home</a>
+</div>
+
+<div class="post-wrap">
+
+  <!-- HEADER -->
+  <span class="hero-tag">Eco Kitchen</span>
+  <h1 class="post-title">7 Kitchen Swaps to <em>ditch plastic</em> for good</h1>
+  <p class="post-date">July 21, 2026</p>
+  <hr class="post-rule">
+  <p class="disclaimer">This post contains affiliate links. If you purchase through them, I may earn a small commission at no extra cost to you — thank you for supporting this blog.</p>
+
+  <!-- INTRO -->
+  <div class="post-body">
+    <p>The kitchen is where most household plastic lives. Cling wrap, synthetic sponges, non-stick pans, plastic bags — we use them without thinking, toss them after a few uses, and they sit in a landfill for hundreds of years.</p>
+    <p>The good news is that almost every single one of them has a better, longer-lasting, and genuinely non-toxic replacement. These aren't sacrifices — most eco swaps are actually <strong>better to use and cheaper in the long run</strong> than what they replace.</p>
+    <p>Here are seven swaps to start with, all practical, all available in India and internationally.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>"You don't have to replace everything at once. Start with one swap. When it runs out, choose better."</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <h2 class="section-heading">The <em>7 kitchen swaps</em></h2>
+
+  <!-- ── SWAP 1: Beeswax Wraps ── -->
+  <div class="swap-card" id="swap-1">
+    <div class="swap-card-header">
+      <div class="swap-num">1</div>
+      <h3>Plastic cling wrap → Beeswax wraps</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Plastic cling wrap</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Beeswax wraps</span>
+      </div>
+      <p>Cling wrap is one of the most wasteful kitchen items — it's used once, can't be recycled, and sits in landfills for centuries. Beeswax wraps are a natural alternative made from cotton cloth coated in beeswax, tree resin, and jojoba oil.</p>
+      <p>They work by using the warmth of your hands to mould around bowls, fruits, cheese, bread, or cut vegetables. They're naturally antibacterial, breathable (which actually keeps produce fresher), and <strong>washable with cold water and mild soap</strong>. One wrap typically lasts 6–12 months with regular use.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> An average household uses hundreds of metres of plastic wrap per year. Switching to beeswax wraps eliminates that entirely — and the wraps compost at end of life.
+      </div>
+      <p>For vegans, there are also <strong>plant-based wax wraps</strong> (soy or candelilla wax) that work identically.</p>
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/81JSO6iIyuL._AC_SL1500_.jpg" alt="Beeswax food wraps" loading="lazy">
+      </div>
+      <p class="img-caption">Bees Wax Wraps</p>
+      <div class="buy-links">
+        <span class="buy-label">Buy</span>
+        <a class="buy-btn" href="https://link.amazon/B0ifOUGqJ" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/><path d="M6.5 19.25c-.28 0-.5.22-.5.5v.75c0 .28.22.5.5.5s.5-.22.5-.5v-.75c0-.28-.22-.5-.5-.5zM17.5 4.25c-.28 0-.5.22-.5.5v.75c0 .28.22.5.5.5s.5-.22.5-.5v-.75c0-.28-.22-.5-.5-.5z"/></svg>
+          amazon.in
+        </a>
+        <a class="buy-btn" href="https://amzn.to/4ykngxe" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/><path d="M6.5 19.25c-.28 0-.5.22-.5.5v.75c0 .28.22.5.5.5s.5-.22.5-.5v-.75c0-.28-.22-.5-.5-.5zM17.5 4.25c-.28 0-.5.22-.5.5v.75c0 .28.22.5.5.5s.5-.22.5-.5v-.75c0-.28-.22-.5-.5-.5z"/></svg>
+          amazon.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 2: Silicone bags ── -->
+  <div class="swap-card" id="swap-2">
+    <div class="swap-card-header">
+      <div class="swap-num">2</div>
+      <h3>Zip-lock plastic bags → Reusable silicone bags</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Single-use zip-lock bags</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Silicone storage bags</span>
+      </div>
+      <p>Plastic zip-lock bags are endlessly convenient and endlessly wasteful. Most people use them once and discard them — they're rarely recycled because of food contamination. Reusable silicone bags are the direct replacement: same shape, same seal, same sizes — but washable, freezer-safe, microwave-safe, and built to last years.</p>
+      <p>They're airtight, leakproof, and transparent so you can see what's inside. They work for snacks, marinating meat, storing cut fruit, freezing leftovers, and even sous-vide cooking. <strong>A set of four silicone bags replaces hundreds of plastic ones</strong> over their lifespan.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> Plastic bags are one of the top items found in ocean cleanups. They're lightweight, blow easily into waterways, and break into microplastics that enter the food chain.
+      </div>
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/61BUspMPALL._SL1376_.jpg" alt="Reusable silicone food storage bags" loading="lazy">
+      </div>
+      <p class="img-caption">Reusable Silicon Bags </p>
+      <div class="buy-links">
+        <span class="buy-label">Buy</span>
+        <a class="buy-btn" href="https://link.amazon/B06EsPFp6" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/><path d="M6.5 19.25c-.28 0-.5.22-.5.5v.75c0 .28.22.5.5.5s.5-.22.5-.5v-.75c0-.28-.22-.5-.5-.5zM17.5 4.25c-.28 0-.5.22-.5.5v.75c0 .28.22.5.5.5s.5-.22.5-.5v-.75c0-.28-.22-.5-.5-.5z"/></svg>
+          amazon.in
+        </a>
+        <a class="buy-btn" href="https://amzn.to/4yfFBv9" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/><path d="M6.5 19.25c-.28 0-.5.22-.5.5v.75c0 .28.22.5.5.5s.5-.22.5-.5v-.75c0-.28-.22-.5-.5-.5zM17.5 4.25c-.28 0-.5.22-.5.5v.75c0 .28.22.5.5.5s.5-.22.5-.5v-.75c0-.28-.22-.5-.5-.5z"/></svg>
+          amazon.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 3: Cast iron / SS ── -->
+  <div class="swap-card" id="swap-2">
+    <div class="swap-card-header">
+      <div class="swap-num">3</div>
+      <h3>Teflon non-stick pans → Cast iron or stainless steel</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Teflon non-stick cookware</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Cast iron / stainless steel</span>
+      </div>
+      <p>Teflon (PTFE) non-stick coatings are convenient — until they're not. Once scratched or overheated above 260°C, they release perfluorocarbon compounds that are harmful to breathe, especially in small kitchens. The coating degrades with time, and there's no safe way to recycle or dispose of these pans.</p>
+      <p><strong>Cast iron</strong> is the gold standard alternative. It's naturally non-stick when seasoned properly, lasts generations (literally — cast iron pans are passed down in families), adds trace iron to food, and handles any heat including induction and open flame. It does need a little care: dry it after washing, rub with a thin layer of oil.</p>
+      <p><strong>Stainless steel</strong> is the other option — lighter, dishwasher-safe, doesn't need seasoning, and completely inert. It requires a bit more technique (preheat properly, use enough oil), but it's virtually indestructible.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> PFAS chemicals from non-stick coatings have been found in human blood and breast milk worldwide. The EU has begun phasing them out. Switching now means one less source of exposure at home.
+      </div>
+     <div class="product-img-wrap">
+           <img src="https://m.media-amazon.com/images/I/71vSMufhOAL._SL1500_.jpg" alt="Cast iron pan" loading="lazy">     
+     </div>
+       <p class="img-caption">Cast Iron Frying Pan </p>
+    
+      <div class="buy-links">
+        <span class="buy-label">buy </span>
+        <a class="buy-btn" href="https://link.amazon/B0ig08AUe" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.in
+        </a>
+        <a class="buy-btn" href="https://amzn.to/4h2Jf5q" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.com
+        </a>
+      </div>
+     
+         <div class="product-img-wrap">
+           <img src="https://m.media-amazon.com/images/I/81HFACTX9ML._SL1500_.jpg" alt="Stainless steel pan" loading="lazy">
+        </div>
+       <p class="img-caption">Stainless Steel Frying Pan </p>
+    
+     
+      <div class="buy-links">
+        <span class="buy-label">Stainless steel</span>
+        <a class="buy-btn" href="https://link.amazon/B0iTKupxw" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.in
+        </a>
+        <a class="buy-btn" href="https://amzn.to/44qJoYT" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 4: Chopping board ── -->
+  <div class="swap-card" id="swap-4">
+    <div class="swap-card-header">
+      <div class="swap-num">4</div>
+      <h3>Plastic chopping board → Wooden or bamboo board</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Plastic chopping board</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Wooden / bamboo board</span>
+      </div>
+      <p>Every time you chop on a plastic board, the knife cuts tiny plastic fragments directly into your food. A 2023 study estimated that an average plastic chopping board sheds around <strong>50 grams of microplastics per year</strong> into the food prepared on it — microplastics that you then eat.</p>
+      <p>Wooden and bamboo boards don't have this problem. Wood also has natural antimicrobial properties — the fibres close around bacteria and trap them where they die, rather than leaving open knife grooves where bacteria multiply. A well-maintained wooden board lasts for decades.</p>
+      <p>Care is simple: wash with soap and cold water (not the dishwasher — it warps wood), dry standing upright, and oil with food-grade mineral oil or coconut oil once a month to prevent cracking.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> Microplastics from cutting boards are one of the most direct and understudied routes of plastic ingestion. Unlike bottled water, you can eliminate this one entirely with a single swap.
+      </div>
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/61NrAFkltvL._SL1024_.jpg" alt="Wooden or bamboo chopping board" loading="lazy">
+      </div>
+        <div class="buy-links">
+        <span class="buy-label">Buy</span>
+        <a class="buy-btn" href="https://link.amazon/B00uifKeg" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.in
+        </a>
+        <a class="buy-btn" href="https://amzn.to/4fuF0hH" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 5: Sponge ── -->
+  <div class="swap-card" id="swap-5">
+    <div class="swap-card-header">
+      <div class="swap-num">5</div>
+      <h3>Synthetic dish sponge → Natural scrubbers</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Synthetic dish sponge</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Loofah / coconut coir / cellulose</span>
+      </div>
+      <p>The humble kitchen sponge is one of the dirtiest and most wasteful objects in the home. Synthetic sponges are made from plastic foam, shed microplastics every time you use them, and are typically replaced every few weeks. They're not recyclable and not compostable.</p>
+      <p><strong>Loofah sponges</strong> (from the loofah plant, not the sea creature) are the most popular natural replacement — they're tough enough for scrubbing, compostable at end of life, and last just as long as synthetic ones. <strong>Coconut coir scrubbers</strong> are rougher and great for pots and pans. <strong>Cellulose sponges</strong> (made from plant fibre) are softer and absorbent, good for wiping surfaces.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> A single synthetic sponge sheds thousands of microplastic fibres per wash — directly into dishwater that goes down the drain and into waterways. Natural alternatives decompose fully within months.
+      </div>
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/91QRdGoIE1L._SL1500_.jpg" alt="Natural loofah or coconut coir scrubber" loading="lazy">
+      </div>
+      <p class="img-caption">Natural Kitchen Scrubber</p>
+      <div class="buy-links">
+        <span class="buy-label">Buy</span>
+        <a class="buy-btn" href="https://link.amazon/B07rZIsey" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.in
+        </a>
+        <a class="buy-btn" href="https://amzn.to/4fqiS6S" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 6: Dish soap ── -->
+  <div class="swap-card" id="swap-6">
+    <div class="swap-card-header">
+      <div class="swap-num">6</div>
+      <h3>Chemical dish soap in plastic bottle → Dish soap bar</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Liquid dish soap (plastic bottle)</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Dish soap bar / plant-based refill</span>
+      </div>
+      <p>Most conventional dish soaps contain synthetic fragrances, phosphates, and surfactants that don't fully break down in waterways, contributing to algae blooms that suffocate aquatic life. The plastic bottles are often not recycled because of soap residue.</p>
+      <p><strong>Dish soap bars</strong> are the simplest swap — they last 2–3 times longer than a liquid bottle of equivalent volume, come in paper packaging or no packaging at all, and clean just as effectively. You can rub your sponge or brush directly on the bar, or grate a little into warm water.</p>
+      <p>If you prefer liquid, look for <strong>plant-based dish soap in a glass bottle or compostable refill pouch</strong>. Brands that are biodegradable and phosphate-free are safer for waterways and your kitchen.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> Dishwater goes directly down the drain and into the water system. What's in it matters — phosphates and synthetic chemicals that don't break down accumulate in rivers, lakes, and eventually drinking water.
+      </div>
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/51-b6UOcgkL._AC_SL1080_.jpg" alt="Eco-friendly dish soap bar" loading="lazy">
+      </div>
+      <p class="img-caption">Eco-friendly dish soap bar</p>
+      <div class="buy-links">
+        <span class="buy-label">Buy</span>
+        <a class="buy-btn" href="https://link.amazon/B0eA5R2yg" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.in
+        </a>
+        <a class="buy-btn" href="https://amzn.to/4fcgNNc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 7: Straws & cutlery ── -->
+  <div class="swap-card" id="swap-7">
+    <div class="swap-card-header">
+      <div class="swap-num">7</div>
+      <h3>Plastic straws & cutlery → Steel or bamboo</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Plastic straws & cutlery</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Steel / bamboo / coconut straws</span>
+      </div>
+      <p>Plastic straws and disposable cutlery are the definition of single-use waste — used for minutes, then immortal for hundreds of years. Straws in particular are a leading pollutant in ocean surveys, too small to be captured by most filtration systems.</p>
+      <p><strong>Stainless steel straws</strong> are the most durable replacement — they come with a small cleaning brush, are dishwasher safe, and last indefinitely. <strong>Bamboo straws</strong> are a natural, compostable option with a pleasant texture. <strong>Coconut shell straws</strong> are another beautiful Kerala-native option.</p>
+      <p>For cutlery, a small <strong>steel travel cutlery set</strong> in a fabric pouch is worth keeping in your bag — it means you'll never need to accept plastic cutlery when ordering out or eating at events.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> Plastic straws were among the first single-use plastics banned in the EU and UK. India banned them in 2022. Switching now removes a small but symbolic piece of plastic from your life entirely.
+      </div>
+      <div class="product-img-wrap two-col">
+        <div class="img-slot">
+          <img src="https://m.media-amazon.com/images/I/71ckUgTeVqL._SL1500_.jpg" alt="Stainless steel straws" loading="lazy">
+        </div>
+        <div class="img-slot">
+          <img src="https://m.media-amazon.com/images/I/61IPuDX42FL._SL1000_.jpg" alt="Steel travel cutlery set" loading="lazy">
+        </div>
+      </div>
+      <p class="img-caption">Left: steel straws · Right: travel cutlery set</p>
+      <div class="buy-links">
+        <span class="buy-label">Steel straws</span>
+        <a class="buy-btn" href="https://link.amazon/B07u3W6iw" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.in
+        </a>
+        <a class="buy-btn" href="https://amzn.to/4ysoVAF" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.com
+        </a>
+      </div>
+      <div class="buy-links" style="border-top:none; padding-top: 0.5rem;">
+        <span class="buy-label">Travel cutlery</span>
+        <a class="buy-btn" href="https://link.amazon/B0dH6Z9bq" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.in
+        </a>
+        <a class="buy-btn" href="https://link.amazon/B07u3W6iw" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M13.12 2.06C8.62 1.54 4.61 4.42 3.5 8.75c-.12.46.28.9.75.83.37-.06.65-.36.72-.73C5.9 5.3 9.27 2.96 13.1 3.56c4.14.65 6.9 4.5 6.25 8.64-.6 3.8-3.9 6.56-7.74 6.56-.44 0-.8.36-.8.8s.36.8.8.8c4.6 0 8.5-3.3 9.22-7.96.78-4.96-2.6-9.65-7.51-10.34z"/></svg>
+          amazon.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- WHERE TO START -->
+  <h2 class="section-heading">Not sure <em>where to start?</em></h2>
+
+  <div class="callout">
+    <p class="callout-label">Start small</p>
+    <ul class="check-list">
+      <li><span class="check-dot"></span><div><strong>Don't replace everything at once.</strong> That's wasteful in itself. When your current sponge wears out, replace it with a loofah. When the cling wrap roll runs out, switch to beeswax wraps.</div></li>
+      <li><span class="check-dot"></span><div><strong>Chopping board first.</strong> It's the highest-impact health swap — you're literally eating plastic from a scratched board. This one is worth doing immediately.</div></li>
+      <li><span class="check-dot"></span><div><strong>Cookware last.</strong> Good cast iron or stainless steel is an investment. Save it for when your non-stick pan starts to peel or scratch.</div></li>
+      <li><span class="check-dot"></span><div><strong>Travel cutlery is underrated.</strong> Keep a set in your bag. It costs very little and eliminates plastic cutlery from your life entirely whenever you eat out.</div></li>
+    </ul>
+  </div>
+
+  <div class="callout-warm">
+    <p class="callout-label">A note on cost</p>
+    <p>Most of these swaps cost more upfront than what they replace — but far less over time. A ₹600 set of beeswax wraps replaces ₹50 rolls of cling wrap bought again and again, year after year. Cast iron lasts decades. Steel straws last forever. The eco-friendly option almost always wins on lifetime cost.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="post-body">
+    <p>The kitchen is the easiest room to start because so many of the swaps are direct one-to-one replacements. You don't need to change how you cook — just what you cook with.</p>
+    <p>Pick one. Make the swap when it runs out. Then pick another. That's the whole system.</p>
+  </div>
+
+  <!-- RELATED POSTS -->
+  <div class="related-post">
+    Check this post →
+    <a href="https://lightenedgirl.github.io/CozyLittleCottage/W1-home-waste-management.html">
+      Home Waste Management — a simple guide
+    </a>
+  </div>
+
+</div><!-- end post-wrap -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  © 2025 Cozy Little Cottage · Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>

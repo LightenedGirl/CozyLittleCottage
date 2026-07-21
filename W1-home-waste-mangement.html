@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Waste Management — Cozy Little Cottage</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FDFAF5;
+    --cream-dark: #F4EFE6;
+    --cream-border: #E8DFD0;
+    --text: #2C2C2A;
+    --text-muted: #7A746A;
+    --text-soft: #5A5550;
+    --blue: #2E5F7A;
+    --blue-pale: #EAF3F8;
+    --blue-mid: #4A83A0;
+    --accent: #8B6F47;
+    --accent-pale: #F5EDE2;
+    --link: #2E5F7A;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+    font-size: 0.97rem;
+  }
+
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAV ── */
+  .site-nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--cream-border);
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .site-logo {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .site-logo:hover { text-decoration: none; color: var(--blue); }
+  .nav-sep { color: var(--cream-border); font-size: 0.85rem; }
+  .nav-link { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.02em; }
+  .nav-link:hover { color: var(--blue); text-decoration: none; }
+
+  /* ── PAGE LAYOUT ── */
+  .page-wrap { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .back-link {
+    display: inline-block;
+    margin: 2rem 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .back-link:hover { color: var(--blue); text-decoration: none; }
+
+  /* ── POST WRAP ── */
+  .post-wrap {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 6rem;
+    animation: fadeUp 0.35s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HERO TAG ── */
+  .hero-tag {
+    display: inline-block;
+    background: #1C3E52;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+
+  /* ── POST HEADER ── */
+  .post-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.7rem;
+  }
+  .post-title em { font-style: italic; color: var(--blue); }
+
+  .post-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+    margin-bottom: 1.4rem;
+  }
+
+  .post-rule {
+    border: none;
+    border-top: 1px solid var(--cream-border);
+    margin: 0 0 1.4rem;
+  }
+
+  .disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 1.8rem;
+  }
+
+  /* ── BODY TEXT ── */
+  .post-body p {
+    margin-bottom: 1.25rem;
+    color: var(--text-soft);
+    line-height: 1.85;
+  }
+  .post-body strong { font-weight: 500; color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    margin: 2rem 0;
+    padding: 1.2rem 1.8rem;
+    border-left: 3px solid var(--cream-border);
+  }
+  .pull-quote p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 2.8rem 0 1.2rem;
+  }
+  .section-heading em { font-style: italic; color: var(--blue); }
+
+  /* ── STEP CARDS (categories) ── */
+  .steps { margin: 1.5rem 0 2rem; }
+
+  .step-card {
+    border: 1px solid var(--cream-border);
+    border-radius: 8px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1rem;
+    background: #fff;
+  }
+  .step-card:last-child { margin-bottom: 0; }
+
+  .step-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--blue-pale);
+    border: 1px solid #B3D4E4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--blue);
+    flex-shrink: 0;
+  }
+
+  .step-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .step-card h3 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.55rem;
+  }
+
+  .step-card p {
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    line-height: 1.75;
+    margin: 0;
+  }
+  .step-card p + p { margin-top: 0.6rem; }
+
+  .step-tip {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-size: 0.83rem;
+    color: var(--blue);
+    font-weight: 500;
+  }
+
+  /* ── CALLOUT (tips) ── */
+  .callout {
+    background: var(--blue-pale);
+    border: 1px solid #B3D4E4;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+  .callout-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+  }
+  .callout p {
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    margin: 0;
+    line-height: 1.75;
+  }
+  .callout p + p { margin-top: 0.6rem; }
+
+  /* ── WARM CALLOUT ── */
+  .callout-warm {
+    background: var(--accent-pale);
+    border: 1px solid #DECCB5;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+  .callout-warm .callout-label { color: var(--accent); }
+  .callout-warm p { font-size: 0.93rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout-warm p + p { margin-top: 0.6rem; }
+
+  /* ── CHECKLIST ── */
+  .check-list { list-style: none; padding: 0; margin: 0.8rem 0 0; }
+  .check-list li {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.93rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue-mid);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+  .check-list li strong { font-weight: 500; color: var(--text); }
+
+  /* ── DIVIDER ── */
+  .section-divider { border: none; border-top: 1px solid var(--cream-border); margin: 2.5rem 0; }
+
+  /* ── RELATED POSTS ── */
+  .related-post {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--cream-border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .related-post a {
+    color: var(--blue);
+    display: block;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--cream-border);
+    margin-top: 4rem;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 540px) {
+    .post-title { font-size: 1.5rem; }
+    .step-card { padding: 1.1rem 1.2rem; }
+    .callout, .callout-warm { padding: 1.1rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="site-logo" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">🌿 Cozy Little Cottage</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">All Posts</a>
+</nav>
+
+<div class="page-wrap">
+  <a class="back-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">← Back to Home</a>
+</div>
+
+<div class="post-wrap">
+
+  <!-- HEADER -->
+  <span class="hero-tag">Home &amp; Living</span>
+  <h1 class="post-title">Home Waste Management —<br><em>a simple guide</em></h1>
+  <p class="post-date">July 20, 2026</p>
+  <hr class="post-rule">
+  <p class="disclaimer">This post contains general guidance on household waste management. Disposal rules may vary by local municipality.</p>
+
+  <!-- INTRO -->
+  <div class="post-body">
+    <p>Every household generates waste every single day — kitchen scraps, cardboard, old batteries, broken gadgets. Most of it ends up in one bin and heads straight to a landfill. But with a little sorting and a few good habits, the majority of what we throw away can have a second life.</p>
+
+    <p>The idea isn't to be perfect. It's to be a little more intentional about where things go.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>"The best waste is the waste you never create. Everything else is just good sorting."</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- THE 5 CATEGORIES -->
+  <h2 class="section-heading">The <em>five categories</em> of home waste</h2>
+
+  <div class="post-body">
+    <p>Most household waste falls into one of five types. Once you know what goes where, the whole thing becomes second nature.</p>
+  </div>
+
+  <div class="steps">
+
+    <!-- 1. Reduce -->
+    <div class="step-card">
+      <div class="step-meta">
+        <div class="step-num">1</div>
+        <span class="step-label">Start here</span>
+      </div>
+      <h3>Reduce — before waste even exists</h3>
+      <p>The most effective waste strategy is making less of it. Carry your own bags, bottles, and containers. Say no to single-use plastic. Choose products with minimal packaging, and buy only what you'll actually use.</p>
+      <p>It sounds small, but this step quietly handles a large chunk of the problem before it starts.</p>
+      <span class="step-tip">→ Think before you buy. Do you really need it?</span>
+    </div>
+
+    <!-- 2. Wet waste -->
+    <div class="step-card">
+      <div class="step-meta">
+        <div class="step-num">2</div>
+        <span class="step-label">Green bin</span>
+      </div>
+      <h3>Wet waste — compostable and organic</h3>
+      <p>Vegetable peels, fruit scraps, cooked food leftovers, tea bags, coffee grounds, eggshells — anything that was once alive and will rot. This is nearly 60% of what most kitchens throw away.</p>
+      <p>All of it can go into a compost bin or pit instead of a landfill. Even a small clay pot on a balcony works. In 30–45 days, you have rich soil for your plants.</p>
+      <span class="step-tip">→ Line your bin with newspaper instead of a plastic bag.</span>
+    </div>
+
+    <!-- 3. Dry waste -->
+    <div class="step-card">
+      <div class="step-meta">
+        <div class="step-num">3</div>
+        <span class="step-label">Blue bin</span>
+      </div>
+      <h3>Dry waste — recyclable materials</h3>
+      <p>Paper, cardboard, plastic bottles, glass jars, aluminium cans, metal scraps — these can all be recycled and remade into something new. The key rule: keep them clean and dry.</p>
+      <p>A greasy pizza box or a wet plastic bottle can contaminate an entire batch at the recycling plant. Rinse, flatten, and store separately from wet waste.</p>
+      <span class="step-tip">→ Clean before recycling. Contamination wastes the effort.</span>
+    </div>
+
+    <!-- 4. Hazardous -->
+    <div class="step-card">
+      <div class="step-meta">
+        <div class="step-num">4</div>
+        <span class="step-label">Red bin · handle with care</span>
+      </div>
+      <h3>Hazardous waste — never in the regular bin</h3>
+      <p>Batteries, CFL bulbs, expired medicines, paints, solvents, pesticides, and cleaning chemicals all contain substances that can leach into soil and groundwater if thrown in a regular bin.</p>
+      <p>Keep a small labelled box in a safe corner at home and drop it off at a designated collection point when it's full. Many pharmacies take back expired medicines, and municipalities often have periodic collection drives.</p>
+      <span class="step-tip">→ Store safely. Drop off — don't bin.</span>
+    </div>
+
+    <!-- 5. E-waste -->
+    <div class="step-card">
+      <div class="step-meta">
+        <div class="step-num">5</div>
+        <span class="step-label">Authorised recycler</span>
+      </div>
+      <h3>E-waste — electronic scrap</h3>
+      <p>Old phones, laptops, chargers, cables, remote controls, and broken appliances. These contain both valuable materials — gold, copper, lithium — and toxic ones like lead and mercury. They should never go into a regular bin.</p>
+      <p>Most phone and appliance brands have authorised take-back programs. You can also find certified e-waste recyclers in your city who will collect from your doorstep.</p>
+      <span class="step-tip">→ Check your brand's take-back program before discarding old devices.</span>
+    </div>
+
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- QUICK TIPS -->
+  <h2 class="section-heading">A few habits that <em>actually help</em></h2>
+
+  <div class="callout">
+    <p class="callout-label">Quick tips</p>
+    <ul class="check-list">
+      <li><span class="check-dot"></span><div><strong>Segregate at source.</strong> Sort waste right where it's made — the kitchen, bathroom, desk. Mixing everything and sorting later is far less effective.</div></li>
+      <li><span class="check-dot"></span><div><strong>Donate before discarding.</strong> Clothes, books, furniture, and working electronics in reasonable condition can find a new home instead of a landfill.</div></li>
+      <li><span class="check-dot"></span><div><strong>Compost your kitchen scraps.</strong> It takes very little space and turns your food waste into something genuinely useful for your garden or balcony plants.</div></li>
+      <li><span class="check-dot"></span><div><strong>Rinse recyclables.</strong> A quick rinse before storing dry waste prevents odours and keeps your batch clean for the recycler.</div></li>
+      <li><span class="check-dot"></span><div><strong>Skip the plastic bin liner.</strong> Line your wet waste bin with a sheet of newspaper instead — it absorbs moisture and composts along with the rest.</div></li>
+    </ul>
+  </div>
+
+  <div class="callout-warm">
+    <p class="callout-label">If you're in Kerala</p>
+    <p>The Haritha Karma Sena — local waste workers — collect segregated waste from most homes on a schedule. Keeping wet and dry waste separated before they arrive makes a real difference to how well the material gets processed downstream.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="post-body">
+    <p>None of this requires a complete lifestyle overhaul. Start with one bin for wet waste, one for dry. That single habit, done consistently, already puts you well ahead of where most households are.</p>
+    <p>Small, steady choices add up — in your home, your neighbourhood, and eventually in the soil and water around us.</p>
+  </div>
+  
+  <!-- RELATED POSTS -->
+  <div class="related-post">
+    Check this post →
+    <a href="https://lightenedgirl.github.io/CozyLittleCottage/W2-kitchen-eco-swaps.html">
+      7 Kitchen Swaps to ditch plastic for good
+      
+    </a>
+  </div>
+
+
+</div><!-- end post-wrap -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  © 2025 Cozy Little Cottage · Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
