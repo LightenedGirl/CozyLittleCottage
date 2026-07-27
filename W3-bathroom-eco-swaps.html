@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco-Friendly Bathroom Swaps — Cozy Little Cottage</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FDFAF5;
+    --cream-dark: #F4EFE6;
+    --cream-border: #E8DFD0;
+    --text: #2C2C2A;
+    --text-muted: #7A746A;
+    --text-soft: #5A5550;
+    --blue: #2E5F7A;
+    --blue-pale: #EAF3F8;
+    --blue-mid: #4A83A0;
+    --green: #3D6B42;
+    --green-pale: #EDF4EE;
+    --accent: #8B6F47;
+    --accent-pale: #F5EDE2;
+    --link: #2E5F7A;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+    font-size: 0.97rem;
+  }
+
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAV ── */
+  .site-nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--cream-border);
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .site-logo {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .site-logo:hover { color: var(--blue); text-decoration: none; }
+  .nav-sep { color: var(--cream-border); font-size: 0.85rem; }
+  .nav-link { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.02em; }
+  .nav-link:hover { color: var(--blue); text-decoration: none; }
+
+  /* ── LAYOUT ── */
+  .page-wrap { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .back-link {
+    display: inline-block;
+    margin: 2rem 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .back-link:hover { color: var(--blue); text-decoration: none; }
+
+  .post-wrap {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 6rem;
+    animation: fadeUp 0.35s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HEADER ── */
+  .hero-tag {
+    display: inline-block;
+    background: #1C3E52;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+
+  .post-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.7rem;
+  }
+  .post-title em { font-style: italic; color: var(--blue); }
+
+  .post-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+    margin-bottom: 1.4rem;
+  }
+
+  .post-rule { border: none; border-top: 1px solid var(--cream-border); margin: 0 0 1.4rem; }
+
+  .disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 1.8rem;
+  }
+
+  /* ── BODY TEXT ── */
+  .post-body p {
+    margin-bottom: 1.25rem;
+    color: var(--text-soft);
+    line-height: 1.85;
+  }
+  .post-body strong { font-weight: 500; color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    margin: 2rem 0;
+    padding: 1.2rem 1.8rem;
+    border-left: 3px solid var(--cream-border);
+  }
+  .pull-quote p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* ── CONTENTS ── */
+  .toc {
+    background: var(--cream-dark);
+    border: 1px solid var(--cream-border);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin: 0 0 2.5rem;
+  }
+  .toc-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.7rem;
+  }
+  .toc ol {
+    padding-left: 1.1rem;
+    margin: 0;
+  }
+  .toc ol li {
+    font-size: 0.88rem;
+    color: var(--text-soft);
+    padding: 0.2rem 0;
+    line-height: 1.5;
+  }
+  .toc ol li a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .toc ol li a:hover { text-decoration: underline; }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 2.8rem 0 1rem;
+  }
+  .section-heading em { font-style: italic; color: var(--blue); }
+
+  /* ── SWAP CARD ── */
+  .swap-card {
+    border: 1px solid var(--cream-border);
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    scroll-margin-top: 1.5rem;
+  }
+
+  .swap-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid var(--cream-border);
+    background: var(--cream-dark);
+  }
+
+  .swap-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--blue-pale);
+    border: 1px solid #B3D4E4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--blue);
+    flex-shrink: 0;
+  }
+
+  .swap-card-header h3 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .swap-card-body { padding: 1.3rem 1.5rem; }
+
+  /* replace row */
+  .replace-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-out { background: #FDECEA; color: #8B2D26; border: 1px solid #F2C0BB; }
+  .badge-in  { background: var(--green-pale); color: var(--green); border: 1px solid #B8D9BC; }
+  .badge-arrow { color: var(--text-muted); font-size: 0.85rem; }
+
+  .swap-card-body p {
+    font-size: 0.92rem;
+    color: var(--text-soft);
+    line-height: 1.78;
+    margin-bottom: 0.9rem;
+  }
+  .swap-card-body p:last-of-type { margin-bottom: 0; }
+  .swap-card-body strong { font-weight: 500; color: var(--text); }
+
+  /* why it matters */
+  .why-box {
+    background: var(--cream);
+    border: 1px solid var(--cream-border);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin: 0.9rem 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+  .why-box strong { color: var(--text-soft); font-weight: 500; }
+
+  /* product image */
+  .product-img-wrap {
+    margin: 1rem 0 0.4rem;
+    border: 1px solid var(--cream-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--cream-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+  }
+  .product-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 12px;
+  }
+  .product-img-wrap.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 200px;
+  }
+  .product-img-wrap.two-col .img-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: var(--cream-dark);
+  }
+  .product-img-wrap.two-col .img-slot:first-child {
+    border-right: 1px solid var(--cream-border);
+  }
+  .product-img-wrap.two-col .img-slot img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+  }
+  .img-caption {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* buy links */
+  .buy-links {
+    margin-top: 1rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--cream-border);
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .buy-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 0.2rem;
+  }
+  .buy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--blue);
+    background: var(--blue-pale);
+    border: 1px solid #B3D4E4;
+    border-radius: 20px;
+    padding: 4px 13px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .buy-btn:hover { background: #d2eaf5; text-decoration: none; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: var(--blue-pale);
+    border: 1px solid #B3D4E4;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+  .callout-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.6rem;
+  }
+  .callout p { font-size: 0.92rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout p + p { margin-top: 0.55rem; }
+
+  .callout-warm {
+    background: var(--accent-pale);
+    border: 1px solid #DECCB5;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+  .callout-warm .callout-label { color: var(--accent); }
+  .callout-warm p { font-size: 0.92rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout-warm p + p { margin-top: 0.55rem; }
+
+  /* ── CHECKLIST ── */
+  .check-list { list-style: none; padding: 0; margin: 0.6rem 0 0; }
+  .check-list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.92rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue-mid);
+    flex-shrink: 0;
+    margin-top: 0.6rem;
+  }
+  .check-list li strong { font-weight: 500; color: var(--text); }
+
+  /* ── DIVIDER ── */
+  .section-divider { border: none; border-top: 1px solid var(--cream-border); margin: 2.5rem 0; }
+
+  /* ── RELATED POST ── */
+  .related-post {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--cream-border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .related-post a {
+    color: var(--blue);
+    display: block;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--cream-border);
+    margin-top: 4rem;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 540px) {
+    .post-title { font-size: 1.5rem; }
+    .swap-card-body { padding: 1.1rem 1.2rem; }
+    .swap-card-header { padding: 0.9rem 1.2rem; }
+    .buy-links { flex-direction: column; align-items: flex-start; }
+    .product-img-wrap.two-col { grid-template-columns: 1fr; height: auto; }
+    .product-img-wrap.two-col .img-slot:first-child { border-right: none; border-bottom: 1px solid var(--cream-border); }
+    .product-img-wrap.two-col .img-slot img { height: 130px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="site-logo" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">🌿 Cozy Little Cottage</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">All Posts</a>
+</nav>
+
+<div class="page-wrap">
+  <a class="back-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">← Back to Home</a>
+</div>
+
+<div class="post-wrap">
+
+  <!-- HEADER -->
+  <span class="hero-tag">Eco Bathroom</span>
+  <h1 class="post-title">7 Bathroom Swaps to <em>ditch plastic</em> for good</h1>
+  <p class="post-date">July 27, 2026</p>
+  <hr class="post-rule">
+  <p class="disclaimer">This post contains affiliate links. If you purchase through them, I may earn a small commission at no extra cost to you — thank you for supporting this blog.</p>
+
+  <!-- INTRO -->
+  <div class="post-body">
+    <p>After the kitchen, the bathroom is the second biggest source of single-use plastic in most homes. Shampoo bottles, plastic toothbrushes, disposable razors, synthetic loofahs — we buy them, use them briefly, and throw them away without much thought.</p>
+    <p>Most of these items also sit directly against our skin or go into our bodies — which means the materials they're made from matter even more than in the kitchen. Many conventional bathroom products contain synthetic fragrances, parabens, sulfates, and microplastics that absorb through skin or wash straight into waterways.</p>
+    <p>Here are seven swaps that are cleaner for your body and the planet — all practical, all available in India and internationally.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>"Your bathroom routine touches your skin, your hair, your water supply. What you choose there matters more than most people realise."</p>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <p class="toc-label">In this post</p>
+    <ol>
+      <li><a href="#swap-1">Plastic toothbrush → Bamboo toothbrush</a></li>
+      <li><a href="#swap-2">Bottled shampoo → Shampoo bar</a></li>
+      <li><a href="#swap-3">Liquid body wash → Bar soap</a></li>
+      <li><a href="#swap-4">Plastic razor → Safety razor</a></li>
+      <li><a href="#swap-5">Plastic cotton buds → Bamboo cotton buds</a></li>
+      <li><a href="#swap-6">Disposable period products → Reusable alternatives</a></li>
+      <li><a href="#swap-7">Synthetic loofah → Natural loofah or dry brush</a></li>
+    </ol>
+  </div>
+
+  <hr class="section-divider">
+  <h2 class="section-heading">The <em>7 bathroom swaps</em></h2>
+
+  <!-- ── SWAP 1: Toothbrush ── -->
+  <div class="swap-card" id="swap-1">
+    <div class="swap-card-header">
+      <div class="swap-num">1</div>
+      <h3>Plastic toothbrush → Bamboo toothbrush</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Plastic toothbrush</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Bamboo toothbrush</span>
+      </div>
+      <p>Over 4.7 billion plastic toothbrushes are thrown away globally every year — and almost none of them are recycled. They're too small for most recycling machinery, made from multiple types of plastic bonded together, and end up in landfills or oceans where they persist for 400+ years.</p>
+      <p>Bamboo toothbrushes are a direct replacement — same shape, same bristle types (soft, medium, firm), same brushing experience. The handle is made from sustainably grown bamboo, which is naturally antibacterial and biodegrades within a few months when composted. Most brands use nylon-4 bristles which are more biodegradable than standard nylon, though the bristles should still be pulled out and discarded separately before composting the handle.</p>
+      <p>They last exactly as long as a regular toothbrush — replace every 3 months as usual. Some brands also offer <strong>charcoal-infused bamboo bristles</strong> for gentle whitening.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> A single person uses roughly 300 toothbrushes in their lifetime. Switching to bamboo eliminates 300 plastic handles going to landfill — per person, per lifetime.
+      </div>
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/81btaGc9zpL._AC_SL1500_.jpg" alt="Bamboo toothbrush" loading="lazy">
+      </div>
+      <p class="img-caption">Bamboo Toothbrush</p>
+      <div class="buy-links">
+        <span class="buy-label">Buy</span>
+        <a class="buy-btn" href="https://link.amazon/B0eJB5UNU" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://amzn.to/4c5HsZY" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 2: Shampoo bar ── -->
+  <div class="swap-card" id="swap-2">
+    <div class="swap-card-header">
+      <div class="swap-num">2</div>
+      <h3>Bottled shampoo → Shampoo bar</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Shampoo in plastic bottle</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Shampoo bar</span>
+      </div>
+      <p>Shampoo bottles are one of the most discarded plastic items in any household. The average person uses 11 bottles of shampoo and conditioner per year. Most of these bottles are not recycled because they're contaminated with product residue, and the pump mechanisms often contain mixed plastics that can't be separated.</p>
+      <p>Shampoo bars are concentrated solid shampoo — the same cleansing ingredients in bar form, without the water content that makes up 80% of liquid shampoo. One bar typically replaces <strong>2–3 bottles of liquid shampoo</strong> and lasts 60–80 washes. They come paper-wrapped or package-free, work for all hair types, and travel without liquid restrictions.</p>
+      <p>There's an adjustment period of 1–2 weeks as your scalp recalibrates its oil production — this is normal and temporary. Look for bars that are <strong>sulfate-free and pH-balanced</strong> for the best results, especially for colour-treated or curly hair.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> If every household in India switched to shampoo bars, it would eliminate billions of plastic bottles from landfills annually. The concentrated formula also means far lower carbon emissions in shipping — you're shipping product, not water.
+      </div>
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/811uZ0Z3mgL._SL1500_.jpg" alt="Shampoo bar" loading="lazy">
+      </div>
+      <p class="img-caption">Shampoo Bar</p>
+      <div class="buy-links">
+        <span class="buy-label">Buy</span>
+        <a class="buy-btn" href="https://link.amazon/B05ZHTWW9" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://amzn.to/4bfdYbX" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 3: Bar soap ── -->
+  <div class="swap-card" id="swap-3">
+    <div class="swap-card-header">
+      <div class="swap-num">3</div>
+      <h3>Liquid body wash → Bar soap</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Liquid body wash (plastic bottle)</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Natural bar soap</span>
+      </div>
+      <p>Liquid body wash is mostly water — you're paying for, and eventually discarding, a plastic bottle filled largely with a substance you could get from your tap. Beyond the packaging, most commercial body washes contain synthetic fragrances, parabens, and sulfates (SLS/SLES) that can disrupt skin's natural moisture barrier and irritate sensitive skin.</p>
+      <p>A natural bar soap — especially one made with <strong>cold-pressed oils like coconut, olive, or castor</strong> — cleanses gently, moisturises naturally, and leaves no plastic behind. Kerala has a beautiful tradition of coconut oil-based soaps that are naturally rich and effective for our climate.</p>
+      <p>Bar soaps also last significantly longer than an equivalent volume of body wash — a standard bar replaces roughly 3 bottles of liquid wash. Look for soaps that are <strong>glycerin-rich, fragrance-free, or scented with essential oils</strong> rather than synthetic fragrance.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> Studies show bar soap has a significantly lower carbon footprint than liquid soap — less packaging, less weight in shipping, and no pump mechanism. It also contains far fewer synthetic chemicals that end up in your shower drain and eventually in waterways.
+      </div>
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/819gf3IgXCL._SL1500_.jpg" alt="Natural bar soap" loading="lazy">
+      </div>
+      <p class="img-caption">Natural Soap Bar</p>
+      <div class="buy-links">
+        <span class="buy-label">Buy</span>
+        <a class="buy-btn" href="https://link.amazon/B081OqiKK" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://amzn.to/4x1yiWt" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 4: Safety razor ── -->
+  <div class="swap-card" id="swap-4">
+    <div class="swap-card-header">
+      <div class="swap-num">4</div>
+      <h3>Plastic disposable razor → Safety razor</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Disposable plastic razor</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Stainless steel safety razor</span>
+      </div>
+      <p>Disposable razors and cartridge razor heads are almost entirely non-recyclable — the combination of plastic, rubber, and metal bonded together makes them impossible to separate for recycling. An estimated 2 billion disposable razors are discarded every year in the US alone. They are, by design, made to be thrown away.</p>
+      <p>A <strong>stainless steel safety razor</strong> is the original alternative — the same tool that was standard before disposables were invented. The handle lasts a lifetime. The only part you replace is the thin steel blade, which costs a fraction of cartridge refills (typically ₹5–15 per blade in India), is fully recyclable steel, and gives a closer, smoother shave with far less irritation because there's only one blade instead of five dragging across the skin.</p>
+      <p>There's a short learning curve — use light pressure, hold at a 30-degree angle, and let the weight of the razor do the work. Once you get it, most people never go back. Safety razors work for both face and body shaving.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> A safety razor purchased once essentially ends your contribution to razor waste for life. The blades are 100% recyclable steel — collect them in a small tin and drop off at a metal recycler when full.
+      </div>
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/814P5bycgLL._SL1386_.jpg" alt="Stainless steel safety razor" loading="lazy">
+      </div>
+      <p class="img-caption">Safety Razor</p>
+      <div class="buy-links">
+        <span class="buy-label">Razor</span>
+        <a class="buy-btn" href="https://link.amazon/B01WI6LDl" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://amzn.to/4x2L72P" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+      <div class="buy-links" style="border-top: none; padding-top: 0.5rem;">
+        <span class="buy-label">Blades</span>
+        <a class="buy-btn" href="https://link.amazon/B06ROSuxb" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://amzn.to/4pFpmDV" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 5: Cotton buds ── -->
+  <div class="swap-card" id="swap-5">
+    <div class="swap-card-header">
+      <div class="swap-num">5</div>
+      <h3>Plastic cotton buds → Bamboo cotton buds</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Plastic-stemmed cotton buds</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Bamboo cotton buds</span>
+      </div>
+      <p>Cotton buds with plastic stems are one of the most commonly found items in coastal and ocean cleanups worldwide. They're small enough to flush down toilets (which many people do), pass through sewage filtration systems, and end up directly in waterways and oceans where they're ingested by fish and seabirds.</p>
+      <p>Bamboo cotton buds are exactly the same to use — same size, same soft cotton tips, same applications. The only difference is the stem, which is made from sustainably harvested bamboo and biodegrades fully in soil or compost within months.</p>
+      <p>Many brands also now offer <strong>reusable silicone cotton bud alternatives</strong> — a washable silicone tip on a metal handle — for those who want to eliminate single-use entirely. These are particularly good for makeup application and removal.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> Cotton bud plastic stems are too small to be captured by most water treatment filters. Switching to bamboo removes one of the most insidious sources of ocean plastic — one that most people don't even think about.
+      </div>
+      <div class="product-img-wrap two-col">
+        <div class="img-slot">
+          <img src="https://m.media-amazon.com/images/I/61WgM6Z-8RL._SL1500_.jpg" alt="Bamboo cotton buds" loading="lazy">
+        </div>
+        <div class="img-slot">
+          <img src="https://m.media-amazon.com/images/I/71UrOHM070L._SL1500_.jpg" alt="Reusable silicone cotton bud" loading="lazy">
+        </div>
+      </div>
+      <p class="img-caption">Above: Bamboo Cotton Buds · Below: Reusable Silicone Buds</p>
+      <div class="buy-links">
+        <span class="buy-label">Bamboo buds</span>
+        <a class="buy-btn" href="https://link.amazon/B0inO8OjM" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://amzn.to/4gZcZQM" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+      <div class="buy-links" style="border-top: none; padding-top: 0.5rem;">
+        <span class="buy-label">Reusable silicone</span>
+        <a class="buy-btn" href="https://link.amazon/B0dJ0ty7v" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://amzn.to/3TBSRKH" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 6: Period products ── -->
+  <div class="swap-card" id="swap-6">
+    <div class="swap-card-header">
+      <div class="swap-num">6</div>
+      <h3>Disposable period products → Reusable alternatives</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Disposable pads & tampons</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Menstrual cup / cloth pads / period underwear</span>
+      </div>
+      <p>A person who menstruates uses an estimated 11,000–16,000 disposable pads or tampons in their lifetime. Conventional disposable pads are up to 90% plastic — they contain polyethylene, polypropylene, and SAP (superabsorbent polymer), none of which biodegrade. Most are also individually wrapped in more plastic. Tampons with plastic applicators add another layer of single-use waste.</p>
+      <p>There are now three excellent reusable alternatives, each suited to different preferences:</p>
+      <p><strong>Menstrual cups</strong> are medical-grade silicone cups that collect rather than absorb flow. They hold more than a tampon, can be worn for up to 12 hours, last 5–10 years, and after an initial learning curve, many users find them far more comfortable and convenient than disposables.</p>
+      <p><strong>Reusable cloth pads</strong> are soft fabric pads that snap around underwear — washed and reused for years. They're particularly popular for overnight use and for those who prefer an external option similar to what they're used to.</p>
+      <p><strong>Period underwear</strong> is absorbent underwear with built-in layers — worn like regular underwear, washed after use. Premium brands absorb the equivalent of 2–4 tampons and dry quickly.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> Switching to a menstrual cup alone eliminates roughly 2,400 disposable products per person over its lifespan. That's thousands of pieces of plastic that never need to be manufactured, packaged, or thrown away.
+      </div>
+      <div class="product-img-wrap two-col">
+        <div class="img-slot">
+          <img src="https://m.media-amazon.com/images/I/719tGWDIIFL._AC_SL1500_.jpg" alt="Menstrual cup" loading="lazy">
+        </div>
+        <div class="img-slot">
+          <img src="https://m.media-amazon.com/images/I/51YGlLou-pL._SL1080_.jpg" alt="Reusable cloth pads" loading="lazy">
+        </div>
+      </div>
+      <p class="img-caption">Top: Menstrual Cup · Bottom: Reusable Cloth Pads</p>
+      <div class="buy-links">
+        <span class="buy-label">Menstrual cup</span>
+        <a class="buy-btn" href="https://link.amazon/B0hEid9JK" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://amzn.to/44MQ0kH" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+      <div class="buy-links" style="border-top: none; padding-top: 0.5rem;">
+        <span class="buy-label">Cloth pads</span>
+        <a class="buy-btn" href="https://amazon.in/dp/PRODUCT-ID-HERE" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://amazon.com/dp/PRODUCT-ID-HERE" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+      <div class="buy-links" style="border-top: none; padding-top: 0.5rem;">
+        <span class="buy-label">Period underwear</span>
+        <a class="buy-btn" href="https://link.amazon/B08U3nRTs" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://www.amazon.com/Teamoy-Menstrual-Super-Absorbent-Comfortable-3pcs%C3%9711-6/dp/B078S6KRX2?crid=3R2VRONIZLEIY&dib=eyJ2IjoiMSJ9.-jRxL1nKsT8LXahuC-tFxM-ryax2mFJIFgI7I4Xf022b4QdYQ9Cdns7BM9DA2CrbeoTl7cO1biJuJtD2TuT2gStqpBUl5tC6-Aqynk0ptGqzqTpuNhSCTYp2L01rYe7iik_0y5mOnqHnciEWOv0NX5F_z8LiebQbTLidHB386-KPkEtYlpkKhNb3cgPJSwSu-Buz99JMQnpKFmVT93l8-7fSwk4fr3P_Ef1WId2nvIB77-5Q3HDlVNtvlMRS9B9gr8DaxQx4xgkdttIcF7CuqEs0s8efMFt_Uloi3P5Zaik.vtGSCsqAIzdVo9zEA5xJaLmRGRo5HREZZX9d5FeQz0M&dib_tag=se&keywords=Reusable%2Bsanitary%2Bpads&qid=1785131360&sprefix=reusable%2Bsanitary%2B%2Caps%2C1396&sr=8-11&th=1&linkCode=ll2&tag=cozycottag08f-20&linkId=791822d51dbbdbc12ad1f171a0ebc9f6&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SWAP 7: Loofah ── -->
+  <div class="swap-card" id="swap-7">
+    <div class="swap-card-header">
+      <div class="swap-num">7</div>
+      <h3>Synthetic loofah → Natural loofah or dry brush</h3>
+    </div>
+    <div class="swap-card-body">
+      <div class="replace-row">
+        <span class="badge badge-out">Synthetic plastic loofah</span>
+        <span class="badge-arrow">→</span>
+        <span class="badge badge-in">Natural loofah / dry brush / cotton washcloth</span>
+      </div>
+      <p>Those colourful mesh puffs hanging in most showers are made entirely from polyester or nylon plastic netting. Every time they're used and rinsed, they shed microplastic fibres directly into the shower water, which then goes down the drain and into water systems. They're also a notorious bacteria trap — the mesh holds moisture and warmth, creating ideal conditions for bacterial and mould growth within days of first use.</p>
+      <p>A <strong>natural loofah</strong> (from the loofah gourd plant) is the same shape, same exfoliating texture, and fully biodegradable. It dries faster than synthetic mesh, harbours far less bacteria, and can be composted at end of life. Natural loofahs are also grown widely in South India and can often be found locally.</p>
+      <p>A <strong>natural dry brush</strong> with boar bristles or plant-fibre bristles is another excellent option — used on dry skin before showering for lymphatic stimulation and exfoliation, then rinsed. A good dry brush lasts years. <strong>Organic cotton washcloths</strong> are the gentlest option for sensitive or acne-prone skin — soft, washable, and completely plastic-free.</p>
+      <div class="why-box">
+        <strong>Why it matters:</strong> Synthetic loofahs are one of the highest-shedding sources of bathroom microplastics per use. Unlike microplastics from clothing (which can be filtered), shower microplastics go directly and immediately into wastewater systems.
+      </div>
+      <div class="product-img-wrap two-col">
+        <div class="img-slot">
+          <img src="https://m.media-amazon.com/images/I/81q+-1zJQQL._SL1500_.jpg" alt="Natural loofah" loading="lazy">
+        </div>
+        <div class="img-slot">
+          <img src="https://m.media-amazon.com/images/I/81mh09mnSaL._SL1500_.jpg" alt="Natural dry brush" loading="lazy">
+        </div>
+      </div>
+      <p class="img-caption">Top: Natural Loofah · Bottom: Natural Dry Brush</p>
+      <div class="buy-links">
+        <span class="buy-label">Natural loofah</span>
+        <a class="buy-btn" href="https://link.amazon/B0hBUPW6c" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://amzn.to/4wv9RkC" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+      <div class="buy-links" style="border-top: none; padding-top: 0.5rem;">
+        <span class="buy-label">Dry brush</span>
+        <a class="buy-btn" href="https://link.amazon/B0ciDppWO" target="_blank" rel="noopener">amazon.in</a>
+        <a class="buy-btn" href="https://amzn.to/4fC5e0GE" target="_blank" rel="noopener">amazon.com</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- WHERE TO START -->
+  <h2 class="section-heading">Not sure <em>where to start?</em></h2>
+
+  <div class="callout">
+    <p class="callout-label">Start small</p>
+    <ul class="check-list">
+      <li><span class="check-dot"></span><div><strong>Bamboo toothbrush first.</strong> It's the easiest, cheapest, and most immediate swap. Order one today and switch when your current brush needs replacing in the next 3 months.</div></li>
+      <li><span class="check-dot"></span><div><strong>Safety razor next.</strong> The upfront cost pays back within a few months from savings on cartridge refills. It's also one of the highest-impact swaps for ongoing plastic reduction.</div></li>
+      <li><span class="check-dot"></span><div><strong>Give shampoo bars a fair trial.</strong> The 2-week transition period puts some people off — but most who stick with it say their hair is healthier afterwards. Choose a bar suited to your hair type.</div></li>
+      <li><span class="check-dot"></span><div><strong>Don't flush cotton buds.</strong> Even before you switch to bamboo, this one habit change makes a real difference. Dispose of plastic cotton buds in the bin, not the toilet.</div></li>
+      <li><span class="check-dot"></span><div><strong>Reusable period products are a bigger upfront investment</strong> — but the long-term savings are substantial. A menstrual cup that costs ₹500–1500 replaces years of monthly spending on disposables.</div></li>
+    </ul>
+  </div>
+
+  <div class="callout-warm">
+    <p class="callout-label">A note on cost</p>
+    <p>Almost every swap here is cheaper over time than what it replaces. A bamboo toothbrush costs the same as a plastic one. A safety razor handle costs more upfront but blades are a fraction of cartridge costs. Shampoo bars last 2–3x longer than bottles. The eco choice is almost always the economical choice — it just requires thinking in months rather than weeks.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="post-body">
+    <p>You don't need to overhaul everything at once. The bathroom is a room you use twice a day — small changes compound quickly. Each product you swap is one less plastic item entering your home, your skin, and eventually the environment.</p>
+    <p>Start with one. Make it a habit. Then swap the next one when you run out.</p>
+  </div>
+
+  <!-- RELATED POSTS -->
+  <div class="related-post">
+    Read next →
+    <a href="https://lightenedgirl.github.io/CozyLittleCottage/kitchen-eco-swaps.html">
+      7 Kitchen Swaps to Ditch Plastic for Good
+    </a>
+  </div>
+
+  <div class="related-post">
+    <a href="https://lightenedgirl.github.io/CozyLittleCottage/waste-management-blog.html">
+      Home Waste Management — a simple guide
+    </a>
+  </div>
+
+</div><!-- end post-wrap -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  © 2025 Cozy Little Cottage · Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
