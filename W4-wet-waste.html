@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is Wet Waste & Types of Wet Waste at Home — Cozy Little Cottage</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FDFAF5;
+    --cream-dark: #F4EFE6;
+    --cream-border: #E8DFD0;
+    --text: #2C2C2A;
+    --text-muted: #7A746A;
+    --text-soft: #5A5550;
+    --green: #3D6B42;
+    --green-pale: #EDF4EE;
+    --green-mid: #5A8F61;
+    --green-dark: #1C4220;
+    --accent: #8B6F47;
+    --accent-pale: #F5EDE2;
+    --link: #3D6B42;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+    font-size: 0.97rem;
+  }
+
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAV ── */
+  .site-nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--cream-border);
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .site-logo {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .site-logo:hover { color: var(--green); text-decoration: none; }
+  .nav-sep { color: var(--cream-border); font-size: 0.85rem; }
+  .nav-link { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.02em; }
+  .nav-link:hover { color: var(--green); text-decoration: none; }
+
+  /* ── LAYOUT ── */
+  .page-wrap { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .back-link {
+    display: inline-block;
+    margin: 2rem 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .back-link:hover { color: var(--green); text-decoration: none; }
+
+  .post-wrap {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 6rem;
+    animation: fadeUp 0.35s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HEADER ── */
+  .hero-tag {
+    display: inline-block;
+    background: #1C4220;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+
+  .post-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.7rem;
+  }
+  .post-title em { font-style: italic; color: var(--green); }
+
+  .post-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+    margin-bottom: 1.4rem;
+  }
+
+  .post-rule { border: none; border-top: 1px solid var(--cream-border); margin: 0 0 1.4rem; }
+
+  .disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 1.8rem;
+  }
+
+  /* ── BODY TEXT ── */
+  .post-body p {
+    margin-bottom: 1.25rem;
+    color: var(--text-soft);
+    line-height: 1.85;
+  }
+  .post-body strong { font-weight: 500; color: var(--text); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    margin: 2rem 0;
+    padding: 1.2rem 1.8rem;
+    border-left: 3px solid var(--cream-border);
+  }
+  .pull-quote p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 2.8rem 0 1rem;
+  }
+  .section-heading em { font-style: italic; color: var(--green); }
+
+  /* ── TYPE CARDS ── */
+  .type-card {
+    border: 1px solid var(--cream-border);
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+  }
+
+  .type-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1rem 1.4rem;
+    background: var(--cream-dark);
+    border-bottom: 1px solid var(--cream-border);
+  }
+
+  .type-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .type-card-header h3 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .type-card-body {
+    padding: 1.2rem 1.4rem;
+  }
+
+  .type-card-body p {
+    font-size: 0.92rem;
+    color: var(--text-soft);
+    line-height: 1.78;
+    margin-bottom: 0.8rem;
+  }
+  .type-card-body p:last-child { margin-bottom: 0; }
+  .type-card-body strong { font-weight: 500; color: var(--text); }
+
+  /* examples pill row */
+  .examples-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.8rem;
+  }
+  .ex-pill {
+    font-size: 0.78rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--green-pale);
+    color: var(--green-dark);
+    border: 1px solid #C0DAC2;
+    font-weight: 400;
+  }
+
+  /* ── DO / DON'T TABLE ── */
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .do-box, .dont-box {
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+  }
+  .do-box {
+    background: var(--green-pale);
+    border: 1px solid #C0DAC2;
+  }
+  .dont-box {
+    background: #FEF0EF;
+    border: 1px solid #F2C0BB;
+  }
+  .do-box .box-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.6rem;
+  }
+  .dont-box .box-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8B2D26;
+    margin-bottom: 0.6rem;
+  }
+  .do-box ul, .dont-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .do-box li, .dont-box li {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: var(--text-soft);
+  }
+  .do-box li:last-child, .dont-box li:last-child { border-bottom: none; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: var(--green-pale);
+    border: 1px solid #C0DAC2;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+  .callout-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.6rem;
+  }
+  .callout p { font-size: 0.92rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout p + p { margin-top: 0.55rem; }
+
+  .callout-warm {
+    background: var(--accent-pale);
+    border: 1px solid #DECCB5;
+    border-radius: 8px;
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+  .callout-warm .callout-label { color: var(--accent); }
+  .callout-warm p { font-size: 0.92rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout-warm p + p { margin-top: 0.55rem; }
+
+  /* ── CHECKLIST ── */
+  .check-list { list-style: none; padding: 0; margin: 0.6rem 0 0; }
+  .check-list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--cream-border);
+    font-size: 0.92rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    flex-shrink: 0;
+    margin-top: 0.6rem;
+  }
+  .check-list li strong { font-weight: 500; color: var(--text); }
+
+  /* ── PRODUCT CARD ── */
+  .product-card {
+    border: 1px solid var(--cream-border);
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+  }
+  .product-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: var(--cream-dark);
+    display: block;
+    padding: 16px;
+  }
+  .product-card-body {
+    padding: 1rem 1.2rem;
+    border-top: 1px solid var(--cream-border);
+  }
+  .product-card-body h4 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+  }
+  .product-card-body p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+  }
+  .buy-links {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .buy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--green-dark);
+    background: var(--green-pale);
+    border: 1px solid #C0DAC2;
+    border-radius: 20px;
+    padding: 4px 13px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .buy-btn:hover { background: #d4ebd6; text-decoration: none; }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.2rem 0;
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider { border: none; border-top: 1px solid var(--cream-border); margin: 2.5rem 0; }
+
+  /* ── RELATED POST ── */
+  .related-post {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--cream-border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .related-post a {
+    color: var(--green);
+    display: block;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--cream-border);
+    margin-top: 4rem;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 540px) {
+    .post-title { font-size: 1.5rem; }
+    .do-dont { grid-template-columns: 1fr; }
+    .products-grid { grid-template-columns: 1fr; }
+    .type-card-body, .callout, .callout-warm { padding: 1rem 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="site-logo" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">🌿 Cozy Little Cottage</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">All Posts</a>
+</nav>
+
+<div class="page-wrap">
+  <a class="back-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">← Back to Home</a>
+</div>
+
+<div class="post-wrap">
+
+  <!-- HEADER -->
+  <span class="hero-tag">Wet Waste</span>
+  <h1 class="post-title">What is wet waste —<br><em>and what goes in it?</em></h1>
+  <p class="post-date">August 11, 2026</p>
+  <hr class="post-rule">
+  <p class="disclaimer">Part of the Cozy Little Cottage waste management series — practical guides to a lower-waste home.</p>
+
+  <!-- INTRO -->
+  <div class="post-body">
+    <p>If you've ever stood at the kitchen bin wondering whether a tea bag or an eggshell counts as wet waste — you're not alone. Wet waste is one of the most talked-about waste categories and also one of the most misunderstood.</p>
+    <p>The good news is that once you understand what it is and what belongs in it, sorting becomes second nature. And wet waste, more than any other category, has the most useful second life — it can become rich compost or even cooking gas for your home.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>"Nearly 50–60% of household waste is wet waste — and almost all of it can be turned into something useful instead of going to a landfill."</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- WHAT IS WET WASTE -->
+  <h2 class="section-heading">What is <em>wet waste?</em></h2>
+
+  <div class="post-body">
+    <p>Wet waste refers to any organic, biodegradable material that was once living — food scraps, plant matter, and anything that will naturally decompose over time. It's called "wet" waste simply because it tends to have high moisture content compared to dry recyclables like paper or plastic.</p>
+    <p>Wet waste is also called <strong>organic waste</strong> or <strong>biodegradable waste</strong>. In India's municipal waste system, it goes into the <strong>green bin</strong> — the one meant for material that can be composted or processed into biogas.</p>
+    <p>The key characteristic of wet waste is that <strong>microorganisms can break it down naturally</strong>. When managed well, this process gives us compost — a nutrient-rich soil amendment that feeds plants and reduces the need for chemical fertilisers. When managed poorly — mixed with other waste in a landfill — it produces methane, a greenhouse gas far more potent than CO₂.</p>
+  </div>
+
+  <div class="callout">
+    <p class="callout-label">The green bin rule</p>
+    <p>If it was once alive and will rot on its own — it's wet waste. If it won't decompose naturally within a few months — it's not wet waste, even if it came from food.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- TYPES -->
+  <h2 class="section-heading">Types of wet waste <em>at home</em></h2>
+
+  <div class="post-body">
+    <p>Wet waste comes from several different parts of the home. Here's a breakdown of each type with examples.</p>
+  </div>
+
+  <!-- Type 1 -->
+  <div class="type-card" id="type-kitchen-scraps">
+    <div class="type-card-header">
+      <span class="type-icon">🥦</span>
+      <h3>Kitchen scraps — vegetable & fruit waste</h3>
+    </div>
+    <div class="type-card-body">
+      <p>The largest source of wet waste in any home. Every time you cook, you generate peels, seeds, cores, tops, and trimmings that are perfectly compostable.</p>
+      <p>This includes both raw and cooked produce waste — though raw scraps decompose faster and are better for home composting.</p>
+      <div class="examples-row">
+        <span class="ex-pill">Vegetable peels</span>
+        <span class="ex-pill">Fruit skins & cores</span>
+        <span class="ex-pill">Onion skins</span>
+        <span class="ex-pill">Garlic peels</span>
+        <span class="ex-pill">Seed pods</span>
+        <span class="ex-pill">Corn husks</span>
+        <span class="ex-pill">Wilted greens</span>
+        <span class="ex-pill">Overripe fruit</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type 2 -->
+  <div class="type-card" id="type-cooked-food">
+    <div class="type-card-header">
+      <span class="type-icon">🍚</span>
+      <h3>Cooked food & leftovers</h3>
+    </div>
+    <div class="type-card-body">
+      <p>Leftover rice, curry, bread, roti, dal, cooked vegetables — all of these are wet waste. They decompose well in a compost pit or biogas unit, though they attract pests more than raw scraps do.</p>
+      <p>For home composting, <strong>avoid adding large amounts of oily or heavily spiced cooked food</strong> as they slow decomposition and attract rodents. Small amounts mixed with dry leaves work fine. For biogas units, cooked food is actually ideal — it breaks down quickly and produces good gas yield.</p>
+      <div class="examples-row">
+        <span class="ex-pill">Leftover rice & roti</span>
+        <span class="ex-pill">Dal & curry</span>
+        <span class="ex-pill">Stale bread</span>
+        <span class="ex-pill">Cooked vegetables</span>
+        <span class="ex-pill">Noodles & pasta</span>
+        <span class="ex-pill">Spoiled food</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type 3 -->
+  <div class="type-card" id="type-tea-coffee">
+    <div class="type-card-header">
+      <span class="type-icon">☕</span>
+      <h3>Tea & coffee waste</h3>
+    </div>
+    <div class="type-card-body">
+      <p>Tea leaves, used tea bags, and coffee grounds are some of the best materials you can add to a compost bin. They're rich in nitrogen, which helps speed up decomposition and feeds the microorganisms that break everything down.</p>
+      <p>Coffee grounds also improve soil aeration and are loved by earthworms — making them especially valuable in a worm bin. <strong>Note:</strong> if using tea bags, check that they're paper-based and not the plastic-mesh type, which don't decompose.</p>
+      <div class="examples-row">
+        <span class="ex-pill">Used tea leaves</span>
+        <span class="ex-pill">Paper tea bags</span>
+        <span class="ex-pill">Coffee grounds</span>
+        <span class="ex-pill">Coffee filters (paper)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type 4 -->
+  <div class="type-card" id="type-eggshells">
+    <div class="type-card-header">
+      <span class="type-icon">🥚</span>
+      <h3>Eggshells & nutshells</h3>
+    </div>
+    <div class="type-card-body">
+      <p>Eggshells are a brilliant compost addition — they're rich in calcium carbonate, which helps balance the pH of compost and improves soil structure. They take longer to break down than soft scraps, so crushing them before adding to the bin speeds things up.</p>
+      <p>Most nutshells (walnut, almond, coconut) are also compostable, though harder shells like walnut can take 1–2 years. Coconut shells are better used as bowls, scrubbers, or plant pots before composting. <strong>Avoid adding salted or flavoured nutshells</strong> — the salt is harmful to soil microbes.</p>
+      <div class="examples-row">
+        <span class="ex-pill">Eggshells</span>
+        <span class="ex-pill">Groundnut shells</span>
+        <span class="ex-pill">Almond shells</span>
+        <span class="ex-pill">Coconut shell</span>
+        <span class="ex-pill">Cashew shells</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type 5 -->
+  <div class="type-card" id="type-floral">
+    <div class="type-card-header">
+      <span class="type-icon">🌸</span>
+      <h3>Floral & garden waste</h3>
+    </div>
+    <div class="type-card-body">
+      <p>Wilted flowers, fallen leaves, dried petals, small plant trimmings — all of this is wet waste. In fact, dry leaves are one of the most valuable additions to a home compost bin because they provide the carbon balance that food scraps (which are high in nitrogen) need.</p>
+      <p>If you have a garden or balcony, fallen leaves and small stem cuttings are an endless supply of free composting material. <strong>Avoid adding diseased plants</strong> to your compost — the pathogens can survive and spread to your garden later.</p>
+      <div class="examples-row">
+        <span class="ex-pill">Wilted flowers</span>
+        <span class="ex-pill">Dried petals</span>
+        <span class="ex-pill">Fallen leaves</span>
+        <span class="ex-pill">Grass clippings</span>
+        <span class="ex-pill">Plant trimmings</span>
+        <span class="ex-pill">Pooja flowers</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type 6 -->
+  <div class="type-card" id="type-hair-nails">
+    <div class="type-card-header">
+      <span class="type-icon">💆</span>
+      <h3>Hair, nails & natural fibres</h3>
+    </div>
+    <div class="type-card-body">
+      <p>This one surprises most people — human hair, nail clippings, and natural fibre scraps (cotton, wool, jute, silk) are all biodegradable and compostable. Hair is particularly high in nitrogen and decomposes slowly, making it a good slow-release fertiliser in a compost pile.</p>
+      <p>Only natural fibres count — synthetic fibres like polyester, nylon, or acrylic are plastic and do not belong in wet waste.</p>
+      <div class="examples-row">
+        <span class="ex-pill">Human & pet hair</span>
+        <span class="ex-pill">Nail clippings</span>
+        <span class="ex-pill">Cotton scraps</span>
+        <span class="ex-pill">Wool threads</span>
+        <span class="ex-pill">Jute fibres</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- DO / DON'T -->
+  <h2 class="section-heading">What goes in — <em>and what doesn't</em></h2>
+
+  <div class="post-body">
+    <p>Not everything organic belongs in the wet waste or compost bin. Some items attract pests, create odours, or simply don't break down well at home.</p>
+  </div>
+
+  <div class="do-dont">
+    <div class="do-box">
+      <p class="box-label">✓ Goes in</p>
+      <ul>
+        <li>Raw fruit & vegetable scraps</li>
+        <li>Cooked food (small amounts)</li>
+        <li>Tea leaves & coffee grounds</li>
+        <li>Eggshells (crushed)</li>
+        <li>Fallen leaves & plant trimmings</li>
+        <li>Paper tea bags</li>
+        <li>Hair & nail clippings</li>
+        <li>Pooja flowers</li>
+        <li>Plain cooked rice & roti</li>
+        <li>Fruit peels & cores</li>
+      </ul>
+    </div>
+    <div class="dont-box">
+      <p class="box-label">✗ Keep out</p>
+      <ul>
+        <li>Meat, fish & bones</li>
+        <li>Dairy products</li>
+        <li>Oily or greasy food</li>
+        <li>Plastic-mesh tea bags</li>
+        <li>Salted or flavoured waste</li>
+        <li>Diseased plants</li>
+        <li>Synthetic fibres</li>
+        <li>Treated or painted wood</li>
+        <li>Pet waste (in home compost)</li>
+        <li>Coal or charcoal ash</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- COMMON MISTAKES -->
+  <h2 class="section-heading"><em>Common mistakes</em> to avoid</h2>
+
+  <div class="callout">
+    <p class="callout-label">Watch out for these</p>
+    <ul class="check-list">
+      <li><span class="check-dot"></span><div><strong>Mixing wet and dry waste.</strong> This is the most common mistake. A wet banana peel in your dry recyclables contaminates the whole bin — paper absorbs moisture, cardboard goes soggy, and none of it can be recycled anymore.</div></li>
+      <li><span class="check-dot"></span><div><strong>Using plastic bin liners for wet waste.</strong> Plastic bags defeat the purpose — the waste can't be composted with the bag around it. Use newspaper sheets to line the bin instead, or a compostable liner.</div></li>
+      <li><span class="check-dot"></span><div><strong>Not draining excess liquid.</strong> Very watery waste (leftover soup, coconut water) creates a soggy, smelly bin. Drain liquids before adding food scraps.</div></li>
+      <li><span class="check-dot"></span><div><strong>Adding meat or dairy to home compost.</strong> These attract rodents, create bad odours, and decompose in a way that home compost bins can't manage. They belong in a biogas unit or municipal wet waste collection — not your backyard pit.</div></li>
+    </ul>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- WHAT TO DO WITH IT -->
+  <h2 class="section-heading">What to <em>do with</em> wet waste</h2>
+
+  <div class="post-body">
+    <p>Once you've sorted your wet waste correctly, you have three good options for what to do with it — each suited to different living situations.</p>
+  </div>
+
+  <div class="callout-warm">
+    <p class="callout-label">Option 1 — Compost it at home</p>
+    <p>The most self-sufficient option. A kitchen compost bin or backyard pit turns your scraps into rich manure in 30–45 days. Works even in apartments with a balcony. We cover this in detail in the next post.</p>
+  </div>
+
+  <div class="callout-warm">
+    <p class="callout-label">Option 2 — Feed a home biogas unit</p>
+    <p>If you generate a lot of kitchen waste, a home biogas unit converts it directly into cooking gas and liquid fertiliser. Compact models now fit a small kitchen or backyard. We cover this too in an upcoming post.</p>
+  </div>
+
+  <div class="callout-warm">
+    <p class="callout-label">Option 3 — Give it to municipal collection</p>
+    <p>In Kerala, the Haritha Karma Sena collects segregated wet waste from homes. Keep it in a green bin or covered container and hand it over on collection days — already sorted, not mixed with dry waste.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- PRODUCTS -->
+  <h2 class="section-heading">Useful products for <em>wet waste at home</em></h2>
+
+  <div class="post-body">
+    <p>You don't need much to manage wet waste well — just a good bin and a habit. Here are a few products that make it easier.</p>
+  </div>
+
+  <div class="products-grid">
+
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/710EtCJPfoL._SL1500_.jpg" alt="Kitchen compost bin" loading="lazy">
+      <div class="product-card-body">
+        <h4>Kitchen compost bin</h4>
+        <p>A countertop bin with a lid and carbon filter to collect scraps odour-free until you're ready to transfer them.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B09YVqeMD" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/4bqVHZi" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/51xqmA7QxvL._SL1350_.jpg" alt="Compostable bin liners" loading="lazy">
+      <div class="product-card-body">
+        <h4>Compostable bin liners</h4>
+        <p>Made from cornstarch — fully compostable along with the contents. A clean alternative to plastic bin bags.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B04StHC3Z" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/4hLgafa" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/81FeSC7T3VL._SL1500_.jpg" alt="Balcony compost bin" loading="lazy">
+      <div class="product-card-body">
+        <h4>Balcony / terrace compost bin</h4>
+        <p>A larger pot or tumbler composter for turning wet waste into garden manure. Good for apartments with outdoor space.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B0cQfbSan" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/4i0xCfM" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/711z4A6Z7rL._SL1080_.jpg" alt="Compost accelerator" loading="lazy">
+      <div class="product-card-body">
+        <h4>Compost accelerator powder</h4>
+        <p>A microbial powder that speeds up decomposition — useful when starting a new compost bin or in cooler weather.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B0dHtrx4e" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/4zc2YGk" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="post-body">
+    <p>Sorting wet waste correctly is genuinely one of the highest-impact things you can do at home. It keeps organic material out of landfills, reduces methane emissions, and gives you something useful — compost for your plants or gas for your kitchen — in return.</p>
+    <p>Start simple: one green bin, lined with newspaper. Sort your kitchen scraps into it every day. That single habit, done consistently, makes a real difference.</p>
+  </div>
+
+  <!-- NEXT POST -->
+  <div class="related-post">
+    Read next →
+    <a href="https://lightenedgirl.github.io/CozyLittleCottage/composting-at-home.html">
+      Composting at Home — A Complete Guide
+    </a>
+  </div>
+
+</div><!-- end post-wrap -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  © 2025 Cozy Little Cottage · Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
