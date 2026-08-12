@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Composting at Home — A Complete Guide — Cozy Little Cottage</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FDFAF5;
+    --cream-dark: #F4EFE6;
+    --cream-border: #E8DFD0;
+    --text: #2C2C2A;
+    --text-muted: #7A746A;
+    --text-soft: #5A5550;
+    --green: #3D6B42;
+    --green-pale: #EDF4EE;
+    --green-mid: #5A8F61;
+    --green-dark: #1C4220;
+    --accent: #8B6F47;
+    --accent-pale: #F5EDE2;
+    --link: #3D6B42;
+  }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--text); line-height: 1.8; font-weight: 300; font-size: 0.97rem; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .site-nav { background: var(--cream); border-bottom: 1px solid var(--cream-border); padding: 0.9rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .site-logo { font-family: 'Lora', Georgia, serif; font-size: 1rem; font-weight: 500; color: var(--text); text-decoration: none; }
+  .site-logo:hover { color: var(--green); text-decoration: none; }
+  .nav-sep { color: var(--cream-border); font-size: 0.85rem; }
+  .nav-link { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.02em; }
+  .nav-link:hover { color: var(--green); text-decoration: none; }
+  .page-wrap { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+  .back-link { display: inline-block; margin: 2rem 0 0; font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.02em; }
+  .back-link:hover { color: var(--green); text-decoration: none; }
+  .post-wrap { max-width: 620px; margin: 0 auto; padding: 2.5rem 1.5rem 6rem; animation: fadeUp 0.35s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-tag { display: inline-block; background: #1C4220; color: #fff; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 18px; }
+  .post-title { font-family: 'Lora', Georgia, serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 500; line-height: 1.25; color: var(--text); margin-bottom: 0.7rem; }
+  .post-title em { font-style: italic; color: var(--green); }
+  .post-date { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.03em; margin-bottom: 1.4rem; }
+  .post-rule { border: none; border-top: 1px solid var(--cream-border); margin: 0 0 1.4rem; }
+  .disclaimer { font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-bottom: 1.8rem; }
+  .post-body p { margin-bottom: 1.25rem; color: var(--text-soft); line-height: 1.85; }
+  .post-body strong { font-weight: 500; color: var(--text); }
+  .pull-quote { margin: 2rem 0; padding: 1.2rem 1.8rem; border-left: 3px solid var(--cream-border); }
+  .pull-quote p { font-family: 'Lora', Georgia, serif; font-size: 1.05rem; font-style: italic; color: var(--text-muted); margin: 0; line-height: 1.65; }
+  .section-heading { font-family: 'Lora', Georgia, serif; font-size: 1.25rem; font-weight: 500; color: var(--text); margin: 2.8rem 0 1rem; }
+  .section-heading em { font-style: italic; color: var(--green); }
+
+  /* step cards */
+  .step-card { border: 1px solid var(--cream-border); border-radius: 10px; background: #fff; margin-bottom: 1.2rem; overflow: hidden; scroll-margin-top: 70px; }
+  .step-card-header { display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.4rem; background: var(--cream-dark); border-bottom: 1px solid var(--cream-border); }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--green-pale); border: 1px solid #C0DAC2; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 500; color: var(--green); flex-shrink: 0; }
+  .step-card-header h3 { font-family: 'Lora', Georgia, serif; font-size: 1rem; font-weight: 500; color: var(--text); margin: 0; }
+  .step-card-body { padding: 1.2rem 1.4rem; }
+  .step-card-body p { font-size: 0.92rem; color: var(--text-soft); line-height: 1.78; margin-bottom: 0.8rem; }
+  .step-card-body p:last-child { margin-bottom: 0; }
+  .step-card-body strong { font-weight: 500; color: var(--text); }
+
+  /* method cards */
+  .method-card { border: 1px solid var(--cream-border); border-radius: 10px; background: #fff; margin-bottom: 1.2rem; overflow: hidden; scroll-margin-top: 70px; }
+  .method-header { padding: 1rem 1.4rem; background: var(--green-dark); border-bottom: 1px solid var(--cream-border); display: flex; align-items: center; gap: 0.8rem; }
+  .method-header h3 { font-family: 'Lora', Georgia, serif; font-size: 1rem; font-weight: 500; color: #fff; margin: 0; }
+  .method-icon { font-size: 1.3rem; }
+  .method-tag { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(255,255,255,0.15); color: #fff; padding: 2px 9px; border-radius: 20px; margin-left: auto; white-space: nowrap; }
+  .method-body { padding: 1.2rem 1.4rem; }
+  .method-body p { font-size: 0.92rem; color: var(--text-soft); line-height: 1.78; margin-bottom: 0.8rem; }
+  .method-body p:last-child { margin-bottom: 0; }
+  .method-body strong { font-weight: 500; color: var(--text); }
+
+  /* data rows */
+  .data-rows { margin: 0.8rem 0; }
+  .data-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.5rem 0; border-bottom: 1px solid var(--cream-border); font-size: 0.88rem; gap: 1rem; }
+  .data-row:last-child { border-bottom: none; }
+  .data-row .dl { color: var(--text-soft); }
+  .data-row .dv { color: var(--text); font-weight: 500; text-align: right; }
+
+  /* pills */
+  .pills-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.8rem; }
+  .pill { font-size: 0.78rem; padding: 3px 10px; border-radius: 20px; background: var(--green-pale); color: var(--green-dark); border: 1px solid #C0DAC2; }
+
+  /* callouts */
+  .callout { background: var(--green-pale); border: 1px solid #C0DAC2; border-radius: 8px; padding: 1.3rem 1.6rem; margin: 2rem 0; }
+  .callout-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.6rem; }
+  .callout p { font-size: 0.92rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout p + p { margin-top: 0.55rem; }
+  .callout-warm { background: var(--accent-pale); border: 1px solid #DECCB5; border-radius: 8px; padding: 1.3rem 1.6rem; margin: 2rem 0; }
+  .callout-warm .callout-label { color: var(--accent); }
+  .callout-warm p { font-size: 0.92rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout-warm p + p { margin-top: 0.55rem; }
+
+  /* checklist */
+  .check-list { list-style: none; padding: 0; margin: 0.6rem 0 0; }
+  .check-list li { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.5rem 0; border-bottom: 1px solid var(--cream-border); font-size: 0.92rem; color: var(--text-soft); line-height: 1.7; }
+  .check-list li:last-child { border-bottom: none; }
+  .check-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-mid); flex-shrink: 0; margin-top: 0.6rem; }
+  .check-list li strong { font-weight: 500; color: var(--text); }
+
+  /* product cards */
+  .products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.2rem 0; }
+  .product-card { border: 1px solid var(--cream-border); border-radius: 10px; background: #fff; overflow: hidden; }
+  .product-card-img { width: 100%; height: 180px; object-fit: contain; background: var(--cream-dark); display: block; padding: 14px; }
+  .product-card-body { padding: 1rem 1.1rem; border-top: 1px solid var(--cream-border); }
+  .product-card-body h4 { font-family: 'Lora', Georgia, serif; font-size: 0.95rem; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; }
+  .product-card-body p { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 0.8rem; line-height: 1.6; }
+  .buy-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .buy-btn { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; font-weight: 500; color: var(--green-dark); background: var(--green-pale); border: 1px solid #C0DAC2; border-radius: 20px; padding: 3px 11px; text-decoration: none; }
+  .buy-btn:hover { background: #d4ebd6; text-decoration: none; }
+
+  .section-divider { border: none; border-top: 1px solid var(--cream-border); margin: 2.5rem 0; }
+  .related-post { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--cream-border); font-size: 0.85rem; color: var(--text-muted); }
+  .related-post a { color: var(--green); display: block; font-family: 'Lora', Georgia, serif; font-size: 1rem; margin-top: 0.3rem; }
+  .site-footer { text-align: center; padding: 2.5rem 1.5rem; font-size: 0.78rem; color: var(--text-muted); border-top: 1px solid var(--cream-border); margin-top: 4rem; letter-spacing: 0.03em; }
+
+  @media (max-width: 540px) {
+    .post-title { font-size: 1.5rem; }
+    .products-grid { grid-template-columns: 1fr; }
+    .data-row { flex-direction: column; gap: 0.1rem; }
+    .data-row .dv { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="site-logo" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">🌿 Cozy Little Cottage</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">All Posts</a>
+</nav>
+
+<div class="page-wrap">
+  <a class="back-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">← Back to Home</a>
+</div>
+
+<div class="post-wrap">
+
+  <span class="hero-tag">Composting</span>
+  <h1 class="post-title">Composting at home —<br><em>a complete guide</em></h1>
+  <p class="post-date">August 11, 2026</p>
+  <hr class="post-rule">
+  <p class="disclaimer">Links marked amazon.in and amazon.com are affiliate links.</p>
+
+  <div class="post-body">
+    <p>Composting is the oldest form of recycling. Long before waste management was a concept, kitchen scraps went back into the earth and came back as food. Home composting is simply reviving that idea — turning what your kitchen throws away into something your garden needs.</p>
+    <p>The good news is that composting at home is far simpler than most people think. You don't need a garden, a lot of space, or any special skill. A balcony, a clay pot, and a little patience is all it takes to get started.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>"Composting is nature's way of recycling. Every peel, every tea bag, every fallen leaf has a second life — if you let it."</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- HOW IT WORKS -->
+  <h2 class="section-heading">How composting <em>actually works</em></h2>
+
+  <div class="post-body">
+    <p>Composting is the natural process by which microorganisms — bacteria, fungi, and worms — break down organic material into a dark, crumbly, nutrient-rich substance called humus or compost. It's essentially controlled decomposition.</p>
+    <p>For composting to work well, it needs four things in balance:</p>
+  </div>
+
+  <div class="callout">
+    <p class="callout-label">The four ingredients</p>
+    <ul class="check-list">
+      <li><span class="check-dot"></span><div><strong>Greens (nitrogen-rich).</strong> Wet, fresh material — vegetable peels, fruit scraps, tea leaves, fresh grass clippings. These provide nitrogen, which feeds the microbes.</div></li>
+      <li><span class="check-dot"></span><div><strong>Browns (carbon-rich).</strong> Dry material — fallen leaves, cardboard, dry coconut husk, newspaper. These provide carbon and keep the pile airy and odour-free.</div></li>
+      <li><span class="check-dot"></span><div><strong>Moisture.</strong> The pile should feel like a wrung-out sponge — damp but not dripping. Too dry and decomposition slows; too wet and it gets smelly.</div></li>
+      <li><span class="check-dot"></span><div><strong>Air.</strong> Microbes need oxygen. Turning or aerating the pile regularly speeds up composting and prevents the anaerobic bacteria that cause bad odours.</div></li>
+    </ul>
+  </div>
+
+  <div class="post-body">
+    <p>The ideal ratio is roughly <strong>2 parts browns to 1 part greens</strong> by volume. In practice, this means every time you add kitchen scraps, add a roughly equal handful of dry leaves or torn cardboard on top.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- METHODS -->
+  <h2 class="section-heading">Three methods — <em>pick what suits you</em></h2>
+
+  <div class="post-body">
+    <p>There's no single right way to compost. The best method depends on how much space you have, how much waste you generate, and how hands-on you want to be.</p>
+  </div>
+
+  <!-- Method 1 -->
+  <div class="method-card" id="method-pit">
+    <div class="method-header">
+      <span class="method-icon">🌿</span>
+      <h3>Pit composting</h3>
+      <span class="method-tag">Garden / yard</span>
+    </div>
+    <div class="method-body">
+      <p>The simplest and oldest method — dig a pit in the ground, add organic waste in layers, cover with soil, and let nature do the work. Ideal if you have a garden or yard, as the pit can be dug directly where you want to enrich the soil.</p>
+      <p><strong>How to do it:</strong> Dig a pit about 2 feet deep and 2–3 feet wide. Add kitchen scraps and garden waste in layers, alternating wet scraps with dry leaves or soil. Cover loosely after each addition to deter pests. Turn the pile every 2–3 weeks with a spade. In 45–60 days, the bottom layer will be ready to use.</p>
+      <div class="data-rows">
+        <div class="data-row"><span class="dl">Time to compost</span><span class="dv">45–60 days</span></div>
+        <div class="data-row"><span class="dl">Space needed</span><span class="dv">Small garden or yard</span></div>
+        <div class="data-row"><span class="dl">Effort</span><span class="dv">Low — turn once a week</span></div>
+        <div class="data-row"><span class="dl">Best for</span><span class="dv">Houses with outdoor space</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 2 -->
+  <div class="method-card" id="method-pot">
+    <div class="method-header">
+      <span class="method-icon">🪴</span>
+      <h3>Pot / bin composting</h3>
+      <span class="method-tag">Apartment friendly</span>
+    </div>
+    <div class="method-body">
+      <p>Perfect for apartments and homes without outdoor space. A clay pot, plastic drum, or purpose-built compost bin with drainage holes works well. You can keep it on a balcony, terrace, or even inside a kitchen with good ventilation.</p>
+      <p><strong>How to do it:</strong> Start with a layer of dry leaves or cocopeat at the bottom. Add kitchen scraps, then cover with another layer of dry leaves or cocopeat. Sprinkle a little compost activator powder or a spoon of old compost to introduce microbes. Keep a loose lid on top. Add scraps daily and cover each time. Turn with a stick or hand fork every few days. In 30–45 days you'll have usable compost at the bottom.</p>
+      <p><strong>Tip:</strong> Keep two bins and alternate — fill one for 2–3 weeks while the other rests and matures. This gives you a continuous supply of compost.</p>
+      <div class="data-rows">
+        <div class="data-row"><span class="dl">Time to compost</span><span class="dv">30–45 days</span></div>
+        <div class="data-row"><span class="dl">Space needed</span><span class="dv">Balcony or terrace</span></div>
+        <div class="data-row"><span class="dl">Effort</span><span class="dv">Low — stir every few days</span></div>
+        <div class="data-row"><span class="dl">Best for</span><span class="dv">Apartments & small homes</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 3 -->
+  <div class="method-card" id="method-vermi">
+    <div class="method-header">
+      <span class="method-icon">🪱</span>
+      <h3>Vermicomposting</h3>
+      <span class="method-tag">Fastest & richest</span>
+    </div>
+    <div class="method-body">
+      <p>Vermicomposting uses earthworms — specifically red wigglers — to break down organic waste faster than microbial composting alone. The result, called vermicompost or worm castings, is one of the richest organic fertilisers available — far more nutrient-dense than regular compost.</p>
+      <p><strong>How to do it:</strong> Set up a worm bin — a shallow box or bin with drainage holes and a lid. Add bedding (torn cardboard, dry leaves, cocopeat) and introduce red wiggler worms. Feed them small amounts of kitchen scraps — vegetable peels, fruit scraps, coffee grounds — every 2–3 days. Keep the bin moist and in a cool, shaded spot. Avoid adding citrus, onion, garlic, meat, or dairy as these are harmful to worms. In 4–6 weeks you'll have dark, crumbly worm castings ready to use. The liquid that drains from the bottom (worm tea) is a powerful liquid fertiliser — dilute 1:10 with water before using.</p>
+      <p><strong>Note:</strong> Worms are sensitive to heat — keep the bin below 35°C. In Kerala's climate, shade and ventilation are important.</p>
+      <div class="data-rows">
+        <div class="data-row"><span class="dl">Time to compost</span><span class="dv">4–6 weeks</span></div>
+        <div class="data-row"><span class="dl">Space needed</span><span class="dv">A small bin, indoors or balcony</span></div>
+        <div class="data-row"><span class="dl">Effort</span><span class="dv">Medium — feed every 2–3 days</span></div>
+        <div class="data-row"><span class="dl">Best for</span><span class="dv">Anyone who wants the richest compost</span></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- STEP BY STEP -->
+  <h2 class="section-heading">Starting your first bin — <em>step by step</em></h2>
+
+  <div class="step-card" id="compost-step-1">
+    <div class="step-card-header">
+      <div class="step-num">1</div>
+      <h3>Choose your bin or spot</h3>
+    </div>
+    <div class="step-card-body">
+      <p>If you have a garden — pick a shaded corner and either dig a pit or place a bin there. If you're in an apartment — a clay pot with holes drilled at the bottom or a purpose-built compost tumbler on the balcony works well. Make sure there's some drainage so excess moisture can escape.</p>
+    </div>
+  </div>
+
+  <div class="step-card" id="compost-step-2">
+    <div class="step-card-header">
+      <div class="step-num">2</div>
+      <h3>Start with a brown base</h3>
+    </div>
+    <div class="step-card-body">
+      <p>Before adding any kitchen scraps, lay a base layer of dry material — fallen leaves, torn cardboard, cocopeat, or dry coconut husk — about 3–4 inches deep. This creates drainage, introduces carbon, and gives the pile a good foundation.</p>
+    </div>
+  </div>
+
+  <div class="step-card" id="compost-step-3">
+    <div class="step-card-header">
+      <div class="step-num">3</div>
+      <h3>Add scraps and cover</h3>
+    </div>
+    <div class="step-card-body">
+      <p>Add your kitchen scraps — peels, coffee grounds, eggshells — and immediately cover with a layer of dry leaves or cocopeat. This is the most important habit: <strong>always cover greens with browns.</strong> It prevents odours, deters fruit flies, and keeps the carbon-nitrogen balance right.</p>
+    </div>
+  </div>
+
+  <div class="step-card" id="compost-step-4">
+    <div class="step-card-header">
+      <div class="step-num">4</div>
+      <h3>Keep it moist — not wet</h3>
+    </div>
+    <div class="step-card-body">
+      <p>The pile should feel like a damp sponge. In Kerala's humid climate, the pile often stays moist enough from the scraps alone. If it looks dry, sprinkle a little water. If it's too wet or smelly, add more dry leaves or torn cardboard and mix it in.</p>
+    </div>
+  </div>
+
+  <div class="step-card" id="compost-step-5">
+    <div class="step-card-header">
+      <div class="step-num">5</div>
+      <h3>Turn it regularly</h3>
+    </div>
+    <div class="step-card-body">
+      <p>Use a stick, hand fork, or compost aerator to turn and mix the pile every 3–5 days. This introduces oxygen, speeds up decomposition, and prevents the pile from compacting. If you're short on time, even once a week makes a significant difference over not turning at all.</p>
+    </div>
+  </div>
+
+  <div class="step-card" id="compost-step-6">
+    <div class="step-card-header">
+      <div class="step-num">6</div>
+      <h3>Harvest your compost</h3>
+    </div>
+    <div class="step-card-body">
+      <p>When the bottom of the pile looks dark, crumbly, earthy-smelling, and you can no longer identify the original materials — it's ready. This usually takes 30–60 days depending on the method and climate. Scoop it out from the bottom, sieve if needed, and use it in your garden or potted plants. Mix 1 part compost with 3 parts soil for best results.</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- TROUBLESHOOTING -->
+  <h2 class="section-heading">Troubleshooting — <em>common problems</em></h2>
+
+  <div class="callout-warm">
+    <p class="callout-label">Smells bad</p>
+    <p>Too much green material or too wet. Add dry leaves or torn cardboard and mix well. Make sure you're covering scraps after every addition. Avoid adding meat, dairy, or oily food to home compost.</p>
+  </div>
+
+  <div class="callout-warm">
+    <p class="callout-label">Fruit flies</p>
+    <p>Scraps are exposed. Always bury or cover food scraps under a layer of dry leaves or cocopeat. A tight-fitting lid on your bin also helps. You can also add a thin layer of soil on top.</p>
+  </div>
+
+  <div class="callout-warm">
+    <p class="callout-label">Not breaking down</p>
+    <p>Too dry, too much brown material, or too cold. Add a little water and some fresh green scraps. Sprinkle compost accelerator powder to reintroduce microbes. Turn the pile to aerate it.</p>
+  </div>
+
+  <div class="callout-warm">
+    <p class="callout-label">Pile attracts ants or pests</p>
+    <p>Usually because sugary fruit scraps are exposed at the top. Bury them deeper and cover well. Sprinkling a little neem powder on top can also deter pests without harming the composting process.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- WHAT TO COMPOST -->
+  <h2 class="section-heading">Quick reference — <em>what to add</em></h2>
+
+  <div class="callout">
+    <p class="callout-label">Good to add</p>
+    <div class="pills-row">
+      <span class="pill">Vegetable peels</span>
+      <span class="pill">Fruit scraps</span>
+      <span class="pill">Tea leaves</span>
+      <span class="pill">Coffee grounds</span>
+      <span class="pill">Eggshells</span>
+      <span class="pill">Fallen leaves</span>
+      <span class="pill">Dry grass</span>
+      <span class="pill">Plain cooked food</span>
+      <span class="pill">Newspaper (torn)</span>
+      <span class="pill">Cardboard (uncoated)</span>
+      <span class="pill">Cocopeat</span>
+      <span class="pill">Hair & nail clippings</span>
+      <span class="pill">Pooja flowers</span>
+      <span class="pill">Paper bags</span>
+    </div>
+  </div>
+
+  <div style="background:#FEF0EF; border:1px solid #F2C0BB; border-radius:8px; padding:1.3rem 1.6rem; margin: 1rem 0 2rem;">
+    <p style="font-size:0.7rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8B2D26; margin-bottom:0.6rem;">Avoid adding</p>
+    <div class="pills-row">
+      <span style="font-size:0.78rem; padding:3px 10px; border-radius:20px; background:#FEF0EF; color:#8B2D26; border:1px solid #F2C0BB;">Meat & fish</span>
+      <span style="font-size:0.78rem; padding:3px 10px; border-radius:20px; background:#FEF0EF; color:#8B2D26; border:1px solid #F2C0BB;">Dairy</span>
+      <span style="font-size:0.78rem; padding:3px 10px; border-radius:20px; background:#FEF0EF; color:#8B2D26; border:1px solid #F2C0BB;">Oily food</span>
+      <span style="font-size:0.78rem; padding:3px 10px; border-radius:20px; background:#FEF0EF; color:#8B2D26; border:1px solid #F2C0BB;">Diseased plants</span>
+      <span style="font-size:0.78rem; padding:3px 10px; border-radius:20px; background:#FEF0EF; color:#8B2D26; border:1px solid #F2C0BB;">Coal ash</span>
+      <span style="font-size:0.78rem; padding:3px 10px; border-radius:20px; background:#FEF0EF; color:#8B2D26; border:1px solid #F2C0BB;">Synthetic fibres</span>
+      <span style="font-size:0.78rem; padding:3px 10px; border-radius:20px; background:#FEF0EF; color:#8B2D26; border:1px solid #F2C0BB;">Treated wood</span>
+      <span style="font-size:0.78rem; padding:3px 10px; border-radius:20px; background:#FEF0EF; color:#8B2D26; border:1px solid #F2C0BB;">Pet waste</span>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- PRODUCTS -->
+  <h2 class="section-heading">Products to <em>get you started</em></h2>
+
+  <div class="products-grid">
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/61-Iug7mMiL._SL1500_.jpg" alt="Compost tumbler bin" loading="lazy">
+      <div class="product-card-body">
+        <h4>Compost tumbler bin</h4>
+        <p>Rotating drum composter — easy to turn, pest-resistant, balcony friendly.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B06Jm2GsJ" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/3U9Gk1k" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/81dUzAQhykL._AC_SL1402_.jpg" alt="Vermicompost worm bin" loading="lazy">
+      <div class="product-card-body">
+        <h4>Worm bin (vermicomposting)</h4>
+        <p>Multi-tray worm bin with drainage tap for worm tea collection.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B08Mx87bl" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/4wVzjQp" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/61nPHmS3KLL._AC_.jpg" alt="Cocopeat block" loading="lazy">
+      <div class="product-card-body">
+        <h4>Cocopeat block</h4>
+        <p>Compressed coconut peat — expands with water, perfect brown layer material for pot composting.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B04sSz17F" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/3RNlzrI" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/711z4A6Z7rL._SL1080_.jpg"  " alt="Compost accelerator powder" loading="lazy">
+      <div class="product-card-body">
+        <h4>Compost accelerator powder</h4>
+        <p>Microbial inoculant that speeds up decomposition — great for new bins or slow piles.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B0dHtrx4e" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/4zc2YGk" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/71f-92mJCTL._AC_SL1024_.jpg" alt="Compost aerator tool" loading="lazy">
+      <div class="product-card-body">
+        <h4>Compost aerator tool</h4>
+        <p>Corkscrew-style tool to aerate and turn compost without fully digging the pile.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B01TUazV4" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/4xy5WDs"" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/71fgFr8gwBL._SL1000_.jpg" alt="Red wiggler worms" loading="lazy">
+      <div class="product-card-body">
+        <h4>Red wiggler worms</h4>
+        <p>Live composting worms for starting a vermicompost bin — the engine of the fastest compost method.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B05A8a3z1" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/4xAPmD6" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="post-body">
+    <p>Composting is one of those habits that starts small and quietly transforms your relationship with food waste. Within a few weeks of starting, you'll notice the bin filling slower, the kitchen feeling cleaner, and your plants looking better.</p>
+    <p>Start with a pot and a bag of cocopeat. That's genuinely all you need.</p>
+  </div>
+
+  <div class="related-post">
+    Read next →
+    <a href="https://lightenedgirl.github.io/CozyLittleCottage/W6-biogas-at-home.html">
+      Setting Up a Biogas System at Home
+    </a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  © 2025 Cozy Little Cottage · Hosted on GitHub Pages
+</footer>
+</body>
+</html>

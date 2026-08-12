@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setting Up a Biogas System at Home — Cozy Little Cottage</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FDFAF5;
+    --cream-dark: #F4EFE6;
+    --cream-border: #E8DFD0;
+    --text: #2C2C2A;
+    --text-muted: #7A746A;
+    --text-soft: #5A5550;
+    --green: #3D6B42;
+    --green-pale: #EDF4EE;
+    --green-mid: #5A8F61;
+    --green-dark: #1C4220;
+    --blue: #2E5F7A;
+    --blue-pale: #EAF3F8;
+    --blue-dark: #1A3D52;
+    --accent: #8B6F47;
+    --accent-pale: #F5EDE2;
+    --link: #3D6B42;
+  }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--text); line-height: 1.8; font-weight: 300; font-size: 0.97rem; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .site-nav { background: var(--cream); border-bottom: 1px solid var(--cream-border); padding: 0.9rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .site-logo { font-family: 'Lora', Georgia, serif; font-size: 1rem; font-weight: 500; color: var(--text); text-decoration: none; }
+  .site-logo:hover { color: var(--green); text-decoration: none; }
+  .nav-sep { color: var(--cream-border); font-size: 0.85rem; }
+  .nav-link { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.02em; }
+  .nav-link:hover { color: var(--green); text-decoration: none; }
+  .page-wrap { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+  .back-link { display: inline-block; margin: 2rem 0 0; font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.02em; }
+  .back-link:hover { color: var(--green); text-decoration: none; }
+  .post-wrap { max-width: 620px; margin: 0 auto; padding: 2.5rem 1.5rem 6rem; animation: fadeUp 0.35s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-tag { display: inline-block; background: #1C4220; color: #fff; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 18px; }
+  .post-title { font-family: 'Lora', Georgia, serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 500; line-height: 1.25; color: var(--text); margin-bottom: 0.7rem; }
+  .post-title em { font-style: italic; color: var(--green); }
+  .post-date { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.03em; margin-bottom: 1.4rem; }
+  .post-rule { border: none; border-top: 1px solid var(--cream-border); margin: 0 0 1.4rem; }
+  .disclaimer { font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-bottom: 1.8rem; }
+  .post-body p { margin-bottom: 1.25rem; color: var(--text-soft); line-height: 1.85; }
+  .post-body strong { font-weight: 500; color: var(--text); }
+  .pull-quote { margin: 2rem 0; padding: 1.2rem 1.8rem; border-left: 3px solid var(--cream-border); }
+  .pull-quote p { font-family: 'Lora', Georgia, serif; font-size: 1.05rem; font-style: italic; color: var(--text-muted); margin: 0; line-height: 1.65; }
+  .section-heading { font-family: 'Lora', Georgia, serif; font-size: 1.25rem; font-weight: 500; color: var(--text); margin: 2.8rem 0 1rem; }
+  .section-heading em { font-style: italic; color: var(--green); }
+
+  /* info cards */
+  .info-card { border: 1px solid var(--cream-border); border-radius: 10px; background: #fff; margin-bottom: 1.2rem; overflow: hidden; scroll-margin-top: 70px; }
+  .info-card-header { display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.4rem; background: var(--cream-dark); border-bottom: 1px solid var(--cream-border); }
+  .info-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .info-card-header h3 { font-family: 'Lora', Georgia, serif; font-size: 1rem; font-weight: 500; color: var(--text); margin: 0; }
+  .info-card-body { padding: 1.2rem 1.4rem; }
+  .info-card-body p { font-size: 0.92rem; color: var(--text-soft); line-height: 1.78; margin-bottom: 0.8rem; }
+  .info-card-body p:last-child { margin-bottom: 0; }
+  .info-card-body strong { font-weight: 500; color: var(--text); }
+
+  /* step cards */
+  .step-card { border: 1px solid var(--cream-border); border-radius: 10px; background: #fff; margin-bottom: 1.2rem; overflow: hidden; scroll-margin-top: 70px; }
+  .step-card-header { display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.4rem; background: var(--green-dark); border-bottom: 1px solid var(--cream-border); }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 500; color: #fff; flex-shrink: 0; }
+  .step-card-header h3 { font-family: 'Lora', Georgia, serif; font-size: 1rem; font-weight: 500; color: #fff; margin: 0; }
+  .step-card-body { padding: 1.2rem 1.4rem; }
+  .step-card-body p { font-size: 0.92rem; color: var(--text-soft); line-height: 1.78; margin-bottom: 0.8rem; }
+  .step-card-body p:last-child { margin-bottom: 0; }
+  .step-card-body strong { font-weight: 500; color: var(--text); }
+
+  /* data rows */
+  .data-rows { margin: 0.8rem 0; }
+  .data-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.5rem 0; border-bottom: 1px solid var(--cream-border); font-size: 0.88rem; gap: 1rem; }
+  .data-row:last-child { border-bottom: none; }
+  .data-row .dl { color: var(--text-soft); }
+  .data-row .dv { color: var(--text); font-weight: 500; text-align: right; }
+
+  /* callouts */
+  .callout { background: var(--green-pale); border: 1px solid #C0DAC2; border-radius: 8px; padding: 1.3rem 1.6rem; margin: 2rem 0; }
+  .callout-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.6rem; }
+  .callout p { font-size: 0.92rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout p + p { margin-top: 0.55rem; }
+  .callout-blue { background: var(--blue-pale); border: 1px solid #B3D4E4; border-radius: 8px; padding: 1.3rem 1.6rem; margin: 2rem 0; }
+  .callout-blue .callout-label { color: var(--blue); }
+  .callout-blue p { font-size: 0.92rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout-blue p + p { margin-top: 0.55rem; }
+  .callout-warm { background: var(--accent-pale); border: 1px solid #DECCB5; border-radius: 8px; padding: 1.3rem 1.6rem; margin: 2rem 0; }
+  .callout-warm .callout-label { color: var(--accent); }
+  .callout-warm p { font-size: 0.92rem; color: var(--text-soft); margin: 0; line-height: 1.75; }
+  .callout-warm p + p { margin-top: 0.55rem; }
+
+  /* checklist */
+  .check-list { list-style: none; padding: 0; margin: 0.6rem 0 0; }
+  .check-list li { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.5rem 0; border-bottom: 1px solid var(--cream-border); font-size: 0.92rem; color: var(--text-soft); line-height: 1.7; }
+  .check-list li:last-child { border-bottom: none; }
+  .check-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-mid); flex-shrink: 0; margin-top: 0.6rem; }
+  .check-list li strong { font-weight: 500; color: var(--text); }
+
+  /* comparison table */
+  .compare-table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.88rem; }
+  .compare-table th { background: var(--green-dark); color: #fff; padding: 0.6rem 0.9rem; text-align: left; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.04em; }
+  .compare-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--cream-border); color: var(--text-soft); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:nth-child(even) td { background: var(--cream-dark); }
+  .compare-table td:first-child { font-weight: 500; color: var(--text); }
+
+  /* product cards */
+  .products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.2rem 0; }
+  .product-card { border: 1px solid var(--cream-border); border-radius: 10px; background: #fff; overflow: hidden; }
+  .product-card-img { width: 100%; height: 180px; object-fit: contain; background: var(--cream-dark); display: block; padding: 14px; }
+  .product-card-body { padding: 1rem 1.1rem; border-top: 1px solid var(--cream-border); }
+  .product-card-body h4 { font-family: 'Lora', Georgia, serif; font-size: 0.95rem; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; }
+  .product-card-body p { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 0.8rem; line-height: 1.6; }
+  .buy-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .buy-btn { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; font-weight: 500; color: var(--green-dark); background: var(--green-pale); border: 1px solid #C0DAC2; border-radius: 20px; padding: 3px 11px; text-decoration: none; }
+  .buy-btn:hover { background: #d4ebd6; text-decoration: none; }
+
+  .section-divider { border: none; border-top: 1px solid var(--cream-border); margin: 2.5rem 0; }
+  .related-post { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--cream-border); font-size: 0.85rem; color: var(--text-muted); }
+  .related-post a { color: var(--green); display: block; font-family: 'Lora', Georgia, serif; font-size: 1rem; margin-top: 0.3rem; }
+  .site-footer { text-align: center; padding: 2.5rem 1.5rem; font-size: 0.78rem; color: var(--text-muted); border-top: 1px solid var(--cream-border); margin-top: 4rem; letter-spacing: 0.03em; }
+
+  @media (max-width: 540px) {
+    .post-title { font-size: 1.5rem; }
+    .products-grid { grid-template-columns: 1fr; }
+    .data-row { flex-direction: column; gap: 0.1rem; }
+    .data-row .dv { text-align: left; }
+    .compare-table { font-size: 0.8rem; }
+    .compare-table th, .compare-table td { padding: 0.5rem 0.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="site-logo" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">🌿 Cozy Little Cottage</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">All Posts</a>
+</nav>
+
+<div class="page-wrap">
+  <a class="back-link" href="https://lightenedgirl.github.io/CozyLittleCottage/index.html">← Back to Home</a>
+</div>
+
+<div class="post-wrap">
+
+  <span class="hero-tag">Biogas</span>
+  <h1 class="post-title">Setting up a biogas system —<br><em>at home</em></h1>
+  <p class="post-date">August 12, 2026</p>
+  <hr class="post-rule">
+  <p class="disclaimer">Links marked amazon.in and amazon.com are affiliate links.</p>
+
+  <div class="post-body">
+    <p>Imagine feeding your kitchen waste into a small unit in your backyard every morning — and using the gas it produces to cook dinner that evening. That's exactly what a home biogas system does, and it's more accessible than most people realise.</p>
+    <p>Home biogas has been quietly growing in India, particularly in Kerala, where the climate is ideal for it. If you generate a good amount of wet waste — food scraps, cooked leftovers, vegetable peels — a biogas unit can turn that into cooking fuel and liquid fertiliser simultaneously.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>"Your kitchen waste has energy in it. A biogas system is simply a way of collecting it before it escapes into the atmosphere."</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- WHAT IS BIOGAS -->
+  <h2 class="section-heading">What is biogas — <em>and how does it work?</em></h2>
+
+  <div class="post-body">
+    <p>Biogas is a mixture of gases — primarily methane (50–70%) and carbon dioxide — produced when organic matter breaks down in the absence of oxygen. This process is called <strong>anaerobic digestion</strong>.</p>
+    <p>In a biogas unit, wet organic waste (food scraps, kitchen waste, sometimes animal dung) is fed into a sealed digester tank along with water. Inside, anaerobic bacteria break the material down over several days, producing biogas that collects in a storage dome or bag above the digester. The gas is then piped directly to your kitchen stove for cooking.</p>
+    <p>The leftover slurry — called <strong>digestate or bioslurry</strong> — drains out of the unit and is one of the richest liquid fertilisers available. Diluted with water, it feeds plants dramatically faster than compost alone.</p>
+  </div>
+
+  <div class="callout">
+    <p class="callout-label">Biogas vs composting — key difference</p>
+    <p>Both handle wet waste. Composting is aerobic (uses oxygen) and produces solid compost. Biogas digestion is anaerobic (no oxygen) and produces gas for cooking plus liquid fertiliser. Biogas handles meat, fish, and dairy that composting can't — making it more suitable for households that generate those scraps.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- IS IT RIGHT FOR YOU -->
+  <h2 class="section-heading">Is a home biogas unit <em>right for you?</em></h2>
+
+  <table class="compare-table">
+    <thead>
+      <tr><th>Factor</th><th>Good fit</th><th>Not ideal</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Wet waste generated</td><td>2–5 kg per day</td><td>Less than 500g per day</td></tr>
+      <tr><td>Space available</td><td>Small yard, backyard, terrace</td><td>Tiny apartment, no outdoor space</td></tr>
+      <tr><td>Type of waste</td><td>All food scraps incl. meat & dairy</td><td>Only dry or non-food waste</td></tr>
+      <tr><td>Climate</td><td>Warm, tropical (Kerala is ideal)</td><td>Very cold regions slow digestion</td></tr>
+      <tr><td>Cooking gas usage</td><td>Supplement or replace LPG</td><td>Already use minimal gas</td></tr>
+      <tr><td>Garden or plants</td><td>Can use liquid fertiliser output</td><td>No plants at all</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout-blue">
+    <p class="callout-label">Kerala advantage</p>
+    <p>Kerala's warm, humid climate is nearly perfect for biogas production. The Kerala government has also subsidised home biogas units through various schemes — check with your local panchayat or KSEB office for current eligibility. Units like the Sintex biogas plant and Home Biogas systems have been widely adopted across the state.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- TYPES OF UNITS -->
+  <h2 class="section-heading">Types of <em>home biogas units</em></h2>
+
+  <div class="info-card" id="biogas-fixed-dome">
+    <div class="info-card-header">
+      <span class="info-icon">🏛️</span>
+      <h3>Fixed dome digester</h3>
+    </div>
+    <div class="info-card-body">
+      <p>The traditional design — a dome-shaped underground concrete tank where waste is fed in, gas collects at the top, and slurry exits from the side. Very durable and long-lasting (20–30 years), but requires construction and can't be relocated.</p>
+      <p>This is the type most commonly subsidised by state governments and is widely used in Kerala. Best for permanent homes with a garden or backyard.</p>
+      <div class="data-rows">
+        <div class="data-row"><span class="dl">Capacity</span><span class="dv">1–10 cubic metres</span></div>
+        <div class="data-row"><span class="dl">Cost</span><span class="dv">₹15,000–₹60,000 (varies with subsidy)</span></div>
+        <div class="data-row"><span class="dl">Lifespan</span><span class="dv">20–30 years</span></div>
+        <div class="data-row"><span class="dl">Installation</span><span class="dv">Professional mason required</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-card" id="biogas-portable">
+    <div class="info-card-header">
+      <span class="info-icon">🫙</span>
+      <h3>Portable / compact biogas unit</h3>
+    </div>
+    <div class="info-card-body">
+      <p>Prefabricated plastic units that sit above ground — no construction required. Units like the HomeBiogas (international) or Sintex compact units can be set up in a few hours and placed in a backyard, terrace, or large balcony. Gas is stored in a collapsible bag and piped to the kitchen.</p>
+      <p>These are the easiest entry point for most urban households and don't require any government approval or professional installation beyond basic plumbing.</p>
+      <div class="data-rows">
+        <div class="data-row"><span class="dl">Capacity</span><span class="dv">Handles 1–6 kg waste/day</span></div>
+        <div class="data-row"><span class="dl">Gas output</span><span class="dv">Up to 2–3 hours cooking per day</span></div>
+        <div class="data-row"><span class="dl">Cost</span><span class="dv">₹8,000–₹25,000</span></div>
+        <div class="data-row"><span class="dl">Installation</span><span class="dv">DIY in 2–4 hours</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-card" id="biogas-floating-drum">
+    <div class="info-card-header">
+      <span class="info-icon">🛢️</span>
+      <h3>Floating drum digester</h3>
+    </div>
+    <div class="info-card-body">
+      <p>A two-tank design where an inverted steel drum floats on the slurry and rises as gas fills it, providing a visual indicator of gas pressure. More common in rural areas and farms. Reliable, but the steel drum requires occasional maintenance to prevent rusting.</p>
+      <p>Less common in urban homes now that portable plastic units are available, but still a good option if you're building a permanent setup on a farm or large property.</p>
+      <div class="data-rows">
+        <div class="data-row"><span class="dl">Capacity</span><span class="dv">2–10 cubic metres</span></div>
+        <div class="data-row"><span class="dl">Cost</span><span class="dv">₹20,000–₹50,000</span></div>
+        <div class="data-row"><span class="dl">Lifespan</span><span class="dv">15–20 years (drum needs upkeep)</span></div>
+        <div class="data-row"><span class="dl">Installation</span><span class="dv">Professional required</span></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- SETUP STEPS -->
+  <h2 class="section-heading">Setting up a <em>portable unit — step by step</em></h2>
+
+  <div class="post-body">
+    <p>For most urban and semi-urban homes, a compact portable biogas unit is the most practical starting point. Here's how to set one up.</p>
+  </div>
+
+  <div class="step-card" id="biogas-step-1">
+    <div class="step-card-header">
+      <div class="step-num">1</div>
+      <h3>Choose your location</h3>
+    </div>
+    <div class="step-card-body">
+      <p>Pick a spot that gets some sunlight (warmth speeds up digestion) and is close enough to the kitchen for the gas pipe to reach. A backyard, side yard, or large terrace all work. The unit needs a flat, stable surface. Keep it away from the main sitting areas as there can be a mild odour near the inlet when feeding.</p>
+    </div>
+  </div>
+
+  <div class="step-card" id="biogas-step-2">
+    <div class="step-card-header">
+      <div class="step-num">2</div>
+      <h3>Assemble the unit</h3>
+    </div>
+    <div class="step-card-body">
+      <p>Most portable units come with an instruction manual and all fittings. Connect the digester tank, gas storage bag or dome, inlet pipe (where you feed waste), outlet pipe (where slurry drains), and gas outlet pipe that runs to the kitchen. Most setups take 2–4 hours and require only basic plumbing tools — no special skills needed.</p>
+    </div>
+  </div>
+
+  <div class="step-card" id="biogas-step-3">
+    <div class="step-card-header">
+      <div class="step-num">3</div>
+      <h3>Prime the digester</h3>
+    </div>
+    <div class="step-card-body">
+      <p>Before regular use, you need to introduce anaerobic bacteria to start the digestion process. Fill the digester with a mix of water and either: cattle dung slurry (the most effective starter), previously made biogas slurry from another unit, or a commercial biogas starter inoculant. Let it sit for 7–10 days before feeding kitchen waste. During this time, gas will begin to form — but let the first 1–2 batches of gas vent out as they contain mostly CO₂ and won't burn well.</p>
+    </div>
+  </div>
+
+  <div class="step-card" id="biogas-step-4">
+    <div class="step-card-header">
+      <div class="step-num">4</div>
+      <h3>Start feeding daily</h3>
+    </div>
+    <div class="step-card-body">
+      <p>Once primed, feed kitchen waste daily — ideally blended or chopped finely with water into a slurry before adding. A ratio of roughly <strong>1 part waste to 1 part water</strong> works well. You can feed vegetable scraps, cooked food, fruit peels, tea waste, and even small amounts of meat and dairy — unlike composting, biogas digesters handle them all. Avoid feeding citrus in large quantities, very oily waste, or any synthetic material.</p>
+    </div>
+  </div>
+
+  <div class="step-card" id="biogas-step-5">
+    <div class="step-card-header">
+      <div class="step-num">5</div>
+      <h3>Connect to your stove</h3>
+    </div>
+    <div class="step-card-body">
+      <p>Run the gas pipe from the unit to your kitchen and connect to a biogas-compatible burner. Most portable units include a burner, or you can use a standard LPG burner with minor adjustment. The gas pressure from a home unit is lower than LPG, so the flame will be smaller — sufficient for boiling, cooking rice, making tea, and general cooking. For high-heat cooking like deep frying, LPG may still be needed as backup.</p>
+    </div>
+  </div>
+
+  <div class="step-card" id="biogas-step-6">
+    <div class="step-card-header">
+      <div class="step-num">6</div>
+      <h3>Collect and use the slurry</h3>
+    </div>
+    <div class="step-card-body">
+      <p>As you feed the inlet daily, processed slurry exits from the outlet pipe. Collect it in a bucket or channel it directly to a garden bed. This <strong>bioslurry is an exceptional liquid fertiliser</strong> — rich in nitrogen, phosphorus, and potassium, and immediately available to plants (unlike compost which needs to break down further in soil). Dilute 1 part slurry with 5–10 parts water before applying to plants to prevent burning roots.</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- WHAT TO FEED -->
+  <h2 class="section-heading">What to feed — <em>and what to avoid</em></h2>
+
+  <div class="callout">
+    <p class="callout-label">Feed freely</p>
+    <ul class="check-list">
+      <li><span class="check-dot"></span><div><strong>All vegetable and fruit scraps</strong> — peels, cores, trimmings, overripe fruit</div></li>
+      <li><span class="check-dot"></span><div><strong>Cooked food</strong> — rice, roti, dal, curry, bread, noodles</div></li>
+      <li><span class="check-dot"></span><div><strong>Meat and fish scraps</strong> — including bones (softer ones break down; hard bones can clog)</div></li>
+      <li><span class="check-dot"></span><div><strong>Dairy waste</strong> — spoiled milk, curd, cheese (in moderate amounts)</div></li>
+      <li><span class="check-dot"></span><div><strong>Tea and coffee waste</strong> — leaves, grounds, paper filters</div></li>
+      <li><span class="check-dot"></span><div><strong>Eggshells</strong> — crushed if possible</div></li>
+    </ul>
+  </div>
+
+  <div class="callout-warm">
+    <p class="callout-label">Avoid or limit</p>
+    <ul class="check-list">
+      <li><span class="check-dot"></span><div><strong>Large amounts of citrus</strong> — the acidity disrupts the bacteria. Small amounts are fine.</div></li>
+      <li><span class="check-dot"></span><div><strong>Heavily oily or fatty waste</strong> — slows digestion and can coat the bacteria.</div></li>
+      <li><span class="check-dot"></span><div><strong>Antibiotics or medicines</strong> — kill the anaerobic bacteria the unit depends on.</div></li>
+      <li><span class="check-dot"></span><div><strong>Disinfectants or cleaning chemicals</strong> — even small amounts can sterilise the digester.</div></li>
+      <li><span class="check-dot"></span><div><strong>Non-organic material</strong> — plastic, glass, metal, synthetic fibre — anything that won't decompose.</div></li>
+    </ul>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- MAINTENANCE -->
+  <h2 class="section-heading">Ongoing <em>maintenance</em></h2>
+
+  <div class="post-body">
+    <p>Home biogas units are low maintenance once running. Here's what to keep on top of:</p>
+  </div>
+
+  <div class="callout">
+    <p class="callout-label">Monthly checks</p>
+    <ul class="check-list">
+      <li><span class="check-dot"></span><div><strong>Check gas pipe connections</strong> for leaks — apply soapy water to joints and look for bubbles.</div></li>
+      <li><span class="check-dot"></span><div><strong>Clear the inlet and outlet pipes</strong> if slurry flow slows — a clog usually means the waste needs more water when feeding.</div></li>
+      <li><span class="check-dot"></span><div><strong>Check the gas storage bag</strong> for damage if your unit uses one — UV exposure degrades plastic over time.</div></li>
+      <li><span class="check-dot"></span><div><strong>Monitor gas output.</strong> If it drops significantly, the bacteria may need a boost — add a small amount of fresh cattle dung slurry or biogas starter.</div></li>
+    </ul>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- PRODUCTS -->
+  <h2 class="section-heading">Products & <em>where to buy</em></h2>
+
+  <div class="products-grid">
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/71SBxy9YkUL._SL1500_.jpg" alt="Portable home biogas unit" loading="lazy">
+      <div class="product-card-body">
+        <h4>Portable home biogas unit</h4>
+        <p>Compact prefabricated unit — handles up to 5 kg waste per day, includes burner and gas pipe.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B03NnUEYE" target="_blank" rel="noopener">amazon.in</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/61mkPlJEjgL._SL1500_.jpg" alt="Biogas starter inoculant" loading="lazy">
+      <div class="product-card-body">
+        <h4>Biogas starter inoculant</h4>
+        <p>Microbial culture to prime a new digester or revive a slow one — an alternative to cattle dung starter.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B0fH3YDzB" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/4qcqCP6" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/61S7CFEMehL._SL1500_.jpg" alt="Biogas compatible stove burner" loading="lazy">
+      <div class="product-card-body">
+        <h4>Biogas stove burner</h4>
+        <p>Single or double burner stove designed for the lower pressure of home biogas systems.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B01TIWltq" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/4qbI7Pi" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-card-img" src="https://m.media-amazon.com/images/I/613UvhSaa2S._SL1473_.jpg" alt="Kitchen waste grinder blender" loading="lazy">
+      <div class="product-card-body">
+        <h4>Kitchen waste blender</h4>
+        <p>Blend scraps with water before feeding into the digester — finer slurry means faster gas production.</p>
+        <div class="buy-links">
+          <a class="buy-btn" href="https://link.amazon/B02mxBo8r" target="_blank" rel="noopener">amazon.in</a>
+          <a class="buy-btn" href="https://amzn.to/4xrCGy8" target="_blank" rel="noopener">amazon.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="post-body">
+    <p>A home biogas unit is one of the most complete solutions for wet waste — it handles everything, produces something genuinely useful, and in the long run pays for itself in reduced LPG costs and fertiliser savings.</p>
+    <p>If you generate a couple of kilograms of kitchen waste every day and have a small outdoor space, it's worth seriously considering. Kerala's climate makes it especially effective — and the government subsidies make it more affordable than most people expect.</p>
+    <p>Start by calling your local panchayat office and asking about the current biogas subsidy scheme. You might be surprised at what's available.</p>
+  </div>
+
+  <div class="related-post">
+    Read next →
+    <a href="https://lightenedgirl.github.io/CozyLittleCottage/W4-wet-waste.html">
+      What is Wet Waste & Types of Wet Waste at Home
+    </a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  © 2025 Cozy Little Cottage · Hosted on GitHub Pages
+</footer>
+</body>
+</html>
